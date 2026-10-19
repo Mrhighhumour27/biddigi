@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { LiveAuctionTicker } from './components/LiveAuctionTicker';
-import { InteractiveAuctionSimulator } from './components/InteractiveAuctionSimulator';
+import { PlatformDashboard } from './components/PlatformDashboard';
 import { ScrollRunway } from './components/ScrollRunway';
 import { InteractiveFormatPreviewer } from './components/InteractiveFormatPreviewer';
 import { SolutionsSection } from './components/SolutionsSection';
@@ -28,8 +28,8 @@ export function App() {
         {/* Live Programmatic Marquee Ticker */}
         <LiveAuctionTicker />
 
-        {/* Interactive Real-Time Auction Simulator Playground */}
-        <InteractiveAuctionSimulator />
+        {/* Real-Time Platform Yield Telemetry Dashboard */}
+        <PlatformDashboard />
 
         {/* Sticky Scroll Runway: 12ms Ad Lifecycle Storytelling */}
         <ScrollRunway />

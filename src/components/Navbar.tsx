@@ -32,10 +32,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#simulator" className="hover:text-slate-900 transition-colors duration-200 flex items-center gap-1.5">
-            <span>Live Simulator</span>
+          <a href="#platform" className="hover:text-slate-900 transition-colors duration-200 flex items-center gap-1.5">
+            <span>Platform</span>
             <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#FF5C00]/10 text-[#FF5C00] font-semibold">
-              Interactive
+              Telemetry
             </span>
           </a>
           <a href="#how-it-works" className="hover:text-slate-900 transition-colors duration-200">
@@ -90,11 +90,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             className="lg:hidden mt-3 liquid-glass-light p-6 shadow-xl flex flex-col gap-4 text-sm"
           >
             <a 
-              href="#simulator" 
+              href="#platform" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
-              Interactive Live Simulator
+              Platform Telemetry & Dashboard
             </a>
             <a 
               href="#how-it-works" 

@@ -259,11 +259,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           <motion.a
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            href="#simulator"
+            href="#platform"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-slate-800 liquid-glass-pill-light hover:bg-white border border-slate-200 transition-all duration-300"
           >
             <Zap className="w-4 h-4 text-[#FF5C00]" />
-            <span>Launch Interactive Simulator</span>
+            <span>Explore Platform Telemetry</span>
           </motion.a>
         </motion.div>
 

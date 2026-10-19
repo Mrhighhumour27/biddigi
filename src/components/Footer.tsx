@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5">
               <li><a href="#architecture" className="hover:text-[#FF5C00] transition-colors">Global Edge Clusters</a></li>
-              <li><a href="#simulator" className="hover:text-[#FF5C00] transition-colors">Live Auction Simulator</a></li>
+              <li><a href="#platform" className="hover:text-[#FF5C00] transition-colors">Platform Telemetry</a></li>
               <li><a href="#how-it-works" className="hover:text-[#FF5C00] transition-colors">12ms Lifecycle Runway</a></li>
               <li><a href="#calculator" className="hover:text-[#FF5C00] transition-colors">Yield Calculator</a></li>
               <li><a href="https://expoworld.co" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5C00] transition-colors flex items-center gap-1 font-semibold">
