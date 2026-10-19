@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-brand-orange: #FF5C00;
+  --color-brand-orange-light: #FF7A1A;
+  --color-brand-orange-glow: rgba(255, 92, 0, 0.4);
+  --color-obsidian-950: #050608;
+  --color-obsidian-900: #08090C;
+  --color-obsidian-850: #0D0F14;
+  --color-obsidian-800: #12151D;
+  --color-obsidian-700: #1C202B;
+}
+
+/* Custom Base & Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #08090C;
+  color: #E4E4E7;
+  overflow-x: hidden;
+}
+
+/* MotionSites Liquid Glassmorphism with Mask Composite */
+.liquid-glass {
+  background: rgba(18, 21, 29, 0.45);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  position: relative;
+  border-radius: 1.5rem;
+}
+
+.liquid-glass-orange {
+  background: rgba(14, 16, 22, 0.65);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem;
+}
+
+.liquid-glass-orange::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.2px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 92, 0, 0.6) 0%,
+    rgba(255, 140, 0, 0.25) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 92, 0, 0.15) 75%,
+    rgba(255, 92, 0, 0.5) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.liquid-glass-subtle {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.liquid-glass-pill {
+  background: rgba(10, 11, 15, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* Scrollhaus Sticky Runway Helper */
+.hero-runway {
+  position: relative;
+}
+
+/* Keyframe Animations */
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-hero-reveal {
+  animation: heroReveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090C;
+}
+::-webkit-scrollbar-thumb {
+  background: #1C202B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5C00;
+}
