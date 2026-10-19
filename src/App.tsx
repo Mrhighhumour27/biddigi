@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { LiveAuctionTicker } from './components/LiveAuctionTicker';
 import { PlatformDashboard } from './components/PlatformDashboard';
+import { InteractiveConceptExplainer } from './components/InteractiveConceptExplainer';
 import { ScrollRunway } from './components/ScrollRunway';
 import { InteractiveFormatPreviewer } from './components/InteractiveFormatPreviewer';
 import { SolutionsSection } from './components/SolutionsSection';
@@ -27,6 +28,9 @@ export function App() {
 
         {/* Live Programmatic Marquee Ticker */}
         <LiveAuctionTicker />
+
+        {/* mFusion-Style Interactive Concept Explainer (Bottlenecks & Architectural Showcase) */}
+        <InteractiveConceptExplainer />
 
         {/* Real-Time Platform Yield Telemetry Dashboard */}
         <PlatformDashboard />

@@ -1,280 +1,343 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeroProps {
   onOpenDemo: () => void;
 }
 
+interface DSPNode {
+  id: string;
+  name: string;
+  category: string;
+  latency: string;
+  protocol: string;
+  cpm: string;
+  x: string;
+  y: string;
+  routePath: string;
+}
+
 export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const dspNodes: DSPNode[] = [
+    {
+      id: 'google',
+      name: 'Google AdX',
+      category: 'Global Marketplace',
+      latency: '8.1ms',
+      protocol: 'OpenRTB 3.0',
+      cpm: '$4.85 avg',
+      x: '22%',
+      y: '10%',
+      routePath: 'M 90 40 Q 200 40 200 160',
+    },
+    {
+      id: 'ttd',
+      name: 'The Trade Desk',
+      category: 'Omnichannel DSP',
+      latency: '7.8ms',
+      protocol: 'OpenRTB 3.0',
+      cpm: '$6.20 avg',
+      x: '78%',
+      y: '10%',
+      routePath: 'M 310 40 Q 200 40 200 160',
+    },
+    {
+      id: 'magnite',
+      name: 'Magnite CTV',
+      category: 'Connected TV & Video',
+      latency: '11.4ms',
+      protocol: 'VAST 4.2',
+      cpm: '$18.40 avg',
+      x: '92%',
+      y: '35%',
+      routePath: 'M 370 120 Q 200 120 200 160',
+    },
+    {
+      id: 'amazon',
+      name: 'Amazon TAM',
+      category: 'Retail & Display',
+      latency: '9.2ms',
+      protocol: 'Transparent Ad Market',
+      cpm: '$4.10 avg',
+      x: '90%',
+      y: '68%',
+      routePath: 'M 360 230 Q 200 230 200 160',
+    },
+    {
+      id: 'pubmatic',
+      name: 'PubMatic',
+      category: 'Header Bidding',
+      latency: '8.9ms',
+      protocol: 'OpenRTB 3.0',
+      cpm: '$5.15 avg',
+      x: '78%',
+      y: '90%',
+      routePath: 'M 310 300 Q 200 300 200 160',
+    },
+    {
+      id: 'openx',
+      name: 'OpenX',
+      category: 'Server-to-Server',
+      latency: '7.4ms',
+      protocol: 'Edge Prebid S2S',
+      cpm: '$4.30 avg',
+      x: '22%',
+      y: '90%',
+      routePath: 'M 90 300 Q 200 300 200 160',
+    },
+    {
+      id: 'equativ',
+      name: 'Equativ',
+      category: 'Direct PMP & Native',
+      latency: '9.8ms',
+      protocol: 'OpenRTB 3.0',
+      cpm: '$4.90 avg',
+      x: '8%',
+      y: '68%',
+      routePath: 'M 40 230 Q 200 230 200 160',
+    },
+    {
+      id: 'xandr',
+      name: 'Xandr / Microsoft',
+      category: 'Premium Video & App',
+      latency: '8.5ms',
+      protocol: 'OpenRTB 3.0',
+      cpm: '$5.40 avg',
+      x: '8%',
+      y: '35%',
+      routePath: 'M 40 120 Q 200 120 200 160',
+    },
+  ];
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationId: number;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    // DSP nodes surrounding central Biddigi core
-    const dspNodes = [
-      { name: 'Google AdX', angle: 0.2, distance: 0.38, cpm: '$5.40' },
-      { name: 'Magnite CTV', angle: 1.3, distance: 0.36, cpm: '$18.20' },
-      { name: 'Amazon TAM', angle: 2.3, distance: 0.40, cpm: '$4.10' },
-      { name: 'The Trade Desk', angle: 3.4, distance: 0.37, cpm: '$7.80' },
-      { name: 'PubMatic', angle: 4.5, distance: 0.39, cpm: '$5.15' },
-      { name: 'OpenX', angle: 5.6, distance: 0.35, cpm: '$3.90' },
-    ];
-
-    interface Particle {
-      sourceIndex: number;
-      progress: number;
-      speed: number;
-      color: string;
-    }
-
-    const particles: Particle[] = [];
-    for (let i = 0; i < 20; i++) {
-      particles.push({
-        sourceIndex: Math.floor(Math.random() * dspNodes.length),
-        progress: Math.random(),
-        speed: 0.005 + Math.random() * 0.006,
-        color: Math.random() > 0.3 ? '#FF5C00' : '#FF8C33',
-      });
-    }
-
-    let time = 0;
-
-    const render = () => {
-      time += 0.02;
-      ctx.clearRect(0, 0, width, height);
-
-      const centerX = width / 2;
-      const centerY = height / 2;
-      const baseRadius = Math.min(width, height);
-
-      // Faint concentric telemetry rings
-      ctx.strokeStyle = 'rgba(203, 213, 225, 0.45)';
-      ctx.lineWidth = 1;
-      [0.2, 0.3, 0.4].forEach((scale) => {
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, baseRadius * scale, 0, Math.PI * 2);
-        ctx.stroke();
-      });
-
-      // DSP outer nodes & connection beams
-      dspNodes.forEach((node, idx) => {
-        const orbitAngle = node.angle + Math.sin(time * 0.5 + idx) * 0.05;
-        const nodeX = centerX + Math.cos(orbitAngle) * (baseRadius * node.distance);
-        const nodeY = centerY + Math.sin(orbitAngle) * (baseRadius * node.distance * 0.85);
-
-        // Connection line to center
-        const grad = ctx.createLinearGradient(nodeX, nodeY, centerX, centerY);
-        grad.addColorStop(0, 'rgba(255, 92, 0, 0.35)');
-        grad.addColorStop(0.5, 'rgba(255, 92, 0, 0.1)');
-        grad.addColorStop(1, 'rgba(203, 213, 225, 0.2)');
-
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.2;
-        ctx.setLineDash([4, 6]);
-        ctx.beginPath();
-        ctx.moveTo(nodeX, nodeY);
-        ctx.lineTo(centerX, centerY);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        // Outer DSP node point
-        ctx.fillStyle = 'rgba(255, 92, 0, 0.15)';
-        ctx.beginPath();
-        ctx.arc(nodeX, nodeY, 15, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.fillStyle = '#FF5C00';
-        ctx.beginPath();
-        ctx.arc(nodeX, nodeY, 4, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Node Label
-        ctx.font = '500 11px JetBrains Mono, monospace';
-        ctx.fillStyle = '#475569';
-        ctx.textAlign = 'center';
-        ctx.fillText(node.name, nodeX, nodeY - 12);
-      });
-
-      // Animate flowing bid packets
-      particles.forEach((p) => {
-        p.progress += p.speed;
-        if (p.progress >= 1) {
-          p.progress = 0;
-          p.sourceIndex = Math.floor(Math.random() * dspNodes.length);
-        }
-
-        const node = dspNodes[p.sourceIndex];
-        const orbitAngle = node.angle + Math.sin(time * 0.5 + p.sourceIndex) * 0.05;
-        const startX = centerX + Math.cos(orbitAngle) * (baseRadius * node.distance);
-        const startY = centerY + Math.sin(orbitAngle) * (baseRadius * node.distance * 0.85);
-
-        const curX = startX + (centerX - startX) * p.progress;
-        const curY = startY + (centerY - startY) * p.progress;
-
-        // Packet glow
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = '#FF5C00';
-        ctx.shadowBlur = 8;
-        ctx.beginPath();
-        ctx.arc(curX, curY, 2.5, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      });
-
-      // Central Biddigi Engine Core Node
-      const corePulse = Math.sin(time * 2.5) * 4;
-      const coreGrad = ctx.createRadialGradient(
-        centerX,
-        centerY,
-        6,
-        centerX,
-        centerY,
-        48 + corePulse
-      );
-      coreGrad.addColorStop(0, '#FF5C00');
-      coreGrad.addColorStop(0.4, 'rgba(255, 92, 0, 0.25)');
-      coreGrad.addColorStop(1, 'rgba(255, 92, 0, 0)');
-
-      ctx.fillStyle = coreGrad;
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, 48 + corePulse, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.fillStyle = '#FFFFFF';
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, 22, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.strokeStyle = '#FF5C00';
-      ctx.lineWidth = 2.5;
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, 22, 0, Math.PI * 2);
-      ctx.stroke();
-
-      ctx.fillStyle = '#0F172A';
-      ctx.font = 'bold 9px Plus Jakarta Sans, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('BIDDIGI', centerX, centerY + 3);
-
-      animationId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const [selectedDSP, setSelectedDSP] = useState<DSPNode>(dspNodes[0]);
 
   return (
-    <section className="relative pt-36 md:pt-44 pb-20 md:pb-28 overflow-hidden min-h-[92svh] flex flex-col justify-center bg-grid-pattern">
+    <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden bg-grid-pattern border-b border-slate-200">
       {/* Soft Ambient Radial Warmth */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] md:w-[950px] h-[500px] bg-gradient-to-b from-[#FF5C00]/10 via-[#FF5C00]/5 to-transparent rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1100px] h-[550px] bg-gradient-to-b from-[#FF5C00]/8 via-[#FF5C00]/3 to-transparent rounded-full blur-[140px] pointer-events-none -z-10" />
 
-      {/* Interactive Canvas Background */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-80 md:opacity-95 -z-10"
-      />
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        {/* 2-Column Hero Grid (Text Left + Interactive Ecosystem Illustration Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-16">
+          
+          {/* Left Column: Value Prop, Copy & CTAs (Col 6) */}
+          <div className="lg:col-span-6 text-left">
+            {/* Top Status Pill */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full liquid-glass-pill-light mb-6 shadow-sm"
+            >
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF5C00] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5C00]"></span>
+              </span>
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-medium">
+                Programmatic Yield Infrastructure
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="text-xs font-mono text-[#FF5C00] font-semibold">Prebid 8.0 & OpenRTB 3.0</span>
+            </motion.div>
 
-      <div className="max-w-6xl mx-auto px-4 md:px-8 text-center relative z-10">
-        {/* Top Status Pill */}
-        <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full liquid-glass-pill-light mb-8 shadow-sm"
-        >
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF5C00] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5C00]"></span>
-          </span>
-          <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-medium">
-            Programmatic Yield Infrastructure
-          </span>
-          <span className="text-slate-300">|</span>
-          <span className="text-xs font-mono text-[#FF5C00] font-semibold">Prebid 8.0 & OpenRTB 3.0</span>
-        </motion.div>
+            {/* Headline */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 mb-5 leading-[1.08]"
+            >
+              Drive Peak Yield.{' '}
+              <br />
+              <span className="font-serif italic font-normal text-[#FF5C00]">
+                Without Latency Lag.
+              </span>
+            </motion.h1>
 
-        {/* Dual-Font Headline */}
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-slate-950 mb-6 leading-[1.08]"
-        >
-          MAXIMIZE YOUR YIELD.{' '}
-          <br className="hidden sm:inline" />
-          <span className="font-serif italic font-normal text-[#FF5C00]">
-            Without Compromise.
-          </span>
-        </motion.h1>
+            {/* Narrative Subtitle */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-6"
+            >
+              BidDigi bridges digital publishers with 180+ top global DSPs in a unified sub-12ms parallel auction engine. 
+              Eliminate waterfall drop-offs, defeat DSP bid shading, and maximize revenue with infrastructure engineered by{' '}
+              <strong className="text-slate-900 font-semibold">Expoworld</strong>.
+            </motion.p>
 
-        {/* Narrative Subtitle */}
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed mb-10"
-        >
-          BidDigi bridges world-class digital publishers with top global DSPs. 
-          Harness sub-12ms parallel header bidding, AI floor pricing, and multi-cloud server auctions 
-          engineered by <strong className="text-slate-900 font-semibold">Expoworld</strong>.
-        </motion.p>
+            {/* Benefits Checkpoints with clean icons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="space-y-2.5 mb-8 text-sm text-slate-700 font-medium"
+            >
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0" />
+                <span>Sub-12ms parallel header bidding across 180+ DSPs</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0" />
+                <span>+38.4% average eCPM uplift via real-time AI floor pricing</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0" />
+                <span>Automated multi-currency reconciliation & guaranteed Net 30 wire</span>
+              </div>
+            </motion.div>
 
-        {/* Action Buttons */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.96 }}
-            onClick={onOpenDemo}
-            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-semibold tracking-wide bg-[#FF5C00] text-white shadow-[0_8px_25px_rgba(255,92,0,0.35)] hover:shadow-[0_12px_35px_rgba(255,92,0,0.5)] hover:bg-[#FF6D1A] transition-all duration-300"
-          >
-            <span>Monetize Your Traffic</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </motion.button>
+            {/* Action Buttons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-center gap-3.5"
+            >
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.96 }}
+                onClick={onOpenDemo}
+                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide bg-[#FF5C00] text-white shadow-[0_8px_25px_rgba(255,92,0,0.35)] hover:shadow-[0_12px_35px_rgba(255,92,0,0.5)] hover:bg-[#FF6D1A] transition-all duration-300 cursor-pointer"
+              >
+                <span>Monetize Your Traffic</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </motion.button>
 
-          <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            href="#platform"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-slate-800 liquid-glass-pill-light hover:bg-white border border-slate-200 transition-all duration-300"
-          >
-            <Zap className="w-4 h-4 text-[#FF5C00]" />
-            <span>Explore Platform Telemetry</span>
-          </motion.a>
-        </motion.div>
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                href="#how-it-works"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-slate-800 liquid-glass-pill-light hover:bg-white border border-slate-200 transition-all duration-300"
+              >
+                <Zap className="w-4 h-4 text-[#FF5C00]" />
+                <span>Explore Interactive Concepts</span>
+              </motion.a>
+            </motion.div>
+          </div>
+
+          {/* Right Column: mFusion-style Interactive Connected Demand Ecosystem (Col 6) */}
+          <div className="lg:col-span-6">
+            <div className="liquid-glass-light p-6 md:p-8 rounded-3xl border border-slate-200/90 shadow-xl bg-white relative">
+              {/* Ecosystem Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+                <div>
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#FF5C00] font-bold block">
+                    YOUR DEMAND. CONNECTED.
+                  </span>
+                  <span className="text-xs text-slate-500">
+                    Live Server-to-Server Prebid Network
+                  </span>
+                </div>
+                <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-slate-900 text-white">
+                  180+ DSPs
+                </span>
+              </div>
+
+              {/* Interactive Orbital Ecosystem Canvas */}
+              <div className="relative w-full h-[320px] sm:h-[350px] flex items-center justify-center overflow-hidden">
+                {/* Concentric Faint Orbit Circles */}
+                <div className="absolute w-[300px] h-[300px] rounded-full border border-slate-200/60 pointer-events-none -z-0" />
+                <div className="absolute w-[200px] h-[200px] rounded-full border border-slate-200/80 pointer-events-none -z-0" />
+                <div className="absolute w-[100px] h-[100px] rounded-full border border-dashed border-[#FF5C00]/30 pointer-events-none -z-0" />
+
+                {/* SVG Connecting Flow Lines */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none -z-0" viewBox="0 0 400 320" preserveAspectRatio="none">
+                  {dspNodes.map((node) => {
+                    const isSelected = selectedDSP.id === node.id;
+                    return (
+                      <g key={node.id}>
+                        <path
+                          d={node.routePath}
+                          fill="none"
+                          stroke={isSelected ? '#FF5C00' : '#E2E8F0'}
+                          strokeWidth={isSelected ? '2.5' : '1.5'}
+                          strokeDasharray={isSelected ? 'none' : '4 4'}
+                          className="transition-colors duration-300"
+                        />
+                        {isSelected && (
+                          <circle r="4" fill="#FF5C00">
+                            <animateMotion path={node.routePath} dur="1.8s" repeatCount="indefinite" />
+                          </circle>
+                        )}
+                      </g>
+                    );
+                  })}
+                </svg>
+
+                {/* Central BidDigi Core Hub */}
+                <div className="relative z-10 p-5 rounded-2xl bg-white border-2 border-[#FF5C00] shadow-lg shadow-[#FF5C00]/15 text-center flex flex-col items-center justify-center min-w-[140px]">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-[#FF5C00] animate-ping" />
+                    <span className="font-extrabold text-sm tracking-tight text-slate-950">BIDDIGI</span>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">
+                    Edge Auction Core
+                  </span>
+                  <span className="text-[9px] font-mono text-[#FF5C00] mt-1 bg-orange-50 px-2 py-0.5 rounded-full font-semibold">
+                    Sub-12ms SLA
+                  </span>
+                </div>
+
+                {/* 8 Satellite DSP Interactive Nodes */}
+                {dspNodes.map((dsp) => {
+                  const isSelected = selectedDSP.id === dsp.id;
+
+                  return (
+                    <button
+                      key={dsp.id}
+                      onClick={() => setSelectedDSP(dsp)}
+                      style={{ left: dsp.x, top: dsp.y }}
+                      className={`absolute -translate-x-1/2 -translate-y-1/2 px-2.5 py-1.5 rounded-xl border text-[11px] font-mono font-bold transition-all duration-200 cursor-pointer shadow-sm z-20 ${
+                        isSelected
+                          ? 'bg-[#FF5C00] text-white border-[#FF5C00] shadow-md shadow-[#FF5C00]/30 scale-110'
+                          : 'bg-white text-slate-700 border-slate-200 hover:border-slate-400 hover:bg-slate-50'
+                      }`}
+                    >
+                      {dsp.name}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Dynamic Selection Pill (mFusion style: All your marketing data indicator) */}
+              <div className="mt-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                  <div>
+                    <div className="font-bold text-slate-900 flex items-center gap-2">
+                      <span>{selectedDSP.name}</span>
+                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-white border border-slate-200 text-slate-600">
+                        {selectedDSP.category}
+                      </span>
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-500">
+                      SLA: <strong className="text-slate-800">{selectedDSP.latency}</strong> • Protocol: {selectedDSP.protocol} • Avg Yield: <strong className="text-[#FF5C00]">{selectedDSP.cpm}</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-[11px] font-mono font-semibold text-slate-400">
+                  <span>Connect</span>
+                  <span>→</span>
+                  <span className="text-slate-700">Bid in Parallel</span>
+                  <span>→</span>
+                  <span className="text-[#FF5C00]">Maximize Yield</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Real-Time Live Telemetry Bar */}
         <motion.div 
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto"
         >
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors">
+          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
               &lt; 12<span className="text-[#FF5C00]">ms</span>
             </div>
@@ -283,7 +346,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             </div>
           </div>
 
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors">
+          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
               +38<span className="text-[#FF5C00]">%</span>
             </div>
@@ -292,7 +355,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             </div>
           </div>
 
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors">
+          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
               450M<span className="text-[#FF5C00]">+</span>
             </div>
@@ -301,7 +364,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             </div>
           </div>
 
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors">
+          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
               180<span className="text-[#FF5C00]">+</span>
             </div>
