@@ -7,61 +7,58 @@
 
   --color-brand-orange: #FF5C00;
   --color-brand-orange-light: #FF7A1A;
-  --color-brand-orange-glow: rgba(255, 92, 0, 0.4);
-  --color-obsidian-950: #050608;
-  --color-obsidian-900: #08090C;
-  --color-obsidian-850: #0D0F14;
-  --color-obsidian-800: #12151D;
-  --color-obsidian-700: #1C202B;
+  --color-brand-orange-glow: rgba(255, 92, 0, 0.2);
 }
 
-/* Custom Base & Reset */
+/* Custom Base & Reset for Light Theme */
 * {
   box-sizing: border-box;
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #08090C;
-  color: #E4E4E7;
+  background-color: #FAFAFC;
+  color: #0F172A;
   overflow-x: hidden;
 }
 
-/* MotionSites Liquid Glassmorphism with Mask Composite */
-.liquid-glass {
-  background: rgba(18, 21, 29, 0.45);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  position: relative;
+/* Light Liquid Glassmorphism (MotionSites Inspired) */
+.liquid-glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
   border-radius: 1.5rem;
 }
 
-.liquid-glass-orange {
-  background: rgba(14, 16, 22, 0.65);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
+.liquid-glass-light-orange {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   position: relative;
   overflow: hidden;
   border-radius: 1.75rem;
+  box-shadow: 0 20px 45px -15px rgba(255, 92, 0, 0.12), 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
-.liquid-glass-orange::before {
+.liquid-glass-light-orange::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1.2px;
+  padding: 1.5px;
   background: linear-gradient(
     135deg,
-    rgba(255, 92, 0, 0.6) 0%,
-    rgba(255, 140, 0, 0.25) 25%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 92, 0, 0.15) 75%,
-    rgba(255, 92, 0, 0.5) 100%
+    rgba(255, 92, 0, 0.7) 0%,
+    rgba(255, 140, 0, 0.3) 30%,
+    rgba(226, 232, 240, 0.6) 50%,
+    rgba(255, 92, 0, 0.2) 70%,
+    rgba(255, 92, 0, 0.6) 100%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -69,46 +66,22 @@ body {
   pointer-events: none;
 }
 
-.liquid-glass-subtle {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  position: relative;
-  border-radius: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.liquid-glass-pill {
-  background: rgba(10, 11, 15, 0.75);
+.liquid-glass-pill-light {
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.02);
 }
 
-/* Scrollhaus Sticky Runway Helper */
-.hero-runway {
-  position: relative;
+/* Subtle dot-matrix background pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
 }
 
-/* Keyframe Animations */
-@keyframes heroReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(24px);
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-.animate-hero-reveal {
-  animation: heroReveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
+/* Animations */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -117,37 +90,37 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-@keyframes pulseGlow {
+@keyframes pulseGlowLight {
   0%, 100% {
-    opacity: 0.35;
+    opacity: 0.45;
     transform: scale(1);
   }
   50% {
-    opacity: 0.65;
-    transform: scale(1.05);
+    opacity: 0.8;
+    transform: scale(1.08);
   }
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 6s ease-in-out infinite;
+.animate-pulse-glow-light {
+  animation: pulseGlowLight 6s ease-in-out infinite;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar for Light Theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #08090C;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1C202B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
