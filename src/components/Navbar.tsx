@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
           <a href="#platform" className="hover:text-slate-900 transition-colors duration-200 flex items-center gap-1.5">
             <span>Platform</span>
             <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#FF5C00]/10 text-[#FF5C00] font-semibold">
-              Telemetry
+              Reporting
             </span>
           </a>
           <a href="#how-it-works" className="hover:text-slate-900 transition-colors duration-200">
@@ -45,10 +45,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             Solutions
           </a>
           <a href="#calculator" className="hover:text-slate-900 transition-colors duration-200">
-            Yield Calculator
+            Revenue Calculator
           </a>
-          <a href="#architecture" className="hover:text-slate-900 transition-colors duration-200">
-            Infrastructure
+          <a href="#faq" className="hover:text-slate-900 transition-colors duration-200">
+            FAQs
           </a>
         </div>
 
@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
         <div className="hidden md:flex items-center gap-4">
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200 text-[11px] font-mono text-slate-600">
             <Activity className="w-3.5 h-3.5 text-emerald-500 animate-pulse" />
-            <span className="text-slate-900 font-semibold">4.2ms</span> SLA
+            <span className="text-slate-900 font-semibold">Publisher</span> Solutions
           </div>
 
           <motion.button 
@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             onClick={onOpenDemo}
             className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold tracking-wide bg-[#FF5C00] text-white overflow-hidden shadow-[0_4px_14px_rgba(255,92,0,0.3)] hover:shadow-[0_6px_20px_rgba(255,92,0,0.45)] hover:bg-[#FF6D1A] transition-all duration-300"
           >
-            <span>Monetize With Us</span>
+            <span>Talk to Our Team</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </motion.button>
         </div>
@@ -94,14 +94,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
-              Platform Telemetry & Dashboard
+              Reporting & Dashboard
             </a>
             <a 
               href="#how-it-works" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
-              How It Works (12ms Lifecycle)
+              How It Works
             </a>
             <a 
               href="#solutions" 
@@ -115,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
-              Revenue Yield Calculator
+              Revenue Calculator
             </a>
 
             <div className="pt-2">

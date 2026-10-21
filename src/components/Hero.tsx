@@ -128,17 +128,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full liquid-glass-pill-light mb-6 shadow-sm"
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full liquid-glass-pill-light mb-6 flex-wrap shadow-sm"
             >
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF5C00] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5C00]"></span>
               </span>
-              <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-medium">
-                Programmatic Yield Infrastructure
+              <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wide text-slate-700 font-medium">
+                AD MONETIZATION FOR PUBLISHERS
               </span>
               <span className="text-slate-300">|</span>
-              <span className="text-xs font-mono text-[#FF5C00] font-semibold">Prebid 8.0 & OpenRTB 3.0</span>
+              <span className="text-xs font-mono text-[#FF5C00] font-semibold">Web • App • Video</span>
             </motion.div>
 
             {/* Headline */}
@@ -148,10 +148,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 mb-5 leading-[1.08]"
             >
-              Drive Peak Yield.{' '}
+              Earn more from your{' '}
               <br />
               <span className="font-serif italic font-normal text-[#FF5C00]">
-                Without Latency Lag.
+                website and app ads.
               </span>
             </motion.h1>
 
@@ -162,9 +162,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-6"
             >
-              BidDigi bridges digital publishers with 180+ top global DSPs in a unified sub-12ms parallel auction engine. 
-              Eliminate waterfall drop-offs, defeat DSP bid shading, and maximize revenue with infrastructure engineered by{' '}
-              <strong className="text-slate-900 font-semibold">Expoworld</strong>.
+              BidDigi helps website owners, app developers, and video publishers sell their ad space to advertising buyers. We bring buyers into competition, help improve your ad setup, and bring performance reporting into one place—so you can focus on your content and audience.
             </motion.p>
 
             {/* Benefits Checkpoints with clean icons */}
@@ -176,15 +174,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             >
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0" />
-                <span>Sub-12ms parallel header bidding across 180+ DSPs</span>
+                <span>Connect your ad spaces with competing advertising buyers</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0" />
-                <span>+38.4% average eCPM uplift via real-time AI floor pricing</span>
+                <span>Improve ad placements and pricing with performance insights</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0" />
-                <span>Automated multi-currency reconciliation & guaranteed Net 30 wire</span>
+                <span>Understand your earnings with clear, consolidated reporting</span>
               </div>
             </motion.div>
 
@@ -201,7 +199,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                 onClick={onOpenDemo}
                 className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide bg-[#FF5C00] text-white shadow-[0_8px_25px_rgba(255,92,0,0.35)] hover:shadow-[0_12px_35px_rgba(255,92,0,0.5)] hover:bg-[#FF6D1A] transition-all duration-300 cursor-pointer"
               >
-                <span>Monetize Your Traffic</span>
+                <span>Discuss My Ad Revenue</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </motion.button>
 
@@ -212,7 +210,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-slate-800 liquid-glass-pill-light hover:bg-white border border-slate-200 transition-all duration-300"
               >
                 <Zap className="w-4 h-4 text-[#FF5C00]" />
-                <span>Explore Interactive Concepts</span>
+                <span>See How It Works</span>
               </motion.a>
             </motion.div>
           </div>
@@ -224,14 +222,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
               <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-wider text-[#FF5C00] font-bold block">
-                    YOUR DEMAND. CONNECTED.
+                    YOUR AD SPACE. CONNECTED.
                   </span>
                   <span className="text-xs text-slate-500">
-                    Live Server-to-Server Prebid Network
+                    Illustration: how buyers connect through BidDigi
                   </span>
                 </div>
                 <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-slate-900 text-white">
-                  180+ DSPs
+                  Ad buyers
                 </span>
               </div>
 
@@ -273,10 +271,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                     <span className="font-extrabold text-sm tracking-tight text-slate-950">BIDDIGI</span>
                   </div>
                   <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">
-                    Edge Auction Core
+                    Ad auction
                   </span>
                   <span className="text-[9px] font-mono text-[#FF5C00] mt-1 bg-orange-50 px-2 py-0.5 rounded-full font-semibold">
-                    Sub-12ms SLA
+                    Buyers compete
                   </span>
                 </div>
 
@@ -313,7 +311,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                       </span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-500">
-                      SLA: <strong className="text-slate-800">{selectedDSP.latency}</strong> • Protocol: {selectedDSP.protocol} • Avg Yield: <strong className="text-[#FF5C00]">{selectedDSP.cpm}</strong>
+                      Select a buyer to explore the illustration. Availability depends on your setup.
                     </div>
                   </div>
                 </div>
@@ -323,7 +321,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                   <span>→</span>
                   <span className="text-slate-700">Bid in Parallel</span>
                   <span>→</span>
-                  <span className="text-[#FF5C00]">Maximize Yield</span>
+                  <span className="text-[#FF5C00]">Earn from ads</span>
                 </div>
               </div>
             </div>
@@ -339,37 +337,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
         >
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
-              &lt; 12<span className="text-[#FF5C00]">ms</span>
+              Web
             </div>
             <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
-              Auction Latency SLA
+              Website ad spaces
             </div>
           </div>
 
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
-              +38<span className="text-[#FF5C00]">%</span>
+              App
             </div>
             <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
-              Avg. CPM Uplift
+              Mobile app advertising
             </div>
           </div>
 
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
-              450M<span className="text-[#FF5C00]">+</span>
+              Video
             </div>
             <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
-              Daily Bid Queries
+              Ads alongside video
             </div>
           </div>
 
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
             <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
-              180<span className="text-[#FF5C00]">+</span>
+              CTV
             </div>
             <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
-              Global Demand DSPs
+              Connected TV advertising
             </div>
           </div>
         </motion.div>

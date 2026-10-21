@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { LiveAuctionTicker } from './components/LiveAuctionTicker';
+import { HomepageExplainer, HomepageFAQ } from './components/HomepageExplainer';
 import { PlatformDashboard } from './components/PlatformDashboard';
-import { InteractiveConceptExplainer } from './components/InteractiveConceptExplainer';
-import { ScrollRunway } from './components/ScrollRunway';
 import { InteractiveFormatPreviewer } from './components/InteractiveFormatPreviewer';
 import { SolutionsSection } from './components/SolutionsSection';
 import { InteractiveYieldCalculator } from './components/InteractiveYieldCalculator';
-import { TechArchitecture } from './components/TechArchitecture';
 import { CompanyHeritage } from './components/CompanyHeritage';
 import { CallToAction } from './components/CallToAction';
 import { Footer } from './components/Footer';
@@ -25,33 +22,22 @@ export function App() {
       <main>
         {/* Hero Section with Interactive Canvas & Parallax */}
         <Hero onOpenDemo={() => setIsModalOpen(true)} />
-
-        {/* Live Programmatic Marquee Ticker */}
-        <LiveAuctionTicker />
-
-        {/* mFusion-Style Interactive Concept Explainer (Bottlenecks & Architectural Showcase) */}
-        <InteractiveConceptExplainer />
+        <HomepageExplainer />
+        <SolutionsSection onOpenDemo={() => setIsModalOpen(true)} />
 
         {/* Real-Time Platform Yield Telemetry Dashboard */}
         <PlatformDashboard />
 
-        {/* Sticky Scroll Runway: 12ms Ad Lifecycle Storytelling */}
-        <ScrollRunway />
-
         {/* Interactive Ad Format Benchmark Previewer */}
         <InteractiveFormatPreviewer />
 
-        {/* Publisher & Advertiser Solutions */}
-        <SolutionsSection onOpenDemo={() => setIsModalOpen(true)} />
 
         {/* Dynamic Yield Uplift Calculator */}
         <InteractiveYieldCalculator onOpenDemo={() => setIsModalOpen(true)} />
 
-        {/* Technical Architecture & Infrastructure */}
-        <TechArchitecture />
-
         {/* Expoworld Heritage & Compliance */}
         <CompanyHeritage />
+        <HomepageFAQ />
 
         {/* Call to Action Banner */}
         <CallToAction onOpenDemo={() => setIsModalOpen(true)} />

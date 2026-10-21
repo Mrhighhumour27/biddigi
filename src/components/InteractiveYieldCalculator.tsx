@@ -36,19 +36,18 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-[#FF5C00] font-semibold mb-4 shadow-sm">
-            <span>REVENUE FORECASTING ENGINE</span>
+            <span>EXPLORE A REVENUE SCENARIO</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 mb-6">
-            Calculate Your Projected{' '}
+            See How Ad Performance Affects{' '}
             <span className="font-serif italic font-normal text-[#FF5C00]">
-              Revenue Uplift.
+              Your Revenue.
             </span>
           </h2>
 
           <p className="text-slate-600 text-base sm:text-lg">
-            See how much incremental revenue our sub-12ms parallel header bidding 
-            and AI dynamic floor pricing unlocks for your ad inventory.
+            Choose your monthly ad impressions and earnings per 1,000 impressions (eCPM). This example applies an assumed 38% improvement to show how the calculation works. It is not a forecast of what BidDigi will earn for you.
           </p>
         </div>
 
@@ -69,6 +68,7 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
 
               <input
                 type="range"
+                aria-label="Monthly ad impressions"
                 min="500000"
                 max="50000000"
                 step="500000"
@@ -107,6 +107,7 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
 
               <input
                 type="range"
+                aria-label="Current average eCPM in dollars"
                 min="0.5"
                 max="12.0"
                 step="0.1"
@@ -136,15 +137,15 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-200 text-xs text-slate-600">
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0 mt-0.5" />
-                <span>Zero upfront integration cost</span>
+                <span>Adjust your traffic</span>
               </div>
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0 mt-0.5" />
-                <span>Net-30 automatic payouts</span>
+                <span>Set your current eCPM</span>
               </div>
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#FF5C00] shrink-0 mt-0.5" />
-                <span>Dedicated yield engineer</span>
+                <span>Compare the scenario</span>
               </div>
             </div>
           </div>
@@ -154,10 +155,10 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
             <div>
               <div className="flex items-center justify-between mb-8">
                 <span className="text-xs font-mono uppercase tracking-wider text-slate-500 font-bold">
-                  Projected Annual Uplift
+                  Illustrative Annual Increase
                 </span>
                 <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                  +38% GAIN
+                  38% ASSUMPTION
                 </span>
               </div>
 
@@ -167,7 +168,7 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
                   +{formatCurrency(projectedAnnualExtra)}
                 </div>
                 <div className="text-xs text-slate-500 mt-2 font-mono">
-                  Additional annualized net earnings
+                  Example annual increase before any fee or cost changes
                 </div>
               </div>
 
@@ -184,7 +185,7 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
                 </div>
 
                 <div className="flex justify-between items-center text-slate-900 font-bold pt-2 border-t border-slate-100">
-                  <span>Projected BidDigi Monthly:</span>
+                  <span>Example Monthly Revenue:</span>
                   <span className="font-mono text-[#FF5C00] text-lg">{formatCurrency(projectedMonthlyRevenue)} /mo</span>
                 </div>
               </div>
@@ -197,11 +198,11 @@ export const InteractiveYieldCalculator: React.FC<CalculatorProps> = ({ onOpenDe
                 onClick={onOpenDemo}
                 className="w-full group flex items-center justify-center gap-2 py-4 rounded-xl bg-[#FF5C00] hover:bg-[#FF6D1A] text-white font-bold text-sm shadow-[0_8px_25px_rgba(255,92,0,0.35)] transition-all cursor-pointer"
               >
-                <span>Unlock This Revenue</span>
+                <span>Discuss My Revenue Potential</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </motion.button>
               <p className="text-[11px] text-center text-slate-400 mt-3 font-mono">
-                Based on historical Expoworld publisher migration benchmarks.
+                Illustration only. Actual results depend on your inventory, demand, and agreed fees.
               </p>
             </div>
           </div>

@@ -9,7 +9,7 @@ export const CompanyHeritage: React.FC = () => {
           {/* Left Text */}
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-[#FF5C00] font-semibold mb-4 shadow-sm">
-              <span>HERITAGE & GLOBAL OFFICES</span>
+              <span>THE TEAM BEHIND BIDDIGI</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 mb-6">
@@ -20,9 +20,7 @@ export const CompanyHeritage: React.FC = () => {
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
-              BidDigi is backed by the proven media engineering of <strong>Expoworld</strong>. 
-              Our ad-tech infrastructure powers high-yield programmatic monetization for hundreds 
-              of publishers worldwide, adhering to the highest global trust and transparency standards.
+              BidDigi is a product by <strong>Expoworld</strong>, bringing advertising technology and ad operations together. We help publishers connect with buyers, make sense of their performance, and plan improvements to their ad setup.
             </p>
 
             <div className="grid grid-cols-2 gap-4 text-xs font-mono">
@@ -48,39 +46,39 @@ export const CompanyHeritage: React.FC = () => {
           <div className="lg:col-span-6 liquid-glass-light p-8 md:p-10">
             <h3 className="text-lg font-bold text-slate-950 mb-6 flex items-center gap-2 font-mono">
               <ShieldCheck className="w-5 h-5 text-emerald-600" />
-              <span>Trust, Compliance & Standards</span>
+              <span>What We Review With You</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="p-4 rounded-xl bg-slate-50/80 border border-slate-200 flex items-start gap-3">
                 <FileCheck2 className="w-5 h-5 text-[#FF5C00] shrink-0" />
                 <div>
-                  <div className="font-bold text-slate-900">IAB Tech Lab Member</div>
-                  <div className="text-slate-500 text-[11px] mt-1">Full compliance with OpenRTB 3.0 & Prebid standards.</div>
+                  <div className="font-bold text-slate-900">Your Integration</div>
+                  <div className="text-slate-500 text-[11px] mt-1">Your existing tools, ad server, and technical requirements.</div>
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-50/80 border border-slate-200 flex items-start gap-3">
                 <Award className="w-5 h-5 text-[#FF5C00] shrink-0" />
                 <div>
-                  <div className="font-bold text-slate-900">TAG Certified Supply</div>
-                  <div className="text-slate-500 text-[11px] mt-1">Pre-bid bot filtering & invalid traffic suppression.</div>
+                  <div className="font-bold text-slate-900">Traffic Quality</div>
+                  <div className="text-slate-500 text-[11px] mt-1">Audience sources and buyer eligibility requirements.</div>
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-50/80 border border-slate-200 flex items-start gap-3">
                 <Globe2 className="w-5 h-5 text-[#FF5C00] shrink-0" />
                 <div>
-                  <div className="font-bold text-slate-900">Sellers.json & Ads.txt</div>
-                  <div className="text-slate-500 text-[11px] mt-1">100% direct authorized supply paths for buyers.</div>
+                  <div className="font-bold text-slate-900">Publisher Authorization</div>
+                  <div className="text-slate-500 text-[11px] mt-1">The ads.txt and seller information needed for your setup.</div>
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-50/80 border border-slate-200 flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#FF5C00] shrink-0" />
                 <div>
-                  <div className="font-bold text-slate-900">GDPR & CCPA Compliant</div>
-                  <div className="text-slate-500 text-[11px] mt-1">Certified CMP with TCF 2.2 consent string forwarding.</div>
+                  <div className="font-bold text-slate-900">Consent Requirements</div>
+                  <div className="text-slate-500 text-[11px] mt-1">Consent signals and privacy requirements relevant to your inventory.</div>
                 </div>
               </div>
             </div>

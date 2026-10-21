@@ -17,20 +17,19 @@ export const CallToAction: React.FC<CTAProps> = ({ onOpenDemo }) => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-slate-800 font-semibold mb-6 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#FF5C00]" />
-            <span>INSTANT INTEGRATION • ZERO UPFRONT COMMITMENT</span>
+            <span>LET’S REVIEW YOUR AD SETUP</span>
           </div>
 
           {/* Headline */}
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 mb-6">
-            Ready to Accelerate Your{' '}
+            Ready to Make More of Your{' '}
             <span className="font-serif italic font-normal text-[#FF5C00]">
-              Programmatic Revenue?
+              Ad Space?
             </span>
           </h2>
 
           <p className="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg mb-10 leading-relaxed">
-            Get a complimentary inventory audit and see how our sub-12ms parallel header bidding engine 
-            can boost your eCPMs by 35%+ in your first 30 days.
+            Tell us about your website or app, your audience, and how you run ads today. We can discuss where BidDigi fits, what integration involves, and the opportunities to improve your ad revenue.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -40,7 +39,7 @@ export const CallToAction: React.FC<CTAProps> = ({ onOpenDemo }) => {
               onClick={onOpenDemo}
               className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold tracking-wide bg-[#FF5C00] text-white shadow-[0_8px_25px_rgba(255,92,0,0.35)] hover:shadow-[0_12px_35px_rgba(255,92,0,0.5)] hover:bg-[#FF6D1A] transition-all cursor-pointer"
             >
-              <span>Request Free Yield Audit</span>
+              <span>Discuss My Ad Setup</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </motion.button>
 
@@ -50,22 +49,22 @@ export const CallToAction: React.FC<CTAProps> = ({ onOpenDemo }) => {
               href="#calculator"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition-all cursor-pointer"
             >
-              <span>Explore Yield Calculator</span>
+              <span>Try the Revenue Calculator</span>
             </motion.a>
           </div>
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-slate-500 font-mono">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-emerald-500" />
-              <span>&lt; 24h Setup Time</span>
+              <span>Review your current setup</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-emerald-500" />
-              <span>Net-30 Fast Payouts</span>
+              <span>Discuss integration options</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-emerald-500" />
-              <span>No Exclusivity Required</span>
+              <span>Confirm commercial terms</span>
             </div>
           </div>
         </div>

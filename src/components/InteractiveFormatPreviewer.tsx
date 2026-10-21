@@ -22,7 +22,7 @@ export const InteractiveFormatPreviewer: React.FC = () => {
       cpm: '$3.80 - $6.20',
       viewability: '86.4%',
       fillRate: '99.5%',
-      description: 'Standard IAB units (300x250, 728x90, 970x250, 300x600) with asynchronous lazy-loading, automatic viewport re-engagement, and zero layout shift.',
+      description: 'Banner ads appear in spaces within your website, such as beside an article or between content sections. Choose sizes and placements that suit desktop and mobile readers.',
       icon: <Monitor className="w-5 h-5 text-[#FF5C00]" />,
       specs: ['Prebid Universal Creative', 'Sticky anchor & interstitial', 'HTML5 & Responsive'],
     },
@@ -33,7 +33,7 @@ export const InteractiveFormatPreviewer: React.FC = () => {
       cpm: '$12.50 - $18.00',
       viewability: '91.2%',
       fillRate: '98.8%',
-      description: 'Sound-off muted autoplay that expands gracefully between editorial paragraphs as users scroll. Reaches peak CPMs without compromising user experience.',
+      description: 'Video ads can appear between article paragraphs, giving publishers a way to introduce video advertising alongside written content.',
       icon: <Sparkles className="w-5 h-5 text-[#FF5C00]" />,
       specs: ['VAST 2.0 - 4.2 compliant', 'Autoplay on 50% viewport', 'Zero video player cost'],
     },
@@ -44,7 +44,7 @@ export const InteractiveFormatPreviewer: React.FC = () => {
       cpm: '$14.20 - $22.50',
       viewability: '95.8%',
       fillRate: '99.1%',
-      description: 'Lightweight native app SDK with background ad pre-caching. Perfect for mobile games, utilities, and news applications requiring crash-free performance.',
+      description: 'Native ads fit the surrounding app content. Rewarded ads let users choose to watch an ad in exchange for an in-app benefit, such as an extra life in a game.',
       icon: <Smartphone className="w-5 h-5 text-[#FF5C00]" />,
       specs: ['Sub-800KB SDK binary', 'app-ads.txt ready', 'Custom native card template'],
     },
@@ -55,7 +55,7 @@ export const InteractiveFormatPreviewer: React.FC = () => {
       cpm: '$22.00 - $35.00',
       viewability: '98.4%',
       fillRate: '97.6%',
-      description: 'Broadcast-quality programmatic insertions for Roku, Apple TV, Amazon Fire, and Smart TV streams with server-side ad insertion (SSAI) support.',
+      description: 'Connected TV and streaming ads appear during video playback on supported TV apps and devices. Integration requirements depend on your player and streaming setup.',
       icon: <Tv className="w-5 h-5 text-[#FF5C00]" />,
       specs: ['SSAI / CSAM compatible', 'VPAID & VAST 4.0', '1080p / 4K UHD streaming'],
     },
@@ -68,19 +68,18 @@ export const InteractiveFormatPreviewer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-[#FF5C00] font-semibold mb-4">
-            <span>INTERACTIVE FORMAT LAB</span>
+            <span>CHOOSE ADS THAT FIT YOUR CONTENT</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 mb-6">
-            Monetize Every Pixel.{' '}
+            Ads for Websites, Apps,{' '}
             <span className="font-serif italic font-normal text-[#FF5C00]">
-              Any Screen.
+              Video and TV.
             </span>
           </h2>
 
           <p className="text-slate-600 text-base sm:text-lg">
-            BidDigi supports the entire spectrum of high-yielding ad formats. 
-            Select a format below to inspect its real-world performance benchmarks.
+            Display ads sit within a page. Video ads appear alongside or within video content. In-app ads can fit a feed or offer an optional reward. Connected TV ads reach streaming viewers. Explore examples below; all performance figures are illustrative and availability depends on your integration.
           </p>
         </div>
 
@@ -189,13 +188,13 @@ export const InteractiveFormatPreviewer: React.FC = () => {
                 {activeFormat.name}
               </div>
               <div className="text-xs text-slate-500 font-mono max-w-xs">
-                Real-time adaptive creative rendering at 60fps via BidDigi lightweight loader.
+                Example placement: see how this ad format fits within your content.
               </div>
             </div>
 
             <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-mono text-slate-600">
-              <span>LATENCY: &lt; 9ms</span>
-              <span className="text-emerald-600 font-bold">100% BRAND SAFE</span>
+              <span>ILLUSTRATIVE EXAMPLE</span>
+              <span className="text-emerald-600 font-bold">FORMAT PREVIEW</span>
             </div>
           </div>
         </div>

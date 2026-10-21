@@ -24,62 +24,62 @@ export const SolutionsSection: React.FC<SolutionsProps> = ({ onOpenDemo }) => {
   const publisherFeatures = [
     {
       icon: <Layers className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'Next-Gen Header Bidding',
-      tag: 'CLIENT & S2S PREBID',
-      description: 'Run simultaneous auctions across 180+ global demand sources with client-side Prebid.js or cloud-based Prebid Server, eliminating ad waterfall latency.',
-      perks: ['Prebid 8.0 compliant', 'Zero page jank or layout shift', 'Parallel DSP auctions'],
+      title: 'More Buyers Competing for Your Ads',
+      tag: 'HEADER BIDDING',
+      description: 'Invite multiple buyers to bid for your available ad spaces at the same time. More competition gives you a clearer view of what buyers are willing to pay.',
+      perks: ['Simultaneous buyer bids', 'Website and server integrations', 'Fit your existing ad setup'],
     },
     {
       icon: <Cpu className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'AI Dynamic Floor Pricing',
-      tag: 'YIELD ENGINE',
-      description: 'Automated machine learning adjusts floor prices dynamically based on geo, time, device, and buyer history to extract maximum value on every impression.',
-      perks: ['Prevents bid shading', '+38% average revenue uplift', 'Granular slot-level floors'],
+      title: 'Smarter Pricing for Your Ad Space',
+      tag: 'PRICING OPTIMIZATION',
+      description: 'A floor price is the minimum bid you accept. Adjusting that price helps balance what you earn per ad with how often your available ad spaces are filled.',
+      perks: ['Review minimum bid prices', 'Compare revenue and fill rate', 'Tune individual ad placements'],
     },
     {
       icon: <Tv className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'Omnichannel & Video / CTV',
-      tag: 'HIGH-CPM FORMATS',
-      description: 'Support high-value video (VAST 2.0-4.2, VPAID), rewarded video, native in-feed widgets, and Connected TV ad inventory with universal player compatibility.',
-      perks: ['High-impact rich media', 'Interactive rewarded ads', 'CTV & OTT programmatic'],
+      title: 'Ad Formats That Fit Your Audience',
+      tag: 'WEB, VIDEO & TV',
+      description: 'Explore banners, native placements, video ads, and connected TV advertising. Choose formats around your content and viewing experience, with integration options reviewed for your property.',
+      perks: ['Display and native ads', 'Video advertising', 'Connected TV and streaming'],
     },
     {
       icon: <Smartphone className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'Ultralight Mobile App SDK',
+      title: 'Advertising Within Your Mobile App',
       tag: 'IOS & ANDROID',
-      description: 'A modular, memory-efficient SDK for native apps. Delivers rapid ad rendering, seamless background caching, and full app-ads.txt compliance.',
-      perks: ['Under 800KB footprint', 'Crash-free architecture', 'Native interstitial & banner'],
+      description: 'Earn from ad placements inside your app. Explore banners, ads that fit your content feed, and optional rewarded ads, with setup matched to your app and audience.',
+      perks: ['Banner and full-screen placements', 'Native ads within app content', 'Optional rewarded experiences'],
     },
   ];
 
   const advertiserFeatures = [
     {
       icon: <Zap className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'OpenRTB 3.0 Direct Pipe',
+      title: 'Connect Your Buying Platform',
       tag: 'DSP INTEGRATION',
-      description: 'Direct server-to-server connections with global DSPs, providing instant access to curated supply with ultra-low query drop rates and high QPS capacity.',
-      perks: ['OpenRTB 2.5 & 3.0 support', 'Low latency bid streams', 'Custom QPS throttling'],
+      description: 'Demand-side platforms (DSPs) help advertisers buy ad space. Discuss a bidding connection to access inventory that matches your buying requirements.',
+      perks: ['Discuss technical integration', 'Review available inventory', 'Agree bidding requirements'],
     },
     {
       icon: <Lock className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'Private Marketplaces (PMP)',
+      title: 'Arrange Private Advertising Deals',
       tag: 'CURATED SUPPLY',
-      description: 'Execute bespoke programmatic deals (PMP, Programmatic Guaranteed, Preferred Deals) across top-tier editorial and gaming inventory.',
-      perks: ['First-look inventory access', 'Custom Deal IDs', 'Audience segmentation'],
+      description: 'A private marketplace is a buying arrangement with selected publishers. Discuss the audience, ad formats, and inventory you need before agreeing deal terms.',
+      perks: ['Selected publisher inventory', 'Agreed deal terms', 'Audience and format requirements'],
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'Brand Safety & Anti-Fraud',
-      tag: 'TAG & ADS.TXT VERIFIED',
-      description: 'Strict multi-layered traffic verification filtering out bot nets, domain spoofing, and invalid traffic (IVT) with 100% sellers.json transparency.',
-      perks: ['TAG Certified Against Fraud', 'Real-time pre-bid filtering', 'Sellers.json & ads.txt verified'],
+      title: 'Review Supply Quality',
+      tag: 'SUPPLY TRANSPARENCY',
+      description: 'Understand where your ads can appear and how inventory is sold. Review publisher authorization, traffic quality requirements, and available controls with the team.',
+      perks: ['Publisher authorization review', 'Inventory quality requirements', 'Supply path transparency'],
     },
     {
       icon: <BarChart3 className="w-6 h-6 text-[#FF5C00]" />,
-      title: 'Contextual & Cookieless Targeting',
-      tag: 'PRIVACY ERA READY',
-      description: 'Reach high-intent audiences without third-party cookies using deep on-page natural language processing and first-party taxonomy signals.',
-      perks: ['IAB Content Categories 3.0', 'GDPR, CCPA & TCF 2.2 compliant', 'Zero identity degradation'],
+      title: 'Find Relevant Content Environments',
+      tag: 'CONTENT & AUDIENCE FIT',
+      description: 'Discuss the content categories, audience locations, and device types that fit your campaign. Available targeting depends on the inventory and signals provided.',
+      perks: ['Relevant content categories', 'Audience location and device', 'Available consented signals'],
     },
   ];
 
@@ -89,19 +89,18 @@ export const SolutionsSection: React.FC<SolutionsProps> = ({ onOpenDemo }) => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-[#FF5C00] font-semibold mb-4">
-            <span>THE SOLUTIONS ECOSYSTEM</span>
+            <span>WHO WE HELP</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 mb-6">
-            Engineered For Both Sides of the{' '}
+            For Publishers Who Sell Ad Space.{' '}
             <span className="font-serif italic font-normal text-[#FF5C00]">
-              Auction Table.
+              For Buyers Who Need It.
             </span>
           </h2>
 
           <p className="text-slate-600 text-base sm:text-lg">
-            Whether you are monetizing digital properties or deploying performance ad spend, 
-            BidDigi delivers transparent, high-efficiency programmatic infrastructure.
+            Publishers use BidDigi to connect ad inventory with buyers and improve monetization. Advertisers and demand partners can discuss access to inventory suited to their campaigns. Choose your role to explore how we can help.
           </p>
 
           {/* Tab Switcher */}
@@ -179,10 +178,10 @@ export const SolutionsSection: React.FC<SolutionsProps> = ({ onOpenDemo }) => {
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">
-                Looking for custom header bidding setups or direct PMP deals?
+                Unsure which solution fits your business?
               </h4>
               <p className="text-xs text-slate-500 mt-0.5">
-                Our ad operations team configures bespoke floor models and deal IDs in under 24 hours.
+                Tell us what you publish or what you want to buy. We can discuss the next steps.
               </p>
             </div>
           </div>
@@ -193,7 +192,7 @@ export const SolutionsSection: React.FC<SolutionsProps> = ({ onOpenDemo }) => {
             onClick={onOpenDemo}
             className="shrink-0 px-6 py-3 rounded-full text-xs font-semibold bg-[#FF5C00] text-white hover:bg-[#FF6D1A] transition-all flex items-center gap-2 shadow-md shadow-[#FF5C00]/20"
           >
-            <span>Speak With AdOps</span>
+            <span>Talk to Our Team</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </motion.button>
         </div>

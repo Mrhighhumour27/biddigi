@@ -22,19 +22,18 @@ export const PlatformDashboard: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-[#FF5C00] font-semibold mb-4 shadow-sm">
             <Activity className="w-3.5 h-3.5" />
-            <span>THE BIDDIGI PLATFORM DASHBOARD</span>
+            <span>UNDERSTAND YOUR AD PERFORMANCE</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 mb-6">
-            Real-Time Yield Telemetry.{' '}
+            See What Your Ads Earn.{' '}
             <span className="font-serif italic font-normal text-[#FF5C00]">
-              Unified in One View.
+              All in One View.
             </span>
           </h2>
 
           <p className="text-slate-600 text-base sm:text-lg">
-            Monitor real-time auction performance, verify demand health across 180+ DSPs, 
-            and track yield uplift across every ad slot with sub-second reporting.
+            See revenue, buyer activity, and performance across your ad spaces. eCPM shows earnings per 1,000 ads; fill rate shows how often an ad request is filled. Explore the sample dashboard below—figures are illustrative, not live customer results.
           </p>
 
           {/* Interactive Tab Switcher */}
@@ -47,7 +46,7 @@ export const PlatformDashboard: React.FC = () => {
                   : 'text-slate-600 hover:text-slate-950'
               }`}
             >
-              Yield & Revenue Analytics
+              Revenue & Earnings
             </button>
             <button
               onClick={() => setActiveTab('demand')}
@@ -57,7 +56,7 @@ export const PlatformDashboard: React.FC = () => {
                   : 'text-slate-600 hover:text-slate-950'
               }`}
             >
-              Live Exchange Health
+              Buyer Activity
             </button>
             <button
               onClick={() => setActiveTab('formats')}
@@ -67,7 +66,7 @@ export const PlatformDashboard: React.FC = () => {
                   : 'text-slate-600 hover:text-slate-950'
               }`}
             >
-              Omnichannel Inventory
+              Ad Formats
             </button>
           </div>
         </div>
@@ -83,7 +82,7 @@ export const PlatformDashboard: React.FC = () => {
                 <span className="w-3 h-3 rounded-full bg-slate-200"></span>
               </div>
               <span className="text-xs font-mono font-bold text-slate-700">
-                app.biddigi.io / analytics / yield-engine
+                Sample dashboard / illustrative data
               </span>
             </div>
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-
 export const Footer: React.FC = () => {
   return (
     <footer className="border-t border-slate-200 bg-slate-50 text-slate-500 text-xs py-16 relative">
@@ -15,12 +14,9 @@ export const Footer: React.FC = () => {
                 className="h-8 w-auto object-contain"
               />
             </div>
-
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm mb-6">
-              Next-generation programmatic advertising marketplace and header bidding yield engine. 
-              Delivering sub-12ms parallel auction latency and transparent publisher monetization.
+              BidDigi helps publishers earn from ads on websites, apps, video, and connected TV by connecting their ad space with buyers and helping them understand and improve performance.
             </p>
-
             <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm max-w-sm text-[11px] font-mono text-slate-600">
               <span className="text-slate-900 font-bold">A Product by Expoworld</span>
               <p className="mt-1 text-slate-500">
@@ -28,7 +24,6 @@ export const Footer: React.FC = () => {
               </p>
             </div>
           </div>
-
           {/* Solutions Col */}
           <div>
             <h4 className="font-bold text-slate-900 mb-4 uppercase tracking-wider font-mono text-[11px]">
@@ -42,48 +37,40 @@ export const Footer: React.FC = () => {
               <li><a href="#solutions" className="hover:text-[#FF5C00] transition-colors">Private Marketplace (PMP)</a></li>
             </ul>
           </div>
-
           {/* Technology Col */}
           <div>
             <h4 className="font-bold text-slate-900 mb-4 uppercase tracking-wider font-mono text-[11px]">
               Platform
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#architecture" className="hover:text-[#FF5C00] transition-colors">Global Edge Clusters</a></li>
-              <li><a href="#platform" className="hover:text-[#FF5C00] transition-colors">Platform Telemetry</a></li>
-              <li><a href="#how-it-works" className="hover:text-[#FF5C00] transition-colors">12ms Lifecycle Runway</a></li>
-              <li><a href="#calculator" className="hover:text-[#FF5C00] transition-colors">Yield Calculator</a></li>
+              <li><a href="#how-it-works" className="hover:text-[#FF5C00] transition-colors">How Ad Auctions Work</a></li>
+              <li><a href="#platform" className="hover:text-[#FF5C00] transition-colors">Revenue Reporting</a></li>
+              <li><a href="#how-it-works" className="hover:text-[#FF5C00] transition-colors">Getting Started</a></li>
+              <li><a href="#calculator" className="hover:text-[#FF5C00] transition-colors">Revenue Calculator</a></li>
               <li><a href="https://expoworld.co" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5C00] transition-colors flex items-center gap-1 font-semibold">
                 Expoworld.co <ArrowUpRight className="w-3 h-3 text-[#FF5C00]" />
               </a></li>
             </ul>
           </div>
-
-          {/* Compliance & Trust */}
           <div>
-            <h4 className="font-bold text-slate-900 mb-4 uppercase tracking-wider font-mono text-[11px]">
-              Trust &amp; Legal
-            </h4>
+            <h4 className="font-bold text-slate-900 mb-4 uppercase tracking-wider font-mono text-[11px]">Learn More</h4>
             <ul className="space-y-2.5">
-              <li><a href="#" className="hover:text-[#FF5C00] transition-colors">Sellers.json Directory</a></li>
-              <li><a href="#" className="hover:text-[#FF5C00] transition-colors">Ads.txt Verification</a></li>
-              <li><a href="#" className="hover:text-[#FF5C00] transition-colors">TAG Certified Against Fraud</a></li>
-              <li><a href="#" className="hover:text-[#FF5C00] transition-colors">Privacy Policy &amp; GDPR</a></li>
-              <li><a href="#" className="hover:text-[#FF5C00] transition-colors">Terms of Service</a></li>
+              <li><a href="#how-it-works" className="hover:text-[#FF5C00]">What BidDigi Does</a></li>
+              <li><a href="#solutions" className="hover:text-[#FF5C00]">Publisher &amp; Buyer Solutions</a></li>
+              <li><a href="#faq" className="hover:text-[#FF5C00]">Frequently Asked Questions</a></li>
+              <li><a href="#metrics" className="hover:text-[#FF5C00]">About BidDigi</a></li>
             </ul>
           </div>
         </div>
-
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-500">
           <div>
-            © {new Date().getFullYear()} BidDigi. Backed by Expoworld. All rights reserved. Deployed on Cloudflare Pages.
+            © {new Date().getFullYear()} BidDigi. Backed by Expoworld. All rights reserved.
           </div>
-
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 text-slate-700 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              All Edge Systems Operational
+              Web • App • Video • CTV
             </span>
           </div>
         </div>
