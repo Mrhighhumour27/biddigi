@@ -127,7 +127,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full liquid-glass-pill-light mb-6 flex-wrap shadow-sm"
             >
               <span className="flex h-2 w-2 relative">
@@ -145,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 mb-5 leading-[1.08]"
             >
               Earn more from your{' '}
@@ -159,7 +159,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
               className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-6"
             >
               BidDigi helps website owners, app developers, and video publishers sell their ad space to advertising buyers. We bring buyers into competition, help improve your ad setup, and bring performance reporting into one place—so you can focus on your content and audience.
@@ -169,7 +169,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
               className="space-y-2.5 mb-8 text-sm text-slate-700 font-medium"
             >
               <div className="flex items-center gap-2.5">
@@ -190,7 +190,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center gap-3.5"
             >
               <motion.button

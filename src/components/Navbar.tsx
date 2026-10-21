@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -8,13 +8,21 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 40);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, []);
 
   return (
     <motion.header
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-5 inset-x-0 z-50 px-4 md:px-8 max-w-7xl mx-auto"
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      data-scrolled={scrolled}
+      className="site-header fixed top-5 inset-x-0 z-50 px-4 md:px-8 max-w-7xl mx-auto"
     >
       <nav className="liquid-glass-pill-light rounded-full px-5 py-3 flex items-center justify-between transition-all duration-300">
         {/* Brand Logo */}
@@ -31,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-600">
+        <div className="hidden lg:flex items-center gap-5 text-xs font-medium text-slate-600">
           <a href="/#platform" className="hover:text-slate-900 transition-colors duration-200 flex items-center gap-1.5">
             <span>Platform</span>
             <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#FF5C00]/10 text-[#FF5C00] font-semibold">
