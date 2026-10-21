@@ -316,48 +316,38 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           </div>
         </div>
 
-        {/* Real-Time Live Telemetry Bar */}
-        <motion.div 
+        {/* Category imagery makes each advertising channel recognizable at a glance. */}
+        <motion.div
+          id="monetization-categories"
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 scroll-mt-28"
         >
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
-              Web
-            </div>
-            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
-              Website ad spaces
-            </div>
-          </div>
-
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
-              App
-            </div>
-            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
-              Mobile app advertising
-            </div>
-          </div>
-
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
-              Video
-            </div>
-            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
-              Ads alongside video
-            </div>
-          </div>
-
-          <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
-              CTV
-            </div>
-            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
-              Connected TV advertising
-            </div>
-          </div>
+          {[
+            { id: 'web', title: 'Web', description: 'Website ad spaces', alt: 'Laptop displaying a website with orange banner ad placements' },
+            { id: 'app', title: 'App', description: 'Mobile app advertising', alt: 'Smartphone showing native advertisements within a mobile app feed' },
+            { id: 'video', title: 'Video', description: 'Ads alongside video', alt: 'Tablet video player with an orange ad placement and a film clapperboard' },
+            { id: 'ctv', title: 'CTV', description: 'Connected TV advertising', alt: 'Connected television showing streaming content and an orange featured ad' },
+          ].map(category => (
+            <article key={category.id} aria-labelledby={`category-${category.id}`} className="group liquid-glass-light p-2.5 md:p-3 text-left bg-white hover:border-[#FF5C00]/40 transition-colors overflow-hidden">
+              <div className="aspect-[3/2] rounded-xl overflow-hidden bg-[#F4F1ED]">
+                <img
+                  src={`/images/categories/${category.id}-v1.webp`}
+                  alt={category.alt}
+                  width={960}
+                  height={640}
+                  loading="lazy"
+                  decoding="async"
+                  className="block w-full h-full object-cover motion-safe:group-hover:scale-[1.035] transition-transform duration-700 ease-out"
+                />
+              </div>
+              <div className="px-2 pt-4 pb-3 md:px-3">
+                <h3 id={`category-${category.id}`} className="text-lg md:text-xl font-semibold text-slate-900 tracking-tight">{category.title}</h3>
+                <p className="text-xs sm:text-[13px] leading-relaxed text-slate-500 mt-1.5">{category.description}</p>
+              </div>
+            </article>
+          ))}
         </motion.div>
       </div>
     </section>
