@@ -30,11 +30,12 @@ export const Footer: React.FC = () => {
               Solutions
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#solutions" className="hover:text-[#FF5C00] transition-colors">Header Bidding</a></li>
-              <li><a href="#solutions" className="hover:text-[#FF5C00] transition-colors">Prebid Server (S2S)</a></li>
-              <li><a href="#solutions" className="hover:text-[#FF5C00] transition-colors">Mobile App SDK</a></li>
-              <li><a href="#solutions" className="hover:text-[#FF5C00] transition-colors">Video &amp; CTV (VAST)</a></li>
-              <li><a href="#solutions" className="hover:text-[#FF5C00] transition-colors">Private Marketplace (PMP)</a></li>
+              <li><a href="/jiohotstar-ads" className="hover:text-[#FF5C00] transition-colors font-semibold">JioHotstar Advertising</a></li>
+              <li><a href="/#solutions" className="hover:text-[#FF5C00] transition-colors">Header Bidding</a></li>
+              <li><a href="/#solutions" className="hover:text-[#FF5C00] transition-colors">Prebid Server (S2S)</a></li>
+              <li><a href="/#solutions" className="hover:text-[#FF5C00] transition-colors">Mobile App SDK</a></li>
+              <li><a href="/#solutions" className="hover:text-[#FF5C00] transition-colors">Video &amp; CTV (VAST)</a></li>
+              <li><a href="/#solutions" className="hover:text-[#FF5C00] transition-colors">Private Marketplace (PMP)</a></li>
             </ul>
           </div>
           {/* Technology Col */}
@@ -43,10 +44,10 @@ export const Footer: React.FC = () => {
               Platform
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#how-it-works" className="hover:text-[#FF5C00] transition-colors">How Ad Auctions Work</a></li>
-              <li><a href="#platform" className="hover:text-[#FF5C00] transition-colors">Revenue Reporting</a></li>
-              <li><a href="#how-it-works" className="hover:text-[#FF5C00] transition-colors">Getting Started</a></li>
-              <li><a href="#calculator" className="hover:text-[#FF5C00] transition-colors">Revenue Calculator</a></li>
+              <li><a href="/#how-it-works" className="hover:text-[#FF5C00] transition-colors">How Ad Auctions Work</a></li>
+              <li><a href="/#platform" className="hover:text-[#FF5C00] transition-colors">Revenue Reporting</a></li>
+              <li><a href="/#how-it-works" className="hover:text-[#FF5C00] transition-colors">Getting Started</a></li>
+              <li><a href="/#calculator" className="hover:text-[#FF5C00] transition-colors">Revenue Calculator</a></li>
               <li><a href="https://expoworld.co" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5C00] transition-colors flex items-center gap-1 font-semibold">
                 Expoworld.co <ArrowUpRight className="w-3 h-3 text-[#FF5C00]" />
               </a></li>
@@ -55,10 +56,10 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-slate-900 mb-4 uppercase tracking-wider font-mono text-[11px]">Learn More</h4>
             <ul className="space-y-2.5">
-              <li><a href="#how-it-works" className="hover:text-[#FF5C00]">What BidDigi Does</a></li>
-              <li><a href="#solutions" className="hover:text-[#FF5C00]">Publisher &amp; Buyer Solutions</a></li>
-              <li><a href="#faq" className="hover:text-[#FF5C00]">Frequently Asked Questions</a></li>
-              <li><a href="#metrics" className="hover:text-[#FF5C00]">About BidDigi</a></li>
+              <li><a href="/#how-it-works" className="hover:text-[#FF5C00]">What BidDigi Does</a></li>
+              <li><a href="/#solutions" className="hover:text-[#FF5C00]">Publisher &amp; Buyer Solutions</a></li>
+              <li><a href="/#faq" className="hover:text-[#FF5C00]">Frequently Asked Questions</a></li>
+              <li><a href="/#metrics" className="hover:text-[#FF5C00]">About BidDigi</a></li>
             </ul>
           </div>
         </div>

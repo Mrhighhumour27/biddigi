@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Menu, X, Activity } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface NavbarProps {
@@ -10,7 +10,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -18,10 +18,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
     >
       <nav className="liquid-glass-pill-light rounded-full px-5 py-3 flex items-center justify-between transition-all duration-300">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <img 
-            src="/logo.png" 
-            alt="BidDigi Logo" 
+        <a href="/" className="flex items-center gap-3 group">
+          <img
+            src="/logo.png"
+            alt="BidDigi Logo"
             className="h-7 md:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono tracking-wider bg-slate-100 border border-slate-200 text-slate-600">
@@ -31,35 +31,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#platform" className="hover:text-slate-900 transition-colors duration-200 flex items-center gap-1.5">
+        <div className="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-600">
+          <a href="/#platform" className="hover:text-slate-900 transition-colors duration-200 flex items-center gap-1.5">
             <span>Platform</span>
             <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#FF5C00]/10 text-[#FF5C00] font-semibold">
               Reporting
             </span>
           </a>
-          <a href="#how-it-works" className="hover:text-slate-900 transition-colors duration-200">
+          <a href="/#how-it-works" className="hover:text-slate-900 transition-colors duration-200">
             How It Works
           </a>
-          <a href="#solutions" className="hover:text-slate-900 transition-colors duration-200">
+          <a href="/#solutions" className="hover:text-slate-900 transition-colors duration-200">
             Solutions
           </a>
-          <a href="#calculator" className="hover:text-slate-900 transition-colors duration-200">
+          <a href="/#calculator" className="hover:text-slate-900 transition-colors duration-200">
             Revenue Calculator
           </a>
-          <a href="#faq" className="hover:text-slate-900 transition-colors duration-200">
+          <a href="/#faq" className="hover:text-slate-900 transition-colors duration-200">
             FAQs
           </a>
+          <a href="/jiohotstar-ads" className="text-[#C44900] hover:text-[#FF5C00] transition-colors whitespace-nowrap font-semibold">JioHotstar Ads</a>
         </div>
 
         {/* Right Action & Status Area */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200 text-[11px] font-mono text-slate-600">
-            <Activity className="w-3.5 h-3.5 text-emerald-500 animate-pulse" />
-            <span className="text-slate-900 font-semibold">Publisher</span> Solutions
-          </div>
-
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.96 }}
             onClick={onOpenDemo}
@@ -71,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden p-2 rounded-full hover:bg-slate-100 text-slate-700"
           aria-label="Toggle Navigation"
@@ -83,43 +79,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
       {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className="lg:hidden mt-3 liquid-glass-light p-6 shadow-xl flex flex-col gap-4 text-sm"
           >
-            <a 
-              href="#platform" 
+            <a
+              href="/#platform"
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
               Reporting & Dashboard
             </a>
-            <a 
-              href="#how-it-works" 
+            <a
+              href="/#how-it-works"
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
               How It Works
             </a>
-            <a 
-              href="#solutions" 
+            <a
+              href="/#solutions"
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
               Solutions for Publishers & Advertisers
             </a>
-            <a 
-              href="#calculator" 
+            <a
+              href="/#calculator"
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 text-slate-800 font-medium border-b border-slate-100"
             >
               Revenue Calculator
             </a>
 
+            <a href="/jiohotstar-ads" onClick={() => setMobileMenuOpen(false)} className="py-2 text-[#C44900] font-semibold border-b border-slate-100">JioHotstar Advertising</a>
             <div className="pt-2">
-              <button 
+              <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenDemo();
