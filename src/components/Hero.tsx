@@ -134,11 +134,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF5C00] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5C00]"></span>
               </span>
-              <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wide text-slate-700 font-medium">
+              <span className="text-[10px] sm:text-xs font-sans uppercase tracking-wide text-slate-700 font-medium">
                 AD MONETIZATION FOR PUBLISHERS
               </span>
               <span className="text-slate-300">|</span>
-              <span className="text-xs font-mono text-[#FF5C00] font-semibold">Web • App • Video</span>
+              <span className="text-xs font-sans text-[#FF5C00] font-semibold">Web • App • Video</span>
             </motion.div>
 
             {/* Headline */}
@@ -160,9 +160,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-6"
+              className="text-base sm:text-lg text-slate-600 font-normal leading-[1.75] mb-6 max-w-xl"
             >
-              BidDigi helps website owners, app developers, and video publishers sell their ad space to advertising buyers. We bring buyers into competition, help improve your ad setup, and bring performance reporting into one place—so you can focus on your content and audience.
+              BidDigi helps you earn from ads on your website, app, or video content. We connect your ad space with competing buyers and help you manage pricing, placements, and reporting.
             </motion.p>
 
             {/* Benefits Checkpoints with clean icons */}
@@ -219,16 +219,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           <div className="lg:col-span-6">
             <div className="liquid-glass-light p-6 md:p-8 rounded-3xl border border-slate-200/90 shadow-xl bg-white relative">
               {/* Ecosystem Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+              <div className="flex items-start justify-between gap-3 pb-4 border-b border-slate-100 mb-4">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#FF5C00] font-bold block">
+                  <span className="text-xs font-sans uppercase tracking-wider text-[#FF5C00] font-bold block">
                     YOUR AD SPACE. CONNECTED.
                   </span>
                   <span className="text-xs text-slate-500">
                     Illustration: how buyers connect through BidDigi
                   </span>
                 </div>
-                <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-slate-900 text-white">
+                <span className="text-xs font-sans font-semibold px-2.5 py-1 rounded-full bg-slate-900 text-white shrink-0 whitespace-nowrap">
                   Ad buyers
                 </span>
               </div>
@@ -270,10 +270,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                     <span className="w-2 h-2 rounded-full bg-[#FF5C00] animate-ping" />
                     <span className="font-extrabold text-sm tracking-tight text-slate-950">BIDDIGI</span>
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">
+                  <span className="text-[10px] font-sans font-bold text-slate-500 uppercase tracking-wider">
                     Ad auction
                   </span>
-                  <span className="text-[9px] font-mono text-[#FF5C00] mt-1 bg-orange-50 px-2 py-0.5 rounded-full font-semibold">
+                  <span className="text-[9px] font-sans text-[#FF5C00] mt-1 bg-orange-50 px-2 py-0.5 rounded-full font-semibold">
                     Buyers compete
                   </span>
                 </div>
@@ -287,7 +287,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                       key={dsp.id}
                       onClick={() => setSelectedDSP(dsp)}
                       style={{ left: dsp.x, top: dsp.y }}
-                      className={`absolute -translate-x-1/2 -translate-y-1/2 px-2.5 py-1.5 rounded-xl border text-[11px] font-mono font-bold transition-all duration-200 cursor-pointer shadow-sm z-20 ${
+                      className={`absolute -translate-x-1/2 -translate-y-1/2 px-2.5 py-1.5 rounded-xl border text-[11px] font-sans font-bold transition-all duration-200 cursor-pointer shadow-sm z-20 ${
                         isSelected
                           ? 'bg-[#FF5C00] text-white border-[#FF5C00] shadow-md shadow-[#FF5C00]/30 scale-110'
                           : 'bg-white text-slate-700 border-slate-200 hover:border-slate-400 hover:bg-slate-50'
@@ -299,29 +299,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                 })}
               </div>
 
-              {/* Dynamic Selection Pill (mFusion style: All your marketing data indicator) */}
-              <div className="mt-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <div className="flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                  <div>
-                    <div className="font-bold text-slate-900 flex items-center gap-2">
-                      <span>{selectedDSP.name}</span>
-                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-white border border-slate-200 text-slate-600">
-                        {selectedDSP.category}
-                      </span>
+              {/* Buyer details use the same readable type as the rest of the page. */}
+              <div className="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <div className="flex items-start gap-3">
+                  <span className="w-2 h-2 mt-1.5 rounded-full bg-emerald-500 shrink-0" aria-hidden="true" />
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                      <span className="text-sm font-semibold text-slate-900">{selectedDSP.name}</span>
+                      <span className="text-xs px-2 py-1 rounded-md bg-white border border-slate-200 text-slate-600">{selectedDSP.category}</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-500">
-                      Select a buyer to explore the illustration. Availability depends on your setup.
-                    </div>
+                    <p className="text-xs leading-relaxed text-slate-500 mt-2">Buyer connections depend on your ad setup.</p>
                   </div>
-                </div>
-
-                <div className="flex items-center gap-1.5 text-[11px] font-mono font-semibold text-slate-400">
-                  <span>Connect</span>
-                  <span>→</span>
-                  <span className="text-slate-700">Bid in Parallel</span>
-                  <span>→</span>
-                  <span className="text-[#FF5C00]">Earn from ads</span>
                 </div>
               </div>
             </div>
@@ -336,37 +324,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto"
         >
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
+            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
               Web
             </div>
-            <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
+            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
               Website ad spaces
             </div>
           </div>
 
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
+            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
               App
             </div>
-            <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
+            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
               Mobile app advertising
             </div>
           </div>
 
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
+            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
               Video
             </div>
-            <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
+            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
               Ads alongside video
             </div>
           </div>
 
           <div className="liquid-glass-light p-4 md:p-5 text-left hover:border-[#FF5C00]/40 transition-colors bg-white">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-mono">
+            <div className="text-2xl font-semibold text-slate-900 tracking-tight">
               CTV
             </div>
-            <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-mono font-medium">
+            <div className="text-[13px] leading-relaxed text-slate-500 mt-2 font-normal">
               Connected TV advertising
             </div>
           </div>
