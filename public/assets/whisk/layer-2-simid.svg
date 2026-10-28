@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <linearGradient id="layer2Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190E33"/>
+      <stop offset="100%" stop-color="#25124A"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" rx="16" fill="url(#layer2Bg)" stroke="#7C4DFF" stroke-width="2" stroke-opacity="0.7"/>
+  <!-- L-Bar Squeeze Indicator -->
+  <path d="M 40 40 L 220 40 L 220 500 L 920 500 L 920 420 L 140 420 L 140 40 Z" fill="rgba(124, 77, 255, 0.25)" stroke="#7C4DFF" stroke-width="2"/>
+  <text x="480" y="240" text-anchor="middle" fill="#F8FAFC" font-family="Chivo, sans-serif" font-size="24" font-weight="800">LAYER 2: VAST 4.2 / SIMID 1.1 OVERLAY</text>
+  <text x="480" y="280" text-anchor="middle" fill="#00E5FF" font-family="JetBrains Mono, monospace" font-size="14">NON-DESTRUCTIVE L-BAR &amp; PAUSE AD CAROUSEL // OMID VERIFIED 60FPS</text>
+</svg>

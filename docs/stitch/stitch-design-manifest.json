@@ -1,0 +1,41 @@
+{
+  "projectId": "6150711321331701294",
+  "projectTitle": "Biddigi — Dark Obsidian AdTech Telemetry",
+  "designSystemId": "assets/8157750417835216599",
+  "designSystemName": "Dark Obsidian Glassmorphic AdTech Telemetry",
+  "generatedAt": "2026-10-28T07:07:00Z",
+  "screens": [
+    {
+      "id": "b16090379d5a4f36876e6ef1366888df",
+      "title": "Biddigi AdTech Command Center - CTV Cutaway Lab",
+      "deviceType": "DESKTOP",
+      "width": 2560,
+      "height": 3628,
+      "screenshotName": "projects/6150711321331701294/files/3a4b378b30bd4ed4a1a125ff1cb54cc5",
+      "htmlCodeName": "projects/6150711321331701294/files/50e91bc270324e85aed629a210510d83"
+    },
+    {
+      "id": "26d7fd4f6b1c4b34a7b99af71237187c",
+      "title": "Biddigi Programmatic Yield Copilot & BigQuery OpenRTB Telemetry",
+      "deviceType": "DESKTOP",
+      "width": 2560,
+      "height": 3562,
+      "screenshotName": "projects/6150711321331701294/files/f95cc424d7e1463a8a832042a99a58bf",
+      "htmlCodeName": "projects/6150711321331701294/files/e6eb489f17a84aaaaef38e5b195dc8a4"
+    }
+  ],
+  "tokens": {
+    "canvas": "#070B14",
+    "surface1": "#0D1526",
+    "surface2": "#131F37",
+    "prismaticCyan": "#00E5FF",
+    "yieldEmerald": "#00E676",
+    "auctionAmber": "#FFD600",
+    "ctvViolet": "#7C4DFF",
+    "typography": {
+      "headline": "Chivo",
+      "body": "Hanken Grotesk",
+      "telemetry": "JetBrains Mono"
+    }
+  }
+}

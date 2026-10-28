@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bgSciFi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0818"/>
+      <stop offset="50%" stop-color="#140D2E"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <radialGradient id="nebulaCore" cx="60%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#7C4DFF" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#00E5FF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#070B14" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgSciFi)"/>
+  <rect width="1280" height="720" fill="url(#nebulaCore)"/>
+  <!-- Sci-Fi Ring Geometry -->
+  <g stroke="#7C4DFF" stroke-width="1.5" stroke-opacity="0.4">
+    <circle cx="640" cy="360" r="220" fill="none" stroke-dasharray="12 6"/>
+    <circle cx="640" cy="360" r="160" fill="none"/>
+    <circle cx="640" cy="360" r="80" fill="rgba(124, 77, 255, 0.1)"/>
+    <line x1="380" y1="360" x2="900" y2="360" stroke="#00E5FF" stroke-opacity="0.5"/>
+  </g>
+  <rect x="48" y="44" width="310" height="48" rx="8" fill="rgba(7, 11, 20, 0.85)" stroke="#7C4DFF" stroke-width="1.2"/>
+  <circle cx="72" cy="68" r="6" fill="#7C4DFF"/>
+  <text x="88" y="73" fill="#F8FAFC" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" letter-spacing="1">CINEMA 2.39:1 // DOLBY VISION</text>
+  <text x="640" y="660" text-anchor="middle" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="13">GOOGLE FLOW + VEO 2: DEEP SPACE HDR10 TIME-DILATION (SEED 718290)</text>
+</svg>

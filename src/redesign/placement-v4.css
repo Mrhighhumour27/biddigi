@@ -1,0 +1,857 @@
+/* A single campaign aperture moves between authored viewing contexts. */
+.v4-placement {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.35fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 80px);
+}
+.v4-placement .placement-copy {
+  min-width: 0;
+}
+.v4-placement h2 {
+  font-size: clamp(42px, 4.3vw, 70px);
+  line-height: 0.98;
+}
+.v4-placement .placement-intro {
+  max-width: 440px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.v4-placement .format-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid #a4aaa3;
+  margin-top: 30px;
+  width: 100%;
+  overflow: visible;
+}
+.v4-placement .format-tabs button {
+  position: relative;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-width: 0;
+  min-height: 54px;
+  padding: 12px 8px;
+  gap: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  border: 0;
+  border-right: 1px solid #a4aaa3;
+}
+.v4-placement .format-tabs button:last-child {
+  border-right: 0;
+}
+.v4-placement .format-tabs button > span {
+  font-size: 11px;
+}
+.v4-placement .format-tabs button[aria-pressed="true"] {
+  background: #ff6500;
+  color: #0b1012;
+}
+.v4-placement .format-description {
+  min-height: 185px;
+  margin-top: 28px;
+}
+.v4-placement .format-description h3 {
+  font-size: 28px;
+  line-height: 1.12;
+}
+.v4-placement .format-description p {
+  font-size: 17px;
+  line-height: 1.65;
+  margin-top: 12px;
+}
+.v4-placement .placement-stage {
+  position: relative;
+  border: 1px solid #36423d;
+  border-top: 4px solid #ff6500;
+  background: #0b1012;
+  box-shadow: none;
+  overflow: hidden;
+  min-width: 0;
+  color: #f2f0e8;
+}
+.v4-placement .placement-stage-topline,
+.v4-placement .placement-stage-bottomline {
+  padding: 18px 20px;
+  gap: 12px;
+  color: #d1d7cd;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  flex-wrap: wrap;
+}
+.v4-placement .placement-stage-topline {
+  border: 0;
+}
+.v4-placement .placement-stage-bottomline {
+  border-top: 1px solid #36423d;
+}
+.v4-placement .placement-stage-bottomline > span:last-child {
+  font-size: 10px;
+}
+.v4-placement .placement-accent {
+  background: #d9f36b;
+  border-radius: 0;
+}
+.placement-journey-rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  padding: 0 20px 20px;
+}
+.placement-journey-rail > span {
+  position: relative;
+  display: block;
+  height: 3px;
+  background: #34403a;
+}
+.placement-journey-rail i {
+  position: absolute;
+  inset: 0;
+  background: #ff6500;
+  display: block;
+}
+.v4-placement .placement-stage-scene {
+  position: relative;
+  margin: 0 20px 20px;
+  animation: none;
+  clip-path: none;
+  filter: none;
+}
+.v4-placement .stage-web {
+  color: #0b1012;
+  background: #f2f0e8;
+  border-color: #a2aaa1;
+  box-shadow: none;
+}
+.v4-placement .studio-chrome {
+  min-height: 32px;
+  height: auto;
+  padding: 10px 12px;
+  font-size: 9px;
+  background: #e7e7df;
+  color: #424c43;
+}
+.v4-placement .publisher-masthead {
+  padding: 20px 16px;
+}
+.v4-placement .publisher-masthead > span {
+  font-size: 19px;
+}
+.v4-placement .publisher-masthead > div {
+  font-size: 8px;
+  gap: 8px;
+}
+.v4-placement .publisher-spread {
+  padding: 16px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 18px;
+}
+.v4-placement .publisher-category {
+  font-size: 9px;
+}
+.v4-placement .publisher-story > h3 {
+  font-size: 27px;
+}
+.v4-placement .publisher-story > p {
+  font-size: 12px;
+}
+.v4-placement .publisher-sidebar {
+  padding-left: 15px;
+}
+.v4-placement .ad-placement-label {
+  font-size: 10px;
+  color: #4d594f;
+}
+.v4-placement .placement-anchor {
+  font-size: 11px;
+  color: #714120;
+}
+.v4-placement .native-story > div > span,
+.v4-placement .native-story small {
+  font-size: 8px;
+  line-height: 1.35;
+}
+.v4-placement .native-story b {
+  font-size: 13px;
+}
+.v4-placement .native-story > .studio-photo {
+  width: 50px;
+}
+.v4-shared-aperture {
+  z-index: 5;
+  outline: 3px solid #ff6500;
+  outline-offset: -3px;
+}
+.campaign-aperture-corners {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background:
+    linear-gradient(#ff6500, #ff6500) left top / 22px 4px no-repeat,
+    linear-gradient(#ff6500, #ff6500) left top / 4px 22px no-repeat,
+    linear-gradient(#ff6500, #ff6500) right bottom / 22px 4px no-repeat,
+    linear-gradient(#ff6500, #ff6500) right bottom / 4px 22px no-repeat;
+}
+.v4-placement .campaign-copy {
+  gap: 18px;
+}
+.v4-placement .publisher-sidebar .campaign-creative {
+  min-height: 300px;
+}
+.v4-placement .publisher-sidebar .campaign-wordmark {
+  font-size: 9px;
+}
+.v4-placement .publisher-sidebar .campaign-copy > strong {
+  font-size: clamp(24px, 2.5vw, 38px);
+}
+.v4-placement .publisher-sidebar .campaign-action {
+  font-size: 9px;
+  line-height: 1.4;
+}
+.v4-placement .publisher-sidebar .campaign-disclosure {
+  font-size: 8px;
+  bottom: 6px;
+  left: 12px;
+}
+/* The campaign must be free to travel across the frame during layout projection.
+   Artwork clips itself; the outer stage remains the bounded clipping surface. */
+.v4-placement .stage-app,
+.v4-placement .app-handset,
+.v4-placement .video-stage,
+.v4-placement .ctv-context {
+  overflow: visible;
+}
+.v4-placement .stage-app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 28px 20px 20px;
+  min-height: 620px;
+  background: #1c2a23;
+  border: 1px solid #42513e;
+}
+.v4-placement .app-context-copy {
+  top: 36px;
+  left: 25px;
+  max-width: 36%;
+  color: #d9f36b;
+}
+.v4-placement .app-context-copy > strong {
+  font-size: clamp(30px, 3.2vw, 48px);
+}
+.v4-placement .app-context-copy > span {
+  font-size: 10px;
+}
+.v4-placement .app-context-copy > span:last-child {
+  font-size: 9px;
+}
+.v4-placement .app-handset {
+  margin: 0 15px 0 auto;
+  width: 260px;
+  max-width: 60%;
+  transform: none;
+  box-shadow: 12px 12px 0 #0b1012;
+  color: #0b1012;
+}
+.v4-placement .app-status {
+  font-size: 10px;
+}
+.v4-placement .app-titlebar > span {
+  font-size: 25px;
+}
+.v4-placement .app-feed-card > div > span {
+  font-size: 9px;
+}
+.v4-placement .app-feed-card h3 {
+  font-size: 21px;
+}
+.v4-placement .app-native > span {
+  font-size: 9px;
+}
+.v4-placement .campaign-small {
+  min-height: 165px;
+}
+.v4-placement .campaign-small .campaign-wordmark {
+  font-size: 8px;
+}
+.v4-placement .campaign-small .campaign-copy > strong {
+  font-size: 27px;
+}
+.v4-placement .campaign-small .campaign-action {
+  font-size: 8px;
+}
+.v4-placement .campaign-small .campaign-disclosure {
+  font-size: 7px;
+}
+.v4-placement .app-bottom-nav {
+  font-size: 8px;
+}
+.v4-placement .app-mode-control {
+  position: static;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 10px;
+}
+.v4-placement .app-mode-control > button {
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 48px;
+  padding: 10px 12px;
+  border-color: #849274;
+  color: #f2f0e8;
+}
+.v4-placement .app-mode-control > button[aria-pressed="true"] {
+  color: #0b1012;
+  background: #d9f36b;
+}
+.v4-placement .reward-overlay {
+  border-radius: 16px;
+  z-index: 20;
+  isolation: isolate;
+}
+.v4-placement .reward-heading {
+  font-size: 10px;
+}
+.v4-placement .reward-return {
+  font-size: 13px;
+  min-height: 48px;
+  padding: 8px;
+}
+.v4-placement .reward-overlay > small {
+  font-size: 10px;
+}
+.v4-placement .reward-overlay .campaign-copy {
+  min-height: 240px;
+}
+.v4-placement .video-stage {
+  aspect-ratio: 1.35;
+}
+.v4-placement .video-content {
+  overflow: hidden;
+}
+.v4-placement .video-program-title > span {
+  font-size: 10px;
+}
+.v4-placement .video-program-title > strong {
+  font-size: 38px;
+}
+.v4-placement .video-ad-overlay {
+  inset: 38px 28px 65px;
+  box-shadow: none;
+}
+.v4-placement .video-ad-overlay > span {
+  top: -23px;
+  font-size: 11px;
+}
+.v4-placement .video-ad-overlay .campaign-wordmark {
+  font-size: 11px;
+}
+.v4-placement .video-ad-overlay .campaign-action {
+  font-size: 11px;
+}
+.v4-placement .video-ad-overlay .campaign-copy > strong {
+  font-size: 45px;
+}
+.v4-placement .video-player-caption {
+  padding: 13px 16px;
+  font-size: 10px;
+  flex-wrap: wrap;
+}
+.v4-placement .video-timeline > button {
+  min-height: 58px;
+  padding: 12px 9px;
+  font-size: 13px;
+  line-height: 1.3;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.v4-placement .video-timeline > button > span {
+  font-size: 10px;
+}
+.v4-placement .stage-caption {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  padding: 17px !important;
+  color: #c2ccbd !important;
+}
+.v4-placement .ctv-context {
+  aspect-ratio: 1672 / 941;
+}
+.v4-placement .ctv-context > .studio-photo {
+  overflow: hidden;
+}
+.v4-placement .ctv-context > .studio-photo img {
+  object-fit: fill;
+}
+.v4-placement .ctv-screen {
+  overflow: visible;
+}
+.v4-placement .ctv-screen > .studio-photo {
+  overflow: hidden;
+}
+.v4-placement .ctv-context-title > span {
+  font-size: 10px;
+}
+.v4-placement .ctv-context-title > strong {
+  font-size: 29px;
+}
+.v4-placement .ctv-controls {
+  flex-wrap: wrap;
+  gap: 14px;
+  background: #1c2a23;
+  padding: 16px;
+}
+.v4-placement .ctv-controls > span {
+  font-size: 12px;
+}
+.v4-placement .ctv-controls > button {
+  font-size: 13px;
+  min-height: 48px;
+  padding: 10px 14px;
+}
+.v4-placement button:focus-visible,
+.v4-format-preview button:focus-visible {
+  outline: 3px solid #d9f36b;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #0b1012;
+  position: relative;
+  z-index: 10;
+}
+/* Platform illustration: a deliberate shutter handoff, never fake playback. */
+.v4-format-preview {
+  background: #0b1012;
+  border-color: #34403a;
+  box-shadow: none;
+  border-top: 4px solid #ff6500;
+}
+.v4-format-preview .format-preview-topline {
+  font-size: 12px;
+  color: #d4d9ce;
+  padding: 18px;
+  flex-wrap: wrap;
+}
+.v4-format-preview .format-preview-topline > span:last-child {
+  font-size: 10px;
+}
+.v4-format-preview .format-cinema {
+  aspect-ratio: 1.4;
+}
+.v4-format-preview .format-content-copy {
+  bottom: 70px;
+}
+.v4-format-preview .format-content-copy > span {
+  font-size: 11px;
+}
+.v4-format-preview .format-content-copy > h3 {
+  font-size: clamp(34px, 4vw, 58px);
+}
+.v4-format-preview .format-campaign-layer {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+  inset: 36px 28px 66px;
+}
+.v4-format-preview .format-campaign-layer > .campaign-creative {
+  border: 0;
+  box-shadow: none;
+}
+.v4-format-preview .format-campaign-layer .campaign-copy > strong {
+  font-size: clamp(30px, 4vw, 55px);
+}
+.v4-format-preview .format-campaign-layer .campaign-wordmark,
+.v4-format-preview .format-campaign-layer .campaign-action {
+  font-size: 11px;
+}
+.v4-format-preview .campaign-disclosure {
+  font-size: 9px;
+}
+.v4-format-preview .format-break-label {
+  top: -24px;
+  font-size: 11px;
+}
+.v4-format-preview .format-view-label {
+  font-size: 11px;
+  padding: 14px 18px;
+  flex-wrap: wrap;
+}
+.v4-format-preview .format-timeline {
+  padding: 17px 20px;
+  font-size: 12px;
+  gap: 17px;
+}
+.v4-format-preview .preview-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 17px;
+  gap: 16px;
+  background: #1c2a23;
+}
+.v4-format-preview .placement-preview-action {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  background: #d9f36b;
+  color: #0b1012;
+  padding: 12px 16px;
+  border: 1px solid #d9f36b;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.v4-format-preview .preview-control > small {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #cbd4c4;
+}
+.v4-format-preview .format-placement-note {
+  font-size: 13px !important;
+  padding: 18px !important;
+  color: #bcc8b8 !important;
+  border-color: #34403a;
+}
+@media (max-width: 1100px) {
+  .v4-placement {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr);
+    gap: 32px;
+  }
+  .v4-placement .publisher-masthead > div {
+    display: none;
+  }
+  .v4-placement .publisher-spread {
+    gap: 12px;
+    padding: 12px;
+  }
+  .v4-placement .publisher-sidebar {
+    padding-left: 10px;
+  }
+  .v4-placement .publisher-sidebar .campaign-copy > strong {
+    font-size: 25px;
+  }
+  .v4-placement .publisher-sidebar .campaign-creative {
+    min-height: 270px;
+  }
+  .v4-placement .app-handset {
+    max-width: 65%;
+    margin-right: 0;
+  }
+  .v4-placement .app-context-copy {
+    left: 15px;
+    max-width: 30%;
+  }
+  .v4-placement .app-context-copy > strong {
+    font-size: 30px;
+  }
+  .v4-placement .app-context-copy > span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  .v4-placement {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .v4-placement .placement-intro {
+    max-width: 600px;
+  }
+  .v4-placement .format-description {
+    min-height: 0;
+  }
+  .v4-placement .format-tabs {
+    max-width: 520px;
+  }
+  .v4-placement .publisher-sidebar .campaign-creative {
+    min-height: 310px;
+  }
+  .v4-placement .app-handset {
+    max-width: 56%;
+    margin-right: 35px;
+  }
+  .v4-placement .app-context-copy {
+    left: 35px;
+    max-width: 35%;
+  }
+  .v4-placement .app-context-copy > strong {
+    font-size: 45px;
+  }
+}
+@media (max-width: 520px) {
+  .v4-placement {
+    gap: 28px;
+  }
+  .v4-placement h2 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+  .v4-placement .placement-intro,
+  .v4-placement .format-description p {
+    font-size: 16px;
+  }
+  .v4-placement .format-description h3 {
+    font-size: 27px;
+  }
+  .v4-placement .format-tabs button {
+    font-size: 13px;
+    min-height: 48px;
+    gap: 5px;
+    padding: 10px 5px;
+  }
+  .v4-placement .format-tabs button > span {
+    font-size: 10px;
+  }
+  .v4-placement .placement-stage-topline,
+  .v4-placement .placement-stage-bottomline {
+    padding: 15px 12px;
+    font-size: 10px;
+  }
+  .v4-placement .placement-stage-bottomline > span:last-child {
+    font-size: 10px;
+    margin-left: 0;
+  }
+  .placement-journey-rail {
+    padding: 0 12px 15px;
+  }
+  .v4-placement .placement-stage-scene {
+    margin: 0 12px 15px;
+  }
+  .v4-placement .studio-chrome {
+    font-size: 8px;
+    padding-inline: 8px;
+  }
+  .v4-placement .publisher-masthead {
+    padding: 16px 12px;
+  }
+  .v4-placement .publisher-masthead > span {
+    font-size: 18px;
+  }
+  .v4-placement .publisher-spread {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 20px;
+  }
+  .v4-placement .publisher-story > .studio-photo {
+    aspect-ratio: 1.75;
+  }
+  .v4-placement .publisher-story > h3 {
+    font-size: 28px;
+  }
+  .v4-placement .publisher-story > p {
+    font-size: 12px;
+  }
+  .v4-placement .publisher-category {
+    font-size: 9px;
+  }
+  .v4-placement .native-story {
+    display: none;
+  }
+  .v4-placement .publisher-sidebar {
+    border-left: 0;
+    border-top: 1px solid #a2aaa1;
+    padding: 13px 0 0;
+  }
+  .v4-placement .publisher-sidebar .campaign-creative {
+    min-height: 175px;
+    aspect-ratio: 1.5;
+  }
+  .v4-placement .publisher-sidebar .campaign-copy {
+    height: 100%;
+    min-height: 175px;
+    gap: 15px;
+    padding: 14px;
+  }
+  .v4-placement .publisher-sidebar .campaign-copy > strong {
+    font-size: 31px;
+  }
+  .v4-placement .publisher-sidebar .campaign-wordmark,
+  .v4-placement .publisher-sidebar .campaign-action {
+    font-size: 10px;
+  }
+  .v4-placement .ad-placement-label,
+  .v4-placement .placement-anchor {
+    font-size: 11px;
+  }
+  .v4-placement .stage-app {
+    padding: 22px 14px 15px;
+    min-height: 0;
+  }
+  .v4-placement .app-context-copy {
+    display: none;
+  }
+  .v4-placement .app-handset {
+    width: 260px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .v4-placement .app-mode-control {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .v4-placement .app-mode-control > button {
+    width: 100%;
+    font-size: 13px;
+  }
+  .v4-placement .reward-heading {
+    font-size: 9px;
+  }
+  .v4-placement .reward-overlay .campaign-copy {
+    min-height: 240px;
+  }
+  .v4-placement .video-stage {
+    aspect-ratio: 0.85;
+  }
+  .v4-placement .video-program-title {
+    left: 15px;
+    bottom: 100px;
+  }
+  .v4-placement .video-program-title > strong {
+    font-size: 32px;
+  }
+  .v4-placement .video-program-title > span {
+    font-size: 9px;
+  }
+  .v4-placement .video-ad-overlay {
+    inset: 40px 16px 92px;
+  }
+  .v4-placement .video-ad-overlay > span {
+    font-size: 10px;
+    top: -26px;
+  }
+  .v4-placement .video-ad-overlay .campaign-copy {
+    padding: 15px;
+  }
+  .v4-placement .video-ad-overlay .campaign-copy > strong {
+    font-size: 31px;
+  }
+  .v4-placement .video-ad-overlay .campaign-wordmark,
+  .v4-placement .video-ad-overlay .campaign-action {
+    font-size: 9px;
+  }
+  .v4-placement .video-player-caption {
+    font-size: 10px;
+    padding: 12px;
+  }
+  .v4-placement .video-timeline > button {
+    font-size: 12px;
+    padding: 12px 6px;
+    min-height: 62px;
+  }
+  .v4-placement .video-timeline > button > span {
+    display: none;
+  }
+  .v4-placement .ctv-context-title {
+    left: 10px;
+    bottom: 9px;
+    gap: 2px;
+  }
+  .v4-placement .ctv-context-title > span {
+    font-size: 8px;
+  }
+  .v4-placement .ctv-context-title > strong {
+    font-size: 18px;
+  }
+  .v4-placement .ctv-controls {
+    padding: 14px 12px;
+  }
+  .v4-placement .ctv-controls > span {
+    font-size: 12px;
+  }
+  .v4-placement .ctv-controls > button {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 13px;
+  }
+  .v4-placement .ctv-screen .campaign-copy {
+    padding: 5px;
+    gap: 3px;
+  }
+  .v4-placement .ctv-screen .campaign-copy > strong {
+    font-size: 13px;
+  }
+  .v4-placement .ctv-screen .campaign-wordmark {
+    font-size: 4px;
+  }
+  .v4-placement .ctv-screen .campaign-action {
+    display: none;
+  }
+  .v4-placement .ctv-screen-label {
+    font-size: 4px;
+  }
+  .v4-format-preview .format-preview-topline {
+    padding: 15px 12px;
+    font-size: 11px;
+  }
+  .v4-format-preview .format-cinema {
+    aspect-ratio: 0.95;
+  }
+  .v4-format-preview .format-content-copy {
+    left: 16px;
+    right: 16px;
+    bottom: 90px;
+  }
+  .v4-format-preview .format-content-copy > span {
+    font-size: 10px;
+  }
+  .v4-format-preview .format-content-copy > h3 {
+    font-size: 35px;
+  }
+  .v4-format-preview .format-campaign-layer {
+    inset: 34px 16px 90px;
+  }
+  .v4-format-preview .format-campaign-layer .campaign-copy {
+    padding: 14px;
+  }
+  .v4-format-preview .format-campaign-layer .campaign-copy > strong {
+    font-size: 34px;
+  }
+  .v4-format-preview .format-campaign-layer .campaign-wordmark,
+  .v4-format-preview .format-campaign-layer .campaign-action {
+    font-size: 10px;
+  }
+  .v4-format-preview .format-break-label {
+    font-size: 10px;
+    top: -24px;
+  }
+  .v4-format-preview .format-view-label {
+    font-size: 10px;
+    padding: 12px;
+  }
+  .v4-format-preview .format-timeline {
+    font-size: 11px;
+    padding: 15px 12px;
+    gap: 12px;
+  }
+  .v4-format-preview .format-timeline .is-active:before {
+    width: 4px;
+    height: 4px;
+    left: -7px;
+    top: 5px;
+  }
+  .v4-format-preview .preview-control {
+    padding: 15px 12px;
+    gap: 12px;
+  }
+  .v4-format-preview .placement-preview-action {
+    width: 100%;
+    padding: 12px;
+    font-size: 13px;
+  }
+  .v4-format-preview .preview-control > small {
+    font-size: 12px;
+  }
+  .v4-format-preview .format-placement-note {
+    font-size: 13px !important;
+    padding: 15px 12px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v4-placement *,
+  .v4-format-preview * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

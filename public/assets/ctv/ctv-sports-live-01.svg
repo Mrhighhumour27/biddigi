@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bgSports" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051329"/>
+      <stop offset="55%" stop-color="#07283B"/>
+      <stop offset="100%" stop-color="#04101E"/>
+    </linearGradient>
+    <radialGradient id="stadiumFlood" cx="50%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#00E676" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#070B14" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgSports)"/>
+  <rect width="1280" height="720" fill="url(#stadiumFlood)"/>
+  <!-- Perspective Stadium Pitch Grid -->
+  <g stroke="#00E676" stroke-width="1.5" stroke-opacity="0.35">
+    <ellipse cx="640" cy="480" rx="360" ry="140" fill="none"/>
+    <line x1="640" y1="340" x2="640" y2="620"/>
+    <line x1="180" y1="480" x2="1100" y2="480"/>
+    <path d="M 280 680 L 480 340 L 800 340 L 1000 680 Z" fill="rgba(0, 230, 118, 0.05)"/>
+  </g>
+  <!-- Broadcast HUD Badge -->
+  <rect x="48" y="44" width="280" height="48" rx="8" fill="rgba(7, 11, 20, 0.85)" stroke="#00E5FF" stroke-width="1.2"/>
+  <circle cx="72" cy="68" r="6" fill="#FF5252"/>
+  <text x="88" y="73" fill="#F8FAFC" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" letter-spacing="1">LIVE 4K HDR // 120 FPS</text>
+  <text x="640" y="660" text-anchor="middle" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="13">GOOGLE FLOW + VEO 2: 400MM BROADCAST TELEPHOTO SYNTHESIS (SEED 404091)</text>
+</svg>

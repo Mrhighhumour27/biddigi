@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bgFin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06121E"/>
+      <stop offset="60%" stop-color="#091E33"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFin)"/>
+  <!-- Financial Candle & Grid Mesh -->
+  <g stroke="#00E5FF" stroke-width="1" stroke-opacity="0.15">
+    <line x1="80" y1="180" x2="1200" y2="180"/>
+    <line x1="80" y1="320" x2="1200" y2="320"/>
+    <line x1="80" y1="460" x2="1200" y2="460"/>
+  </g>
+  <path d="M 80 420 Q 280 380, 480 260 T 880 210 T 1200 140" fill="none" stroke="#00E676" stroke-width="3"/>
+  <!-- Live Ticker Bar at Bottom -->
+  <rect x="0" y="640" width="1280" height="80" fill="rgba(7, 11, 20, 0.95)" stroke="#FFD600" stroke-width="1"/>
+  <text x="32" y="688" fill="#FFD600" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700">BIDDIGI INDEX +3.4% ▲</text>
+  <text x="280" y="688" fill="#00E676" font-family="JetBrains Mono, monospace" font-size="15">CTV eCPM $32.40 ▲</text>
+  <text x="510" y="688" fill="#00E5FF" font-family="JetBrains Mono, monospace" font-size="15">S2S PBS 14ms ▼</text>
+  <text x="730" y="688" fill="#F8FAFC" font-family="JetBrains Mono, monospace" font-size="15">FILL RATE 96.8% ▲</text>
+  <rect x="48" y="44" width="280" height="48" rx="8" fill="rgba(7, 11, 20, 0.85)" stroke="#FFD600" stroke-width="1.2"/>
+  <circle cx="72" cy="68" r="6" fill="#00E676"/>
+  <text x="88" y="73" fill="#F8FAFC" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" letter-spacing="1">QUANT FINANCIAL DESK</text>
+</svg>

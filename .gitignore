@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Harness, temporary, and secret files
+.papa
+.wrangler
+scratch
+*.zip
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

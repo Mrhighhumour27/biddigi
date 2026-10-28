@@ -1,0 +1,46 @@
+{
+  "method": "Built-in image_gen",
+  "date": "2026-10-26",
+  "assets": [
+    {
+      "id": "product",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-c0a3e822-40fc-4858-a579-10e846138ec0.png",
+      "prompt": "Use case: ads-marketing. Asset type: finished source photograph for Biddigi cinematic media-studio website, fictional outdoor footwear campaign. Generate a premium editorial product photograph: one exquisitely detailed unbranded technical trail-running shoe, cobalt-blue ripstop and mesh upper, burnt orange sculpted rubber outsole, small cream panels, charcoal laces. Shoe rests diagonally on rough warm sandstone in a dramatic studio, warm porcelain backdrop with crisp cobalt shadow and a small orange gel reflection. Directional daylight, tactile realistic rubber and woven textile, refined luxury sports campaign art direction, not a generic stock photo. Landscape 3:2 composition. Product occupies central-right two thirds leaving clean usable left space. No writing, letters, logos, watermarks, UI, frames or extra shoes. Realistic construction and natural shadow. This is fictional product photography, not a famous brand."
+    },
+    {
+      "id": "editorial",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-245141ef-0d09-453b-a797-89afebbf8ec5.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: cinematic editorial source photograph for a premium publisher website. Wide 3:2 photograph of a remote alpine lake below sculptural limestone peaks at sunrise, winding walking trail in foreground with one very small hiker wearing a burnt orange jacket, deep cobalt lake, sunlit pale stone, mist and natural rich shadows. Exceptional travel magazine art direction, warm film grain, real photography, balanced visual depth. No text, logos, interface, frames, watermarks. Entire photo finished, not a mockup. Usable foreground and main vista near middle for responsive cropping."
+    },
+    {
+      "id": "app-editorial",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-24f038ee-b97a-4fee-add1-ba05a88af2dc.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: portrait editorial photograph for a fictional premium lifestyle mobile feed. A stylish contemporary Mediterranean coastal cafe seen through large sculptural arches with a beautiful cobalt sea beyond, warm porcelain plaster, a vivid orange chair and small citrus still life, natural late afternoon sun with architectural shadows. Elevated travel magazine photography, tactile surfaces, subtle film grain, editorial not CGI. Portrait 2:3 image, composition suited to mobile feed. No letters, logos, UI, watermarks or frames."
+    },
+    {
+      "id": "lifestyle",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-60a76146-e587-4447-a902-b28d187a5a13.png",
+      "prompt": "Use case: ads-marketing. Asset type: portrait lifestyle photograph for the SAME fictional outdoor footwear campaign as reference. Reference image is the exact product to preserve, not a layout. Create a premium full-body environmental campaign photograph of one athletic adult trail runner wearing these cobalt blue mesh trail shoes with burnt orange rubber soles and cream panels, moving along a sunlit rocky coastal path. Orange lightweight jacket, charcoal shorts, natural proportions, believable running anatomy, face not dominant. Cobalt sea and warm pale rocks. Finely crafted editorial sports photography, dramatic sun, tactile real materials, mild motion only in background. Portrait 2:3 composition, full figure and both shoes visible, foreground shoe detail. No writing, logos, famous brand marks, UI, frames or watermark. Preserve shoe design/colors from reference. Original fictional campaign."
+    },
+    {
+      "id": "entertainment",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-a3b6e163-4707-4b53-997a-abbe31dfbbd2.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: fictional cinematic entertainment still for a streaming ad-placement demonstration. Original film-like scene of a South Asian woman in a long amber coat on a rain-wet city rooftop at blue hour, distant luminous cobalt skyline, warm orange practical light reflected in puddles, atmospheric restrained suspense, professional cinematography anamorphic depth, rich natural skin and material texture. Landscape 16:9 frame, subject toward right with atmospheric city space across left. No celebrities, recognizable actors, film titles, logos, text, watermarks, interface or subtitles. A finished original cinematic image, not a real show."
+    },
+    {
+      "id": "ctv-room",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-760d346e-99bc-46ee-a743-ec13dcb0706c.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium connected television advertising context photograph. Wide 16:9 straight-on perfectly frontal living room, large slim modern television centered on warm walnut console, television screen is uniform dark graphite near-black with no reflection and clearly rectangular frontal geometry, warm porcelain walls, understated sculptural cobalt chair right, small burnt-orange ceramic left, evening indirect architectural light. High-end interior editorial photography, real materials, cinematic ambiance. Screen occupies about central 60% width and 55% height with all corners visible, to composite a live digital image over it later. No people, text, brand logos, UI or watermarks."
+    },
+    {
+      "id": "sports",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-7b192f16-a16e-4a93-8f14-08ff12ac4dc7.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: original cinematic sports still for media campaign context. Dynamic cricket batter in neutral ivory kit making a technically credible swing at sunset, stadium bokeh and orange sunlight, deep cobalt sky, no national or team insignia. Realistic bat, hands, body and cricket pitch. High-end sports editorial photograph, landscape 16:9 composition, athlete on right third and dramatic stadium atmosphere left. No famous athlete, branding, text, overlays, UI, watermarks."
+    },
+    {
+      "id": "culture",
+      "source": "C:\\Users\\Work\\.codex\\generated_images\\01a1755c-a784-7fd3-9e44-0906f7c67174\\exec-a1ba9ee9-3c57-4bda-8c3b-57c8dd3c30ea.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: finished culture and food editorial photograph for regional streaming campaign context. Cinematic contemporary Indian food scene in a beautiful warm restaurant: handmade brass and ceramic bowls of vivid colorful vegetarian dishes, fresh herbs, saffron orange cloth with subtle cobalt ceramics, sunlight across a dark textured table, warm porcelain interior softly blurred behind. Beautiful tactile detail and authentic delicious ingredients, refined travel magazine photography, landscape 3:2. No text, brands, people, UI, frames or watermark."
+    }
+  ]
+}

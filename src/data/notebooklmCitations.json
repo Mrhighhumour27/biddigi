@@ -1,0 +1,39 @@
+{
+  "packVersion": "2025.05.v3",
+  "notebookLmReady": true,
+  "totalDocuments": 5,
+  "sources": [
+    {
+      "id": "STD-OPENRTB-26-30",
+      "badge": "IAB OpenRTB 2.6 / 3.0",
+      "title": "IAB Tech Lab OpenRTB 2.6 & 3.0 CTV Pod Bidding Specification",
+      "filename": "docs/notebooklm-kb/dist/01-iab-openrtb-2.6-3.0-ctv-spec.md",
+      "sectionRef": "Section 3.2.4 (Video Object), Section 3.2.20 (Pod Deduplication & Dynamic Floors)",
+      "keyInvariant": "Enforces structured Ad Pod bidding (podid, maxseq, mincpmpersec) and competitive separation across SSAI streams."
+    },
+    {
+      "id": "STD-PREBID-9X-PBS",
+      "badge": "Prebid.js 9.x + PBS Edge",
+      "title": "Prebid.js 9.x & Prebid Server (Go) Hybrid Auction Architecture",
+      "filename": "docs/notebooklm-kb/dist/02-prebid-js-9x-pbs-hybrid-architecture.md",
+      "sectionRef": "Prebid 9.x Price Floors Module & PBS Stored Requests Specification",
+      "keyInvariant": "Offloads heavy multi-DSP fan-out to edge Prebid Server clusters, compressing p95 auction latency by 35ms–120ms."
+    },
+    {
+      "id": "STD-VAST-42-SIMID-11",
+      "badge": "VAST 4.2 + SIMID 1.1",
+      "title": "IAB VAST 4.2 Verification & SIMID 1.1 Interactive CTV Overlay Standard",
+      "filename": "docs/notebooklm-kb/dist/03-iab-vast-4.2-simid-1.1-interactive-ctv.md",
+      "sectionRef": "IAB VAST 4.2 Section 3.18 (AdVerifications) & SIMID 1.1 State Machine",
+      "keyInvariant": "Decouples interactive HTML5 CTV overlays (L-Bar, Pause Ads) from video transport, replacing deprecated VPAID completely."
+    },
+    {
+      "id": "STD-BIDDIGI-ADR-004-005",
+      "badge": "Biddigi ADR-004 & ADR-005",
+      "title": "Biddigi Architectural Decision Records: Flow/Veo 2 Streams & Whisk 3D Signal Planes",
+      "filename": "docs/notebooklm-kb/dist/04-biddigi-adr-004-005-compilation.md",
+      "sectionRef": "ADR-004 (Cinematic V3 Streams) & ADR-005 (3-Plane Isometric Signal Decomposition)",
+      "keyInvariant": "Unifies Google Flow + Veo 2 scene-consistent broadcast streams with Whisk 3D spatial layer separation and Gemini 2.5 Flash yield auditing."
+    }
+  ]
+}

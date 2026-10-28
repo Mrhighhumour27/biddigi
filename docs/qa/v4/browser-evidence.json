@@ -1,0 +1,255 @@
+{
+  "date": "2026-10-26",
+  "desktop": [
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/publishers",
+      "title": "Publisher ad monetization | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/advertisers",
+      "title": "Advertising and demand solutions | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/ott-ads",
+      "title": "OTT and video advertising | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/jiohotstar-ads",
+      "title": "JioHotstar advertising services | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/prime-video-ads",
+      "title": "Prime Video advertising services | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/sonyliv-ads",
+      "title": "Sony LIV advertising services | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/youtube-ads",
+      "title": "YouTube advertising services | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/zee5-ads",
+      "title": "ZEE5 advertising services | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/about",
+      "title": "About Biddigi and Expoworld | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/contact",
+      "title": "Discuss your project | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Bricolage",
+      "path": "/privacy",
+      "title": "Privacy notice | Biddigi",
+      "width": 1440
+    },
+    {
+      "docWidth": 1425,
+      "font": "Bricolage",
+      "path": "/terms",
+      "title": "Website terms | Biddigi",
+      "width": 1440
+    }
+  ],
+  "narrow": [
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/publishers",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/advertisers",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/ott-ads",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/jiohotstar-ads",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/prime-video-ads",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/sonyliv-ads",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/youtube-ads",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/zee5-ads",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/about",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/contact",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/privacy",
+      "width": 320
+    },
+    {
+      "docWidth": 305,
+      "font": "Archivo, Arial, sans-serif",
+      "path": "/terms",
+      "width": 320
+    }
+  ],
+  "zoom200": [
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/publishers",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/advertisers",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/ott-ads",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/jiohotstar-ads",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/prime-video-ads",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/sonyliv-ads",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/youtube-ads",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/zee5-ads",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/about",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/contact",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/privacy",
+      "width": 719
+    },
+    {
+      "doc": 712,
+      "overflow": false,
+      "path": "/terms",
+      "width": 719
+    }
+  ],
+  "zoomVerified": {
+    "beforeCssWidth": 1439,
+    "afterCssWidth": 719,
+    "userConfirmedPercent": 200
+  },
+  "framePacing": {
+    "elapsedMs": 4016.534,
+    "medianMs": 16.69999999999709,
+    "over32ms": 0,
+    "p95Ms": 16.80000000000291,
+    "samples": 241,
+    "cssViewport": {
+      "width": 360,
+      "height": 800
+    },
+    "cpuSlowdown": 4,
+    "measurement": "requestAnimationFrame intervals in desktop Chrome emulation; not physical-device or field Core Web Vitals"
+  }
+}

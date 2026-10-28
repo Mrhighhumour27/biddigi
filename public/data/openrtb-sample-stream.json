@@ -1,0 +1,1678 @@
+{
+  "generatedAt": "2025-05-15T18:30:00.000Z",
+  "schemaVersion": "openrtb-2.6-3.0-bq-v3",
+  "bigQueryFreeTierStatus": {
+    "monthlyQueryQuotaTb": 1,
+    "estimatedScanPerRunMb": 1.42,
+    "monthlyRunsSupportedInFreeTier": 704225,
+    "partitionFilterEnforced": true,
+    "clusteringColumns": [
+      "publisher_id",
+      "placement_type",
+      "winning_dsp_id"
+    ]
+  },
+  "placementSummaries": [
+    {
+      "placement_type": "CTV_LBAR",
+      "sample_count": 12,
+      "p50_cpm": 39.73,
+      "p72_optimal_floor_cpm": 44.77,
+      "p90_cpm": 45.81,
+      "avg_clearing_cpm": 37.04,
+      "avg_latency_ms": 98
+    },
+    {
+      "placement_type": "CTV_PAUSE",
+      "sample_count": 12,
+      "p50_cpm": 35.4,
+      "p72_optimal_floor_cpm": 37.21,
+      "p90_cpm": 43.75,
+      "avg_clearing_cpm": 32.53,
+      "avg_latency_ms": 96
+    },
+    {
+      "placement_type": "CTV_MIDROLL",
+      "sample_count": 12,
+      "p50_cpm": 40.98,
+      "p72_optimal_floor_cpm": 45.4,
+      "p90_cpm": 46.32,
+      "avg_clearing_cpm": 39.06,
+      "avg_latency_ms": 98
+    },
+    {
+      "placement_type": "DISPLAY_HEADER",
+      "sample_count": 12,
+      "p50_cpm": 14.59,
+      "p72_optimal_floor_cpm": 15.57,
+      "p90_cpm": 17.02,
+      "avg_clearing_cpm": 13.6,
+      "avg_latency_ms": 95
+    }
+  ],
+  "sampleEvents": [
+    {
+      "auction_timestamp": "2025-05-15T18:30:00.000Z",
+      "auction_id": "ortb26-186a0-ctv-spor",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "live.sportsnet-ott.tv",
+      "placement_type": "CTV_LBAR",
+      "stream_id": "ctv-sports-live-01",
+      "openrtb_version": "3.0",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 96,
+      "applied_soft_floor_cpm": 20.59,
+      "applied_hard_floor_cpm": 24.82,
+      "highest_bid_cpm": 22.13,
+      "second_highest_bid_cpm": 20.29,
+      "clearing_price_cpm": 24.82,
+      "winning_dsp_id": "index-exchange-s2s",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 20.29,
+          "response_ms": 65,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 17.85,
+          "response_ms": 28,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 19.04,
+          "response_ms": 50,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 9.77,
+          "response_ms": 96,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 22.13,
+          "response_ms": 48,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 16.69,
+          "response_ms": 71,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 13.31,
+          "response_ms": 59,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 16.84,
+          "response_ms": 94,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a0-ctv-spor",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 24.82,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-sports-live-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-sports-live-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 24.82
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "live.sportsnet-ott.tv",
+          "cat": [
+            "IAB17",
+            "IAB17-1"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:01.250Z",
+      "auction_id": "ortb26-186a1-ctv-scif",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "cinema.nebula-stream.io",
+      "placement_type": "CTV_PAUSE",
+      "stream_id": "ctv-scifi-drama-01",
+      "openrtb_version": "2.6",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 101,
+      "applied_soft_floor_cpm": 17.78,
+      "applied_hard_floor_cpm": 21.43,
+      "highest_bid_cpm": 34.35,
+      "second_highest_bid_cpm": 29.27,
+      "clearing_price_cpm": 31.95,
+      "winning_dsp_id": "freewheel-ssp-core",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 26.73,
+          "response_ms": 84,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 29.27,
+          "response_ms": 42,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 22.79,
+          "response_ms": 57,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 15.74,
+          "response_ms": 79,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 20.65,
+          "response_ms": 52,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 34.35,
+          "response_ms": 101,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 21.86,
+          "response_ms": 42,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 26.06,
+          "response_ms": 73,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a1-ctv-scif",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 21.43,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-scifi-drama-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-scifi-drama-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 21.43
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "cinema.nebula-stream.io",
+          "cat": [
+            "IAB1",
+            "IAB1-5"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:02.500Z",
+      "auction_id": "ortb26-186a2-ctv-fin-",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "terminal.alphadesk-tv.com",
+      "placement_type": "CTV_MIDROLL",
+      "stream_id": "ctv-fin-news-01",
+      "openrtb_version": "2.6",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 113,
+      "applied_soft_floor_cpm": 24.57,
+      "applied_hard_floor_cpm": 29.61,
+      "highest_bid_cpm": 35.49,
+      "second_highest_bid_cpm": 31,
+      "clearing_price_cpm": 33.01,
+      "winning_dsp_id": "index-exchange-s2s",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 29.1,
+          "response_ms": 64,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 18.04,
+          "response_ms": 70,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 17.81,
+          "response_ms": 62,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 29.87,
+          "response_ms": 70,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 35.49,
+          "response_ms": 64,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 30.81,
+          "response_ms": 113,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 19.86,
+          "response_ms": 57,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 31,
+          "response_ms": 78,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a2-ctv-fin-",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 29.61,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-fin-news-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-fin-news-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 29.61
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "terminal.alphadesk-tv.com",
+          "cat": [
+            "IAB13",
+            "IAB13-1"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:03.750Z",
+      "auction_id": "ortb26-186a3-web-head",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "quant-insights.biddigi.io",
+      "placement_type": "DISPLAY_HEADER",
+      "stream_id": "web-header-flagship-01",
+      "openrtb_version": "3.0",
+      "device_type": "DESKTOP",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 116,
+      "applied_soft_floor_cpm": 6.94,
+      "applied_hard_floor_cpm": 8.37,
+      "highest_bid_cpm": 11.36,
+      "second_highest_bid_cpm": 10.6,
+      "clearing_price_cpm": 11.02,
+      "winning_dsp_id": "magnite-ctv-s2s",
+      "vast_version": "N/A",
+      "simid_interactive": false,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 5.42,
+          "response_ms": 107,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 10.6,
+          "response_ms": 62,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 11.36,
+          "response_ms": 53,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 9.25,
+          "response_ms": 88,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 7.72,
+          "response_ms": 64,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 7.16,
+          "response_ms": 71,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 6,
+          "response_ms": 72,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 6.46,
+          "response_ms": 116,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a3-web-head",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 8.37,
+            "bidfloorcur": "USD",
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-web-header-flagship-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 8.37
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "quant-insights.biddigi.io",
+          "cat": [
+            "IAB19",
+            "IAB19-18"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 2,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:05.000Z",
+      "auction_id": "ortb26-186a4-ctv-spor",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "live.sportsnet-ott.tv",
+      "placement_type": "CTV_LBAR",
+      "stream_id": "ctv-sports-live-01",
+      "openrtb_version": "2.6",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 93,
+      "applied_soft_floor_cpm": 20.59,
+      "applied_hard_floor_cpm": 24.82,
+      "highest_bid_cpm": 40.15,
+      "second_highest_bid_cpm": 34.09,
+      "clearing_price_cpm": 37.34,
+      "winning_dsp_id": "amazon-aps-tam",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 31.18,
+          "response_ms": 58,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 19.61,
+          "response_ms": 67,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 31.11,
+          "response_ms": 43,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 33.25,
+          "response_ms": 80,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 34.09,
+          "response_ms": 60,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 30.95,
+          "response_ms": 93,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 40.15,
+          "response_ms": 70,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 20.47,
+          "response_ms": 56,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a4-ctv-spor",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 24.82,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-sports-live-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-sports-live-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 24.82
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "live.sportsnet-ott.tv",
+          "cat": [
+            "IAB17",
+            "IAB17-1"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:06.250Z",
+      "auction_id": "ortb26-186a5-ctv-scif",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "cinema.nebula-stream.io",
+      "placement_type": "CTV_PAUSE",
+      "stream_id": "ctv-scifi-drama-01",
+      "openrtb_version": "2.6",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 93,
+      "applied_soft_floor_cpm": 17.78,
+      "applied_hard_floor_cpm": 21.43,
+      "highest_bid_cpm": 26.66,
+      "second_highest_bid_cpm": 25.65,
+      "clearing_price_cpm": 26.68,
+      "winning_dsp_id": "amazon-aps-tam",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 25.65,
+          "response_ms": 93,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 14.83,
+          "response_ms": 74,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 13.81,
+          "response_ms": 55,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 19.16,
+          "response_ms": 36,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 20.7,
+          "response_ms": 28,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 18.03,
+          "response_ms": 77,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 26.66,
+          "response_ms": 56,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 23.39,
+          "response_ms": 64,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a5-ctv-scif",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 21.43,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-scifi-drama-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-scifi-drama-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 21.43
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "cinema.nebula-stream.io",
+          "cat": [
+            "IAB1",
+            "IAB1-5"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:07.500Z",
+      "auction_id": "ortb26-186a6-ctv-fin-",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "terminal.alphadesk-tv.com",
+      "placement_type": "CTV_MIDROLL",
+      "stream_id": "ctv-fin-news-01",
+      "openrtb_version": "3.0",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 108,
+      "applied_soft_floor_cpm": 24.57,
+      "applied_hard_floor_cpm": 29.61,
+      "highest_bid_cpm": 47.13,
+      "second_highest_bid_cpm": 44.41,
+      "clearing_price_cpm": 46.19,
+      "winning_dsp_id": "freewheel-ssp-core",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 16.52,
+          "response_ms": 74,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 44.41,
+          "response_ms": 73,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 30.04,
+          "response_ms": 24,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 31.06,
+          "response_ms": 108,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 29.6,
+          "response_ms": 69,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 47.13,
+          "response_ms": 99,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 25.83,
+          "response_ms": 41,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 38.24,
+          "response_ms": 105,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a6-ctv-fin-",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 29.61,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-fin-news-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-fin-news-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 29.61
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "terminal.alphadesk-tv.com",
+          "cat": [
+            "IAB13",
+            "IAB13-1"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:08.750Z",
+      "auction_id": "ortb26-186a7-web-head",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "quant-insights.biddigi.io",
+      "placement_type": "DISPLAY_HEADER",
+      "stream_id": "web-header-flagship-01",
+      "openrtb_version": "2.6",
+      "device_type": "DESKTOP",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 99,
+      "applied_soft_floor_cpm": 6.94,
+      "applied_hard_floor_cpm": 8.37,
+      "highest_bid_cpm": 15.57,
+      "second_highest_bid_cpm": 12.44,
+      "clearing_price_cpm": 14.48,
+      "winning_dsp_id": "magnite-ctv-s2s",
+      "vast_version": "N/A",
+      "simid_interactive": false,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 5.99,
+          "response_ms": 64,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 12.44,
+          "response_ms": 75,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 15.57,
+          "response_ms": 39,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 10.06,
+          "response_ms": 99,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 7.19,
+          "response_ms": 42,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 9.69,
+          "response_ms": 72,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 9.73,
+          "response_ms": 43,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 10.74,
+          "response_ms": 56,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a7-web-head",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 8.37,
+            "bidfloorcur": "USD",
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-web-header-flagship-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 8.37
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "quant-insights.biddigi.io",
+          "cat": [
+            "IAB19",
+            "IAB19-18"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 2,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:10.000Z",
+      "auction_id": "ortb26-186a8-ctv-spor",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "live.sportsnet-ott.tv",
+      "placement_type": "CTV_LBAR",
+      "stream_id": "ctv-sports-live-01",
+      "openrtb_version": "2.6",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 95,
+      "applied_soft_floor_cpm": 20.59,
+      "applied_hard_floor_cpm": 24.82,
+      "highest_bid_cpm": 45.81,
+      "second_highest_bid_cpm": 33.25,
+      "clearing_price_cpm": 42.6,
+      "winning_dsp_id": "pubmatic-openwrap",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 25.15,
+          "response_ms": 55,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 27.49,
+          "response_ms": 34,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 13.41,
+          "response_ms": 46,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 45.81,
+          "response_ms": 41,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 26.66,
+          "response_ms": 61,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 20.48,
+          "response_ms": 85,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 19.97,
+          "response_ms": 30,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 33.25,
+          "response_ms": 95,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a8-ctv-spor",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 24.82,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-sports-live-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-sports-live-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 24.82
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "live.sportsnet-ott.tv",
+          "cat": [
+            "IAB17",
+            "IAB17-1"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:11.250Z",
+      "auction_id": "ortb26-186a9-ctv-scif",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "cinema.nebula-stream.io",
+      "placement_type": "CTV_PAUSE",
+      "stream_id": "ctv-scifi-drama-01",
+      "openrtb_version": "3.0",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 84,
+      "applied_soft_floor_cpm": 17.78,
+      "applied_hard_floor_cpm": 21.43,
+      "highest_bid_cpm": 27.52,
+      "second_highest_bid_cpm": 24.28,
+      "clearing_price_cpm": 25.59,
+      "winning_dsp_id": "index-exchange-s2s",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 21.07,
+          "response_ms": 79,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 20.19,
+          "response_ms": 84,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 11.12,
+          "response_ms": 62,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 11.68,
+          "response_ms": 80,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 27.52,
+          "response_ms": 76,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 24.28,
+          "response_ms": 68,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 16.75,
+          "response_ms": 54,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 13.45,
+          "response_ms": 77,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186a9-ctv-scif",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 21.43,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-scifi-drama-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-scifi-drama-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 21.43
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "cinema.nebula-stream.io",
+          "cat": [
+            "IAB1",
+            "IAB1-5"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:12.500Z",
+      "auction_id": "ortb26-186aa-ctv-fin-",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "terminal.alphadesk-tv.com",
+      "placement_type": "CTV_MIDROLL",
+      "stream_id": "ctv-fin-news-01",
+      "openrtb_version": "2.6",
+      "device_type": "CTV",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 100,
+      "applied_soft_floor_cpm": 24.57,
+      "applied_hard_floor_cpm": 29.61,
+      "highest_bid_cpm": 45.4,
+      "second_highest_bid_cpm": 36.13,
+      "clearing_price_cpm": 42.22,
+      "winning_dsp_id": "pubmatic-openwrap",
+      "vast_version": "VAST_4_2",
+      "simid_interactive": true,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 21.09,
+          "response_ms": 82,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 31.03,
+          "response_ms": 100,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 21.17,
+          "response_ms": 60,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 45.4,
+          "response_ms": 57,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 31.63,
+          "response_ms": 37,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 27.33,
+          "response_ms": 66,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 36.13,
+          "response_ms": 77,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 14.82,
+          "response_ms": 60,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186aa-ctv-fin-",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 29.61,
+            "bidfloorcur": "USD",
+            "video": {
+              "mimes": [
+                "video/mp4",
+                "application/x-mpegURL"
+              ],
+              "minduration": 15,
+              "maxduration": 30,
+              "protocols": [
+                7,
+                8,
+                10
+              ],
+              "w": 1920,
+              "h": 1080,
+              "startdelay": 0,
+              "plcmt": 1,
+              "api": [
+                7,
+                8
+              ],
+              "podid": "pod-ctv-fin-news-01",
+              "maxseq": 3
+            },
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-ctv-fin-news-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 29.61
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "terminal.alphadesk-tv.com",
+          "cat": [
+            "IAB13",
+            "IAB13-1"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 3,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    },
+    {
+      "auction_timestamp": "2025-05-15T18:30:13.750Z",
+      "auction_id": "ortb26-186ab-web-head",
+      "publisher_id": "pub-biddigi-enterprise-01",
+      "site_or_app_domain": "quant-insights.biddigi.io",
+      "placement_type": "DISPLAY_HEADER",
+      "stream_id": "web-header-flagship-01",
+      "openrtb_version": "2.6",
+      "device_type": "DESKTOP",
+      "geo_country": "USA",
+      "configured_bidders": 8,
+      "responding_bidders": 8,
+      "timed_out_bidders": 0,
+      "auction_latency_ms": 82,
+      "applied_soft_floor_cpm": 6.94,
+      "applied_hard_floor_cpm": 8.37,
+      "highest_bid_cpm": 13.35,
+      "second_highest_bid_cpm": 10.41,
+      "clearing_price_cpm": 12.42,
+      "winning_dsp_id": "freewheel-ssp-core",
+      "vast_version": "N/A",
+      "simid_interactive": false,
+      "bid_vector": [
+        {
+          "dsp_id": "ttd-ctv-prime",
+          "dsp_name": "The Trade Desk CTV",
+          "bid_cpm": 5.59,
+          "response_ms": 54,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "dv360-pg-live",
+          "dsp_name": "Google DV360 Programmatic",
+          "bid_cpm": 10.41,
+          "response_ms": 22,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "magnite-ctv-s2s",
+          "dsp_name": "Magnite ClearLine S2S",
+          "bid_cpm": 6.2,
+          "response_ms": 36,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "pubmatic-openwrap",
+          "dsp_name": "PubMatic OpenWrap OTT",
+          "bid_cpm": 7.11,
+          "response_ms": 82,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "index-exchange-s2s",
+          "dsp_name": "Index Exchange Server",
+          "bid_cpm": 6.01,
+          "response_ms": 79,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "freewheel-ssp-core",
+          "dsp_name": "FreeWheel Broadcast SSP",
+          "bid_cpm": 13.35,
+          "response_ms": 61,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "amazon-aps-tam",
+          "dsp_name": "Amazon Publisher Services",
+          "bid_cpm": 8.43,
+          "response_ms": 68,
+          "status": "VALID_BID"
+        },
+        {
+          "dsp_id": "xandr-curated-ctv",
+          "dsp_name": "Microsoft Invest / Xandr",
+          "bid_cpm": 7.41,
+          "response_ms": 45,
+          "status": "VALID_BID"
+        }
+      ],
+      "openrtb_packet_preview": {
+        "id": "ortb26-186ab-web-head",
+        "imp": [
+          {
+            "id": "1",
+            "bidfloor": 8.37,
+            "bidfloorcur": "USD",
+            "ext": {
+              "prebid": {
+                "storedrequest": {
+                  "id": "pbs-web-header-flagship-01"
+                },
+                "floors": {
+                  "floorRule": "bq_quantile_p72_v3",
+                  "floorValue": 8.37
+                }
+              }
+            }
+          }
+        ],
+        "app": {
+          "bundle": "quant-insights.biddigi.io",
+          "cat": [
+            "IAB19",
+            "IAB19-18"
+          ],
+          "publisher": {
+            "id": "pub-biddigi-enterprise-01"
+          }
+        },
+        "device": {
+          "devicetype": 2,
+          "ifa": "00000000-0000-0000-0000-000000000000",
+          "lmt": 0
+        },
+        "tmax": 140
+      }
+    }
+  ]
+}
