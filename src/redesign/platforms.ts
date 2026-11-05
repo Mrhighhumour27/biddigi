@@ -24,8 +24,7 @@ export const platforms: AdvertisingPlatform[] = [
     name: "JioHotstar",
     category: "OTT & streaming",
     tagline: "Your brand. Their next viewing moment.",
-    description:
-      "Bring your campaign into entertainment and sports viewing. Biddigi helps shape the media brief, coordinate creative, and prepare your JioHotstar campaign for review.",
+    description: "Run video campaigns on JioHotstar with Biddigi. We plan your media, coordinate creative requirements and execute your campaign across the agreed inventory.",
     objectives: ["Brand introductions", "Product launches", "Campaign recall"],
     formats: [
       {
@@ -78,8 +77,7 @@ export const platforms: AdvertisingPlatform[] = [
     name: "Prime Video",
     category: "OTT & streaming",
     tagline: "A bigger setting for your brand story.",
-    description:
-      "Explore advertising alongside Prime Video entertainment. Biddigi helps translate your objective into a media brief, prepare assets, and coordinate campaign requirements.",
+    description: "Reach Prime Video audiences with Biddigi. We plan and execute your streaming video campaign, with formats and interactive options confirmed for your market.",
     objectives: [
       "Brand awareness",
       "Entertainment-led storytelling",
@@ -132,8 +130,7 @@ export const platforms: AdvertisingPlatform[] = [
     name: "Sony LIV",
     category: "OTT & streaming",
     tagline: "Be part of the viewing conversation.",
-    description:
-      "Plan a Sony LIV campaign around your brand and viewing context. Biddigi supports the brief, placement discussion, creative coordination, and delivery review.",
+    description: "Run your Sony LIV campaign with Biddigi. We handle media planning, creative coordination, execution and delivery review around your audience and objective.",
     objectives: [
       "Sports-led awareness",
       "Entertainment audiences",
@@ -186,8 +183,7 @@ export const platforms: AdvertisingPlatform[] = [
     name: "YouTube",
     category: "Online video",
     tagline: "Meet your audience as they watch and discover.",
-    description:
-      "Connect your creative with a clear YouTube campaign objective. Biddigi helps plan formats, coordinate assets, support setup, and interpret the agreed performance measures.",
+    description: "Run in-stream, in-feed and Shorts campaigns on YouTube with Biddigi. We plan your media, execute the agreed campaign and review its delivery.",
     objectives: ["Video reach", "Views and consideration", "Website actions"],
     formats: [
       {
@@ -242,8 +238,7 @@ export const platforms: AdvertisingPlatform[] = [
     name: "ZEE5",
     category: "OTT & streaming",
     tagline: "Build a campaign around the stories people choose.",
-    description:
-      "Explore ZEE5 advertising with a brief built around your audience, language, and campaign timing. Biddigi supports planning, creative coordination, and campaign review.",
+    description: "Reach ZEE5 audiences with Biddigi. We plan and execute video and display campaigns around your language, audience and timing.",
     objectives: [
       "Language-led brand awareness",
       "Entertainment campaigns",
@@ -256,14 +251,14 @@ export const platforms: AdvertisingPlatform[] = [
           "Explore video placements before or during eligible content.",
       },
       {
-        name: "Platform display",
+        name: "Medium rectangle display",
         description:
-          "Discuss eligible home-screen or other platform display inventory.",
+          "A 300 × 250 display unit on supported ZEE5 surfaces, as documented by ZEE5 Ads Manager.",
       },
       {
-        name: "Additional placements",
+        name: "Native and banner placements",
         description:
-          "Ask about overlays or other available formats; confirm the exact placement before production.",
+          "Native desktop and mobile placements, leaderboard and mobile banners; confirm the device and placement before production.",
       },
     ],
     creative: [
@@ -293,7 +288,7 @@ export const platforms: AdvertisingPlatform[] = [
     ],
     source: {
       label: "ZEE5 platform placement information",
-      url: "https://www.zee5.com/termsofuse",
+      url: "https://adsmanagerhelp.zee5.com/portal/en/kb/articles/ad-formats",
     },
   },
 ];

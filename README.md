@@ -1,5 +1,9 @@
 # Biddigi website
 
+The OTT and platform pages now feature original publisher ad-placement examples. See [platform placements and verification](docs/PLATFORM-PLACEMENTS.md).
+
+The 5 November design refinement adds official company logos, clearer typography, earlier platform discovery and consistent interactive-tool styling. See [design refinements and verification](docs/DESIGN-REFINEMENTS.md) and [brand asset provenance](public/brands/SOURCES.md).
+
 The current interface is the signal-architecture revision requested after V3: a dimensional ad cutaway, shared placement transitions and a cinematic OTT atlas. See [current implementation and verification](docs/V4-IMPLEMENTATION.md) and [research/decision record](docs/decisions/ADR-005-signal-architecture.md). Earlier V2/V3 screenshots are historical.
 
 Publisher-first marketing website with 13 prerendered pages, original ImageGen artwork composed in HTML, controlled Motion interactions, contextual enquiries and a server-only transactional mail adapter.

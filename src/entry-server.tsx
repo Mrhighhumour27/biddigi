@@ -7,6 +7,8 @@ export { routes } from "./redesign/routes";
 export { MediaHero } from "./redesign/MediaHero";
 export { SignalHero } from "./redesign/SignalHero";
 export { CampaignAtlas } from "./redesign/CampaignAtlas";
+export { PlacementGallery } from "./redesign/PlacementGallery";
+export { placementExamples } from "./redesign/placementExamples";
 export function render(pathname: string) {
   return renderToString(
     <StrictMode>

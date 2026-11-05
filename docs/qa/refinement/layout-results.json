@@ -1,0 +1,366 @@
+[
+  {
+    "width": 320,
+    "path": "/",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/publishers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/advertisers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/ott-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/jiohotstar-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/prime-video-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/sonyliv-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/youtube-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/zee5-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/about",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/contact",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/privacy",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "path": "/terms",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/publishers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/advertisers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/ott-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/jiohotstar-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/prime-video-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/sonyliv-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/youtube-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/zee5-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/about",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/contact",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/privacy",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "path": "/terms",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/publishers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/advertisers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/ott-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/jiohotstar-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/prime-video-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/sonyliv-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/youtube-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/zee5-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/about",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/contact",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/privacy",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "path": "/terms",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/publishers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/advertisers",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/ott-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/jiohotstar-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/prime-video-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/sonyliv-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/youtube-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/zee5-ads",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/about",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/contact",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/privacy",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "path": "/terms",
+    "brokenBrands": [],
+    "h1": 1,
+    "overflow": false
+  }
+]

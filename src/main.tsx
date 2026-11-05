@@ -6,6 +6,8 @@ import "./v4.css";
 import "./redesign/campaign-atlas.css";
 import "./redesign/placement-v4.css";
 import "./redesign/publisher-tools.css";
+import "./redesign/refinements.css";
+import "./redesign/platform-placements.css";
 import App from "./App";
 const root = document.getElementById("root")!;
 const content = (

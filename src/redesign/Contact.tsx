@@ -1,3 +1,4 @@
+import { BrandLogo } from "./BrandLogo";
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { AlertCircle, ArrowRight, Check, ShieldCheck } from "lucide-react";
@@ -284,9 +285,7 @@ export function ContactPage() {
         <div className="contact-intro">
           <span className="eyebrow">LET’S FIND THE RIGHT NEXT STEP</span>
           <h1>
-            Bring your project.
-            <br />
-            We’ll bring the perspective.
+            Discuss your project.
           </h1>
           <p>
             Tell us what you publish or what you want to promote. We’ll review
@@ -512,7 +511,7 @@ export function ContactPage() {
                                 )
                               }
                             />
-                            <span>{platform.name}</span>
+                            <BrandLogo brand={platform.id} label={platform.name} />
                           </label>
                         ))}
                       </fieldset>

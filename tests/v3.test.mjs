@@ -111,10 +111,10 @@ test("all prerendered image sources resolve and generated contexts differ across
       );
     assert.ok(!html.includes("landscape-sun"));
   }
-  assert.match(render("/jiohotstar-ads"), /sports-640/);
-  assert.match(render("/zee5-ads"), /culture-640/);
-  assert.match(render("/prime-video-ads"), /entertainment-640/);
-  assert.match(render("/youtube-ads"), /app-editorial-640/);
+  assert.match(render("/jiohotstar-ads"), /jiohotstar-pre-roll/);
+  assert.match(render("/zee5-ads"), /zee5-formats-2022/);
+  assert.match(render("/prime-video-ads"), /prime-interactive/);
+  assert.match(render("/youtube-ads"), /youtube-instream/);
 });
 
 test("typography and compressed client sizes stay within the delivery budget", async () => {

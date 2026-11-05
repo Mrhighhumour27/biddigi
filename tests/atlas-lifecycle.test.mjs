@@ -1,98 +1,59 @@
-import test from "node:test";
-import assert from "node:assert/strict";
-import { JSDOM } from "jsdom";
-import { act, createElement } from "react";
-import { CampaignAtlas } from "../dist-ssr/entry-server.js";
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { JSDOM } from 'jsdom';
+import { act, createElement } from 'react';
+import { CampaignAtlas } from '../dist-ssr/entry-server.js';
 
-// Real component events, with image completion/failure controlled at the DOM
-// boundary. Pixel quality and network transfer remain separate browser checks.
-test("atlas selected artwork loads eagerly, ignores stale events, and recovers from a failed context", async () => {
-  const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', {
-    url: "http://localhost/", pretendToBeVisual: true,
-  });
+test('platform galleries preserve media, keyboard focus, failure recovery and enquiry context', async () => {
+  const dom = new JSDOM('<div id="root"></div>', { url: 'http://localhost/', pretendToBeVisual: true });
   const prior = new Map();
-  function install(key, value) {
+  for (const [key, value] of Object.entries({ window: dom.window, document: dom.window.document, navigator: dom.window.navigator, IS_REACT_ACT_ENVIRONMENT: true })) {
     prior.set(key, Object.getOwnPropertyDescriptor(globalThis, key));
     Object.defineProperty(globalThis, key, { configurable: true, writable: true, value });
   }
-  install("window", dom.window);
-  install("document", dom.window.document);
-  install("navigator", dom.window.navigator);
-  install("IS_REACT_ACT_ENVIRONMENT", true);
-  const { createRoot } = await import("react-dom/client");
-  const root = createRoot(dom.window.document.getElementById("root"));
-  const doc = dom.window.document;
-  const panel = () => doc.querySelector('[role="tabpanel"]');
-  const current = () => doc.querySelector(".atlas-image-current img");
-  const tab = (name) => [...doc.querySelectorAll('[role="tab"]')].find((node) => node.textContent.includes(name));
-  async function click(element) {
-    assert.ok(element, "requested control exists");
-    await act(async () => element.dispatchEvent(new dom.window.MouseEvent("click", { bubbles: true })));
-  }
-  async function imageEvent(element, type) {
-    await act(async () => element.dispatchEvent(new dom.window.Event(type, { bubbles: false })));
-  }
+  const { createRoot } = await import('react-dom/client');
+  const root = createRoot(document.getElementById('root'));
+  const tabs = () => [...document.querySelectorAll('.atlas-selector [role=tab]')];
+  const image = () => document.querySelector('.placement-media img');
+  const click = async node => act(async () => node.dispatchEvent(new dom.window.MouseEvent('click', { bubbles: true })));
   try {
     await act(async () => root.render(createElement(CampaignAtlas)));
-    assert.equal(current().getAttribute("loading"), "lazy", "initial below-fold photograph may be deferred");
-    await imageEvent(current(), "load");
-
-    await click(tab("Prime Video"));
-    const abandonedImage = current();
-    assert.equal(abandonedImage.getAttribute("loading"), "eager", "a deliberately selected image must load even while clipped for its entrance");
-    assert.equal(panel().getAttribute("aria-busy"), "true");
-    await click(tab("ZEE5"));
-    const failedImage = current();
-    assert.match(failedImage.getAttribute("src"), /culture/);
-    assert.equal(failedImage.getAttribute("loading"), "eager");
-
-    await imageEvent(abandonedImage, "load");
-    await imageEvent(abandonedImage, "error");
-    assert.equal(panel().getAttribute("aria-busy"), "true", "an obsolete asset cannot finish or fail the current selection");
-    assert.equal(doc.querySelector(".atlas-image-failure"), null);
-    assert.equal(current(), failedImage);
-
-    await imageEvent(failedImage, "error");
-    assert.equal(panel().getAttribute("aria-busy"), "false", "a terminal asset failure ends the loading announcement");
-    assert.equal(doc.querySelectorAll(".atlas-screen img").length, 0, "failure must remove the previous platform scene as well as the broken photograph");
-    const failure = doc.querySelector('[role="status"]');
-    assert.match(failure.textContent, /ZEE5/);
-    assert.match(failure.textContent, /Illustration unavailable/);
-    assert.match(failure.textContent, /food and culture photograph/);
-    assert.equal(doc.querySelector(".atlas-screen-copy"), null, "a failed scene must not masquerade as rendered artwork");
-    assert.match(doc.querySelector(".atlas-screen-bottom").textContent, /IMAGE UNAVAILABLE/);
-    assert.match(doc.querySelector(".atlas-enquire").getAttribute("href"), /platform=zee5/);
-
-    const retry = [...doc.querySelectorAll("button")].find((node) => node.textContent.includes("Retry ZEE5"));
-    retry.focus();
-    await click(retry);
-    const retryImage = current();
-    assert.notEqual(retryImage, failedImage, "retry creates a fresh image request");
-    assert.equal(retryImage.getAttribute("loading"), "eager");
-    assert.equal(doc.activeElement, tab("ZEE5"), "focus survives removal of the Retry control");
-    assert.equal(panel().getAttribute("aria-busy"), "true");
-    assert.equal(doc.querySelector(".atlas-image-previous"), null, "retry cannot bring back an unrelated old scene");
-
-    await imageEvent(failedImage, "load");
-    await imageEvent(failedImage, "error");
-    assert.equal(panel().getAttribute("aria-busy"), "true", "late events from the failed request cannot complete its replacement");
-    assert.equal(doc.querySelector(".atlas-image-failure"), null);
-    await imageEvent(retryImage, "load");
-    assert.equal(panel().getAttribute("aria-busy"), "false");
-    assert.equal(doc.querySelector(".atlas-image-current").dataset.ready, "true");
-    assert.match(doc.querySelector(".atlas-screen-copy").textContent, /Stories that/);
-    assert.equal(doc.querySelector(".atlas-image-failure"), null);
-
-    await act(async () => tab("ZEE5").dispatchEvent(new dom.window.KeyboardEvent("keydown", { key: "Home", bubbles: true })));
-    assert.equal(doc.activeElement, tab("JioHotstar"));
-    assert.equal(tab("JioHotstar").getAttribute("aria-selected"), "true");
-    assert.equal(current().getAttribute("loading"), "eager");
+    assert.match(image().getAttribute('src'), /jiohotstar-pre-roll/);
+    assert.equal(document.querySelector('video'), null, 'a video is never loaded before a play request');
+    assert.equal(image().getAttribute('loading'), 'lazy');
+    await click(document.querySelector('.placement-gallery-tabs button:nth-child(2)'));
+    assert.match(image().getAttribute('src'), /mid-roll/);
+    const old = image();
+    await click(tabs()[1]);
+    assert.match(image().getAttribute('src'), /prime-interactive/);
+    await act(async () => old.dispatchEvent(new dom.window.Event('error')));
+    assert.equal(document.querySelector('[role=status]'), null, 'an abandoned platform cannot fail the current media');
+    await click(tabs()[4]);
+    assert.match(image().getAttribute('src'), /zee5-formats-2022/);
+    assert.match(document.querySelector('.placement-limitation').textContent, /Historical interface/);
+    assert.match(document.querySelector('.atlas-enquire').getAttribute('href'), /platform=zee5/);
+    await act(async () => image().dispatchEvent(new dom.window.Event('error')));
+    assert.match(document.querySelector('[role=status]').textContent, /could not be loaded/);
+    assert.equal(image(), null);
+    await click(document.querySelector('.placement-media-error button'));
+    assert.ok(image());
+    assert.equal(document.activeElement, document.querySelector('.placement-media'));
+    await act(async () => tabs()[4].dispatchEvent(new dom.window.KeyboardEvent('keydown', { key: 'Home', bubbles: true })));
+    assert.equal(document.activeElement, tabs()[0]);
+    assert.match(image().getAttribute('src'), /jiohotstar-pre-roll/);
+    await click(document.querySelector('.placement-play'));
+    assert.match(document.querySelector('video').getAttribute('src'), /pre-roll.mp4/);
+    assert.equal(document.querySelector('video').hasAttribute('controls'), true);
+    await click(tabs()[3]);
+    assert.equal(document.querySelector('video'), null, 'switching platform removes the old player');
+    const formats = [...document.querySelectorAll('.placement-gallery-tabs button')];
+    await act(async () => formats[0].dispatchEvent(new dom.window.KeyboardEvent('keydown', { key: 'End', bubbles: true })));
+    assert.equal(document.activeElement, formats[2]);
+    assert.match(image().getAttribute('src'), /youtube-shorts/);
+    assert.match(document.querySelector('.atlas-enquire').getAttribute('href'), /platform=youtube/);
   } finally {
     await act(async () => root.unmount());
     dom.window.close();
-    for (const [key, descriptor] of prior) {
-      if (descriptor) Object.defineProperty(globalThis, key, descriptor);
-      else delete globalThis[key];
-    }
+    for (const [key, value] of prior) { if (value) Object.defineProperty(globalThis, key, value); else delete globalThis[key]; }
   }
 });

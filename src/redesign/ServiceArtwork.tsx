@@ -1,3 +1,4 @@
+import { BrandLogo } from "./BrandLogo";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { MediaPhoto } from "./MediaHero";
 
@@ -11,9 +12,9 @@ export function ServiceArtwork({
   const company = kind === "company";
   const publisher = kind === "publisher";
   const photo =
-    kind.includes("jio") || kind.includes("sony")
+    kind.includes("jio")
       ? "sports"
-      : kind.includes("zee")
+      : kind.includes("sony") ? "lifestyle" : kind.includes("zee")
         ? "culture"
         : kind.includes("youtube")
           ? "app-editorial"
@@ -27,6 +28,7 @@ export function ServiceArtwork({
       className={`service-artwork ${company ? "service-artwork-company" : ""} ${publisher ? "service-artwork-publisher" : ""}`}
     >
       <div className="service-artwork-top">
+        {name && <BrandLogo brand={kind} />}
         <span>
           {company
             ? "CONTENT / CREATIVE / CONNECTION"

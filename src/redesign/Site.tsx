@@ -1,3 +1,5 @@
+import { PlacementGallery, PlacementPoster } from "./PlacementGallery";
+import { BrandLogo } from "./BrandLogo";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import {
@@ -16,7 +18,6 @@ import {
 } from "lucide-react";
 import { AuctionScene, MetricTrace } from "./Illustrations";
 import { PlacementLens, FormatPreview } from "./PlacementStudio";
-import { MediaPhoto } from "./MediaHero";
 import { SignalHero } from "./SignalHero";
 import { CampaignAtlas } from "./CampaignAtlas";
 import { DimensionalAdCutaway } from "./DimensionalAdCutaway";
@@ -101,26 +102,6 @@ function Header({ path }: { path: string }) {
         }
       }}
     >
-      <div className="bg-[#05080F] border-b border-[#131F37] text-[11px] font-mono text-[#94A3B8] py-1.5 px-4 hidden md:block">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-[#00E5FF] font-bold">
-              <span className="h-2 w-2 rounded-full bg-[#00E5FF] animate-pulse" />
-              COMMAND v4.2 // PROD-US-EAST
-            </span>
-            <span>QPS: <strong className="text-white">842.6k</strong> (+4.2%)</span>
-            <span>p99: <strong className="text-[#00E676]">18.4ms</strong></span>
-            <span>Win Rate: <strong className="text-white">64.8%</strong></span>
-            <span>Pipe: <strong className="text-[#00E5FF]">$14.2M/day</strong></span>
-            <span>SLA: <strong className="text-[#00E676]">99.994%</strong></span>
-          </div>
-          <div className="flex items-center gap-3 text-[10px]">
-            <a href="/ott-ads#ctv-cutaway-lab" className="text-[#00E5FF] hover:underline">CTV Cutaway Lab</a>
-            <span className="text-[#64748B]">•</span>
-            <a href="/publishers#yield-copilot" className="text-[#00E676] hover:underline">Yield Copilot</a>
-          </div>
-        </div>
-      </div>
       <div className="container nav-inner">
         <a href="/" className="brand" aria-label="Biddigi home">
           <img
@@ -211,7 +192,7 @@ function Footer() {
         <div className="footer-platforms">
           {platforms.map((p) => (
             <a href={p.slug} key={p.id}>
-              {p.name}
+              <BrandLogo brand={p.id} label={p.name} dark />
             </a>
           ))}
         </div>
@@ -575,6 +556,7 @@ function Publishers() {
       />
       <section className="section container">
         <PlacementLens />
+        <a className="text-link" href="#yield-copilot">Explore a revenue scenario <ArrowDown size={16} /></a>
       </section>
       <section id="how-it-works" className="section section-tinted">
         <div className="container detail-split">
@@ -765,25 +747,13 @@ function PlatformList() {
       {platforms.map((p, i) => (
         <article key={p.id}>
           <div className="platform-image">
-            <MediaPhoto
-              name={
-                p.id === "jiohotstar" || p.id === "sonyliv"
-                  ? "sports"
-                  : p.id === "zee5"
-                    ? "culture"
-                    : p.id === "youtube"
-                      ? "app-editorial"
-                      : "entertainment"
-              }
-              alt={`Original illustrative viewing context for ${p.name} campaign planning`}
-              sizes="(max-width:680px) 88vw, 260px"
-            />
+            <PlacementPoster platformId={p.id} />
             <span className="platform-index">0{i + 1}</span>
           </div>
           <div>
             <span className="eyebrow">{p.category}</span>
             <h3>
-              <a href={p.slug}>{p.name}</a>
+              <a href={p.slug}><BrandLogo brand={p.id} /></a>
             </h3>
             <p>{p.description}</p>
           </div>
@@ -806,16 +776,14 @@ function OttHub() {
         <span className="eyebrow">BIDDIGI FOR ADVERTISERS</span>
         <h1>
           Your brand.
-          <br />
+          {" "}
           Their next
-          <br />
+          {" "}
           <span>viewing moment.</span>
         </h1>
         <div>
           <p>
-            OTT and video advertising, planned around your audience. Explore
-            five platforms, understand the placements and start with a clear
-            campaign brief.
+            Run your campaign on JioHotstar, Prime Video, Sony LIV, YouTube or ZEE5. Biddigi handles media planning, campaign execution and delivery review. Explore the original placement examples below.
           </p>
           <LinkButton href={contact("advertiser")}>
             Request a media plan
@@ -825,32 +793,6 @@ function OttHub() {
           </a>
         </div>
       </section>
-      <section className="section section-tinted">
-        <div className="container detail-split">
-          <FormatPreview />
-          <div>
-            <span className="eyebrow">OTT AND VIDEO ADVERTISING</span>
-            <h2>
-              Different platforms.
-              <br />A plan that fits.
-            </h2>
-            <p>
-              Streaming entertainment, sports and online video offer different
-              contexts for your message. Choose a familiar platform below, or
-              bring the objective and we’ll discuss your options.
-            </p>
-            <p className="small-note">
-              YouTube is an online-video service included alongside our OTT
-              offering. Formats and inventory vary by platform, device and
-              market.
-            </p>
-          </div>
-        </div>
-      </section>
-      <CampaignAtlas />
-      <div className="container">
-        <DimensionalAdCutaway />
-      </div>
       <section className="section container" id="platforms">
         <SectionHeading
           eyebrow="FIND YOUR VIEWING CONTEXT"
@@ -867,6 +809,10 @@ function OttHub() {
           </LinkButton>
         </div>
       </section>
+      <CampaignAtlas />
+      <div className="container">
+        <DimensionalAdCutaway />
+      </div>
       <section className="section process-section">
         <div className="container">
           <SectionHeading
@@ -875,7 +821,7 @@ function OttHub() {
           />
           <Process campaign />
           <p className="small-note">
-            Biddigi provides campaign support. Platform availability,
+            Biddigi plans and executes your campaign. Platform availability,
             eligibility and creative approval are confirmed before booking.
           </p>
         </div>
@@ -894,12 +840,13 @@ function PlatformPage({ slug }: { slug: string }) {
             OTT & video ads / {p.name}
           </a>
           <span className="eyebrow">
-            {p.name.toUpperCase()} ADVERTISING WITH BIDDIGI
+            Advertising with Biddigi
           </span>
+          <BrandLogo brand={p.id} hero />
           <h1>{p.tagline}</h1>
           <p>{p.description}</p>
           <LinkButton href={contact("advertiser", p.name)}>
-            Request a {p.name} media plan
+            <BrandLogo brand={p.id} label={`Request a ${p.name} media plan`} />
           </LinkButton>
           <div className="objective-tags">
             {p.objectives.map((o) => (
@@ -907,7 +854,7 @@ function PlatformPage({ slug }: { slug: string }) {
             ))}
           </div>
         </div>
-        <ServiceArtwork kind={p.id} name={p.name} />
+        <PlacementGallery platformId={p.id} eager compact />
       </section>
       <section className="section section-tinted" id="ad-formats">
         <div className="container detail-split">
@@ -924,10 +871,10 @@ function PlatformPage({ slug }: { slug: string }) {
               campaign.
             </p>
             <p className="small-note">
-              Conceptual placement illustration, not a live {p.name} interface.
+              Original {p.name} advertising reference. Examples retain their source branding; current booking details are confirmed in your media plan.
             </p>
           </div>
-          <FormatPreview kind={p.id} />
+          <PlacementGallery platformId={p.id} />
         </div>
         <div className="container format-cards">
           {p.formats.map((f, i) => (
@@ -1177,7 +1124,7 @@ function NotFound() {
       <span className="eyebrow">404 / A DIFFERENT DIRECTION</span>
       <h1>
         This page isn’t
-        <br />
+        {" "}
         in the picture.
       </h1>
       <p>Head back to Biddigi or tell us what you were looking for.</p>
