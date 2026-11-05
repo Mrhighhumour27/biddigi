@@ -19,7 +19,7 @@ function documentFor(path, title, description, missing = false) {
     )
     .replace(
       "</head>",
-      `${missing ? '<meta name="robots" content="noindex" />' : `<link rel="canonical" href="${url}" />`}\n<meta property="og:title" content="${escape(title)} | Biddigi" />\n<meta property="og:description" content="${escape(description)}" />\n<meta property="og:url" content="${url}" />\n<meta property="og:type" content="website" />\n<meta property="og:image" content="https://biddigi.io/brand-social.png" />\n<meta name="twitter:card" content="summary_large_image" />\n</head>`,
+      `${missing ? '<meta name="robots" content="noindex" />' : `<link rel="canonical" href="${url}" />`}\n<meta property="og:title" content="${escape(title)} | Biddigi" />\n<meta property="og:description" content="${escape(description)}" />\n<meta property="og:url" content="${url}" />\n<meta property="og:type" content="website" />\n<meta property="og:image" content="https://biddigi.io/brand-social.png" />\n<meta name="twitter:card" content="summary_large_image" />\n${missing ? "" : `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Organization",name:"Biddigi",url:"https://biddigi.io",logo:"https://biddigi.io/brand-wordmark.svg"})}</script>`}\n</head>`,
     );
 }
 for (const route of routes) {

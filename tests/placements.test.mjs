@@ -24,7 +24,7 @@ test('publisher references are complete and all original media previews resolve'
 test('each service page uses original galleries and no generic platform scene', () => {
   for (const slug of ['jiohotstar','prime-video','sonyliv','youtube','zee5']) {
     const doc = new JSDOM(render('/' + slug + '-ads')).window.document;
-    assert.equal(doc.querySelectorAll('.placement-gallery').length, 2);
+    assert.equal(doc.querySelectorAll('.placement-gallery').length, 1);
     assert.equal(doc.querySelectorAll('.platform-hero .service-artwork,.platform-hero img[src^="/images/v3/"]').length, 0);
     assert.equal(doc.querySelectorAll('video').length, 0, 'SSR should contain posters only');
     assert.ok(doc.querySelector('.brand-logo-platform'));

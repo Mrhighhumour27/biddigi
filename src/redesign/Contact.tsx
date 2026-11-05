@@ -1,5 +1,6 @@
+import { Verification } from "./Verification";
 import { BrandLogo } from "./BrandLogo";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { AlertCircle, ArrowRight, Check, ShieldCheck } from "lucide-react";
 import { platforms } from "./platforms";
@@ -92,6 +93,15 @@ function newSubmissionId() {
 }
 
 export function ContactPage() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [ready, setReady] = useState(false);
+  const [verificationRevision, setVerificationRevision] = useState(0);
+  const tokenChanged = useCallback(
+    (token: string) => setTurnstileToken(token),
+    [],
+  );
+  const readyChanged = useCallback((value: boolean) => setReady(value), []);
+
   const [fields, setFields] = useState<Fields>(initialFields);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [serverError, setServerError] = useState("");
@@ -156,7 +166,7 @@ export function ContactPage() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (isSubmitting.current) return;
+    if (isSubmitting.current || !ready || !turnstileToken) return;
     const nextErrors = validate(fields);
     setErrors(nextErrors);
     setServerError("");
@@ -206,6 +216,7 @@ export function ContactPage() {
         body: JSON.stringify({
           ...payload,
           submissionId: logicalSubmission.current.id,
+          turnstileToken,
         }),
         signal: controller.signal,
       });
@@ -236,6 +247,8 @@ export function ContactPage() {
       track("enquiry_error", fields.role);
       requestAnimationFrame(() => errorRef.current?.focus());
     } finally {
+      setTurnstileToken("");
+      setVerificationRevision((v) => v + 1);
       window.clearTimeout(timeout);
       isSubmitting.current = false;
       requestRef.current = null;
@@ -284,9 +297,7 @@ export function ContactPage() {
       <div className="container">
         <div className="contact-intro">
           <span className="eyebrow">LET’S FIND THE RIGHT NEXT STEP</span>
-          <h1>
-            Discuss your project.
-          </h1>
+          <h1>Discuss your project.</h1>
           <p>
             Tell us what you publish or what you want to promote. We’ll review
             your brief and discuss where Biddigi can help.
@@ -511,7 +522,10 @@ export function ContactPage() {
                                 )
                               }
                             />
-                            <BrandLogo brand={platform.id} label={platform.name} />
+                            <BrandLogo
+                              brand={platform.id}
+                              label={platform.name}
+                            />
                           </label>
                         ))}
                       </fieldset>
@@ -711,10 +725,23 @@ export function ContactPage() {
                       We use these details to respond to your enquiry. See our{" "}
                       <a href="/privacy">privacy notice</a>.
                     </p>
+                    <Verification
+                      revision={verificationRevision}
+                      onToken={tokenChanged}
+                      onReady={readyChanged}
+                    />
+                    {!ready && (
+                      <p role="status">
+                        Online enquiries are being configured. Your details have
+                        not been sent.
+                      </p>
+                    )}
                     <button
                       className="button button-primary"
                       type="submit"
-                      disabled={status === "submitting"}
+                      disabled={
+                        status === "submitting" || !ready || !turnstileToken
+                      }
                     >
                       {status === "submitting"
                         ? "Sending your enquiry…"

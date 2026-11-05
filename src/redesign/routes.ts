@@ -1,7 +1,7 @@
 export const routes = [
   {
     path: "/",
-    title: "Ad monetization for publishers",
+    title: "Publisher monetization and OTT advertising",
     description:
       "Turn your audience into ad revenue. Biddigi connects website, app, video and CTV ad space with buyers and helps improve your ad setup.",
   },

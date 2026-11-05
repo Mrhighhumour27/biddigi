@@ -1,3 +1,7 @@
+# Current enhancement release
+
+See [implementation, activation and remaining validation](docs/ENHANCEMENT-RELEASE.md). The browser entry imports `src/site.css`; older CSS files remain historical references. Cloudflare API routes are now in `functions/api`, with shared mail logic in `server/enquiry-core.mjs`. Live delivery requires the documented production configuration.
+
 # Biddigi website
 
 The OTT and platform pages now feature original publisher ad-placement examples. See [platform placements and verification](docs/PLATFORM-PLACEMENTS.md).

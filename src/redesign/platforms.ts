@@ -24,7 +24,8 @@ export const platforms: AdvertisingPlatform[] = [
     name: "JioHotstar",
     category: "OTT & streaming",
     tagline: "Your brand. Their next viewing moment.",
-    description: "Run video campaigns on JioHotstar with Biddigi. We plan your media, coordinate creative requirements and execute your campaign across the agreed inventory.",
+    description:
+      "Run video campaigns on JioHotstar with Biddigi. We plan your media, coordinate creative requirements and execute your campaign across the agreed inventory.",
     objectives: ["Brand introductions", "Product launches", "Campaign recall"],
     formats: [
       {
@@ -77,7 +78,8 @@ export const platforms: AdvertisingPlatform[] = [
     name: "Prime Video",
     category: "OTT & streaming",
     tagline: "A bigger setting for your brand story.",
-    description: "Reach Prime Video audiences with Biddigi. We plan and execute your streaming video campaign, with formats and interactive options confirmed for your market.",
+    description:
+      "Reach Prime Video audiences with Biddigi. We plan and execute your streaming video campaign, with formats and interactive options confirmed for your market.",
     objectives: [
       "Brand awareness",
       "Entertainment-led storytelling",
@@ -130,7 +132,8 @@ export const platforms: AdvertisingPlatform[] = [
     name: "Sony LIV",
     category: "OTT & streaming",
     tagline: "Be part of the viewing conversation.",
-    description: "Run your Sony LIV campaign with Biddigi. We handle media planning, creative coordination, execution and delivery review around your audience and objective.",
+    description:
+      "Run your Sony LIV campaign with Biddigi. We handle media planning, creative coordination, execution and delivery review around your audience and objective.",
     objectives: [
       "Sports-led awareness",
       "Entertainment audiences",
@@ -183,7 +186,8 @@ export const platforms: AdvertisingPlatform[] = [
     name: "YouTube",
     category: "Online video",
     tagline: "Meet your audience as they watch and discover.",
-    description: "Run in-stream, in-feed and Shorts campaigns on YouTube with Biddigi. We plan your media, execute the agreed campaign and review its delivery.",
+    description:
+      "Run in-stream, in-feed and Shorts campaigns on YouTube with Biddigi. We plan your media, execute the agreed campaign and review its delivery.",
     objectives: ["Video reach", "Views and consideration", "Website actions"],
     formats: [
       {
@@ -238,7 +242,8 @@ export const platforms: AdvertisingPlatform[] = [
     name: "ZEE5",
     category: "OTT & streaming",
     tagline: "Build a campaign around the stories people choose.",
-    description: "Reach ZEE5 audiences with Biddigi. We plan and execute video and display campaigns around your language, audience and timing.",
+    description:
+      "Reach ZEE5 audiences with Biddigi. We plan and execute video and display campaigns around your language, audience and timing.",
     objectives: [
       "Language-led brand awareness",
       "Entertainment campaigns",
@@ -292,3 +297,37 @@ export const platforms: AdvertisingPlatform[] = [
     },
   },
 ];
+
+export const platformComparison: Record<
+  string,
+  { context: string; objective: string; measurement: string }
+> = {
+  jiohotstar: {
+    context: "Sports and entertainment streaming",
+    objective: "Brand introductions and campaign recall",
+    measurement:
+      "Impressions and video delivery; completion reporting where available",
+  },
+  "prime-video": {
+    context: "Films and series in a streaming environment",
+    objective: "Brand storytelling with in-stream video",
+    measurement:
+      "Video delivery; interactive actions only for eligible bookings",
+  },
+  sonyliv: {
+    context: "Entertainment and sports viewing",
+    objective: "Video awareness around relevant viewing contexts",
+    measurement: "Impressions and available video-delivery metrics",
+  },
+  youtube: {
+    context: "Video viewing, discovery and Shorts",
+    objective: "Awareness, consideration and eligible action campaigns",
+    measurement:
+      "Impressions, views and available engagement; conversions require agreed tracking",
+  },
+  zee5: {
+    context: "Entertainment and regional-language viewing",
+    objective: "Video awareness and eligible display campaigns",
+    measurement: "Video delivery and eligible display metrics",
+  },
+};

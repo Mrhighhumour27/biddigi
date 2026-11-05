@@ -1,3 +1,8 @@
+import {
+  PlatformComparison,
+  CampaignDeliverables,
+  JourneyChoice,
+} from "./ServiceSections";
 import { PlacementGallery, PlacementPoster } from "./PlacementGallery";
 import { BrandLogo } from "./BrandLogo";
 import { useEffect, useRef, useState } from "react";
@@ -320,41 +325,133 @@ function CTA({ campaign = false }: { campaign?: boolean }) {
 }
 
 function PublisherChecklist() {
-  return <aside className="service-brief" aria-label="Publisher review checklist">
-    <span className="eyebrow">YOUR FIRST BIDDIGI REVIEW</span><h2>Bring your property. Start with your setup.</h2>
-    <dl><dt>Property</dt><dd>Website URL, app-store listing or streaming service.</dd><dt>Audience</dt><dd>Monthly ad impressions, main countries and content categories.</dd><dt>Current setup</dt><dd>Ad server, demand sources, placements and any integration constraints.</dd><dt>Review focus</dt><dd>Buyer eligibility, ads.txt or app-ads.txt, consent signals and reporting access.</dd></dl>
-    <a className="text-link" href={contact()}>Discuss your publisher setup <ArrowUpRight size={16} /></a>
-  </aside>;
+  return (
+    <aside className="service-brief" aria-label="Publisher review checklist">
+      <span className="eyebrow">YOUR FIRST BIDDIGI REVIEW</span>
+      <h2>Bring your property. Start with your setup.</h2>
+      <dl>
+        <dt>Property</dt>
+        <dd>Website URL, app-store listing or streaming service.</dd>
+        <dt>Audience</dt>
+        <dd>Monthly ad impressions, main countries and content categories.</dd>
+        <dt>Current setup</dt>
+        <dd>
+          Ad server, demand sources, placements and any integration constraints.
+        </dd>
+        <dt>Review focus</dt>
+        <dd>
+          Buyer eligibility, ads.txt or app-ads.txt, consent signals and
+          reporting access.
+        </dd>
+      </dl>
+      <a className="text-link" href={contact()}>
+        Discuss your publisher setup <ArrowUpRight size={16} />
+      </a>
+    </aside>
+  );
 }
 function CampaignBrief() {
-  return <aside className="service-brief" aria-label="Campaign planning brief">
-    <span className="eyebrow">YOUR BIDDIGI MEDIA PLAN</span><h2>Define the campaign before booking.</h2>
-    <dl><dt>Audience & objective</dt><dd>Locations, languages, viewing context and what you want the campaign to achieve.</dd><dt>Platform & format</dt><dd>Select streaming or online video inventory and confirm eligible placements.</dd><dt>Budget & dates</dt><dd>Agree spend, campaign window and available inventory.</dd><dt>Creative & reporting</dt><dd>Confirm asset specifications, approval steps and available delivery metrics.</dd></dl>
-  </aside>;
+  return (
+    <aside className="service-brief" aria-label="Campaign planning brief">
+      <span className="eyebrow">YOUR BIDDIGI MEDIA PLAN</span>
+      <h2>Define the campaign before booking.</h2>
+      <dl>
+        <dt>Audience & objective</dt>
+        <dd>
+          Locations, languages, viewing context and what you want the campaign
+          to achieve.
+        </dd>
+        <dt>Platform & format</dt>
+        <dd>
+          Select streaming or online video inventory and confirm eligible
+          placements.
+        </dd>
+        <dt>Budget & dates</dt>
+        <dd>Agree spend, campaign window and available inventory.</dd>
+        <dt>Creative & reporting</dt>
+        <dd>
+          Confirm asset specifications, approval steps and available delivery
+          metrics.
+        </dd>
+      </dl>
+    </aside>
+  );
 }
 function PublisherServices() {
-  return <div><SectionHeading eyebrow="BIDDIGI PUBLISHER SERVICES" title="A review built around your inventory." />
-    <div className="service-grid">{[
-      ['Websites', 'Review display and native placements, ad-server configuration, header bidding and ads.txt.'],
-      ['Mobile apps', 'Review app-store listings, app-ads.txt, existing SDKs and supported in-app placements.'],
-      ['Video & connected TV', 'Review player or streaming integrations, ad-break requirements, creative compatibility and available demand.'],
-    ].map(([title,text])=><article key={title}><Workflow aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div>
-  </div>;
+  return (
+    <div>
+      <SectionHeading
+        eyebrow="BIDDIGI PUBLISHER SERVICES"
+        title="A review built around your inventory."
+      />
+      <div className="service-grid">
+        {[
+          [
+            "Websites",
+            "Review display and native placements, ad-server configuration, header bidding and ads.txt.",
+          ],
+          [
+            "Mobile apps",
+            "Review app-store listings, app-ads.txt, existing SDKs and supported in-app placements.",
+          ],
+          [
+            "Video & connected TV",
+            "Review player or streaming integrations, ad-break requirements, creative compatibility and available demand.",
+          ],
+        ].map(([title, text]) => (
+          <article key={title}>
+            <Workflow aria-hidden="true" />
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
 }
 function ReportingScope() {
-  return <div><SectionHeading eyebrow="BIDDIGI PERFORMANCE REVIEW" title="Know what your reporting needs to answer." text="We review available metrics against your property, placements and agreed commercial scope." />
-    <div className="service-grid">{[
-      ['Delivery', 'Review served impressions and fill by placement, device and geography where the integration supports these breakdowns.'],
-      ['Revenue', 'Compare gross revenue and eCPM, then account for the agreed fees when reviewing net earnings.'],
-      ['Next actions', 'Use delivery and revenue trends to discuss placement changes, pricing and integration issues.'],
-    ].map(([title,text])=><article key={title}><BarChart3 aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div>
-  </div>;
+  return (
+    <div>
+      <SectionHeading
+        eyebrow="BIDDIGI PERFORMANCE REVIEW"
+        title="Know what your reporting needs to answer."
+        text="We review available metrics against your property, placements and agreed commercial scope."
+      />
+      <div className="service-grid">
+        {[
+          [
+            "Delivery",
+            "Review served impressions and fill by placement, device and geography where the integration supports these breakdowns.",
+          ],
+          [
+            "Revenue",
+            "Compare gross revenue and eCPM, then account for the agreed fees when reviewing net earnings.",
+          ],
+          [
+            "Next actions",
+            "Use delivery and revenue trends to discuss placement changes, pricing and integration issues.",
+          ],
+        ].map(([title, text]) => (
+          <article key={title}>
+            <BarChart3 aria-hidden="true" />
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function Home() {
   return (
     <>
-      <PageHero eyebrow="PUBLISHER MONETIZATION & OTT CAMPAIGNS" title="Ad operations for publishers. Campaign execution for brands." text="Biddigi supports publisher integrations, placement reviews and reporting, and executes advertising campaigns across JioHotstar, Prime Video, Sony LIV, YouTube and ZEE5." />
+      <PageHero
+        dual
+        eyebrow="PUBLISHER MONETIZATION & OTT CAMPAIGNS"
+        title="Ad operations for publishers. Campaign execution for brands."
+        text="Biddigi supports publisher integrations, placement reviews and reporting, and executes advertising campaigns across JioHotstar, Prime Video, Sony LIV, YouTube and ZEE5."
+      />
       <div className="property-bar">
         <div className="container">
           <span>ONE CONNECTION. FOUR ENVIRONMENTS.</span>
@@ -393,6 +490,9 @@ function Home() {
         <div className="container">
           <PublisherServices />
         </div>
+      </section>
+      <section className="section container">
+        <PlatformComparison />
       </section>
       <section className="section section-dark signal-reporting" id="reporting">
         <div className="container">
@@ -437,7 +537,9 @@ function Home() {
         </div>
         <FAQ />
       </section>
-      <CTA />
+      <section className="section container">
+        <JourneyChoice enquiry />
+      </section>
     </>
   );
 }
@@ -447,12 +549,14 @@ function PageHero({
   text,
   campaign = false,
   company = false,
+  dual = false,
 }: {
   eyebrow: string;
   title: string;
   text: string;
   campaign?: boolean;
   company?: boolean;
+  dual?: boolean;
 }) {
   return (
     <section className="page-hero container service-page-hero">
@@ -460,11 +564,38 @@ function PageHero({
         <span className="eyebrow">{eyebrow}</span>
         <h1>{title}</h1>
         <p>{text}</p>
-        <LinkButton href={company ? "/contact" : contact(campaign ? "advertiser" : "publisher")}>
-          {company ? "Discuss your project" : campaign ? "Request a media plan" : "Discuss my ad setup"}
+        <LinkButton
+          href={
+            dual
+              ? "/publishers"
+              : company
+                ? "/contact"
+                : contact(campaign ? "advertiser" : "publisher")
+          }
+        >
+          {dual
+            ? "Monetize your inventory"
+            : company
+              ? "Discuss your project"
+              : campaign
+                ? "Request a media plan"
+                : "Discuss my ad setup"}
         </LinkButton>
+        {dual && (
+          <LinkButton href="/advertisers">
+            Plan an advertising campaign
+          </LinkButton>
+        )}
       </div>
-      {company ? <ServiceArtwork kind="company" /> : campaign ? <CampaignBrief /> : <PublisherChecklist />}
+      {dual ? (
+        <JourneyChoice />
+      ) : company ? (
+        <ServiceArtwork kind="company" />
+      ) : campaign ? (
+        <CampaignBrief />
+      ) : (
+        <PublisherChecklist />
+      )}
     </section>
   );
 }
@@ -566,7 +697,6 @@ function Calculator() {
           </p>
         </div>
       </div>
-
     </section>
   );
 }
@@ -580,7 +710,9 @@ function Publishers() {
       />
       <section className="section container">
         <PublisherServices />
-        <a className="text-link" href="#calculator">Explore a revenue scenario <ArrowDown size={16} /></a>
+        <a className="text-link" href="#calculator">
+          Explore a revenue scenario <ArrowDown size={16} />
+        </a>
       </section>
       <section id="how-it-works" className="section section-tinted">
         <div className="container detail-split">
@@ -608,7 +740,19 @@ function Publishers() {
               </p>
             </details>
           </div>
-          <PublisherChecklist />
+          <div className="service-brief">
+            <h3>Integration review</h3>
+            <p>
+              Review your ad server, existing demand connections, placement tags
+              and access permissions. Agree configuration and testing
+              responsibilities before making changes.
+            </p>
+            <h3>Readiness checks</h3>
+            <p>
+              Check ads.txt or app-ads.txt, seller details, consent signals and
+              relevant buyer requirements for your property.
+            </p>
+          </div>
         </div>
       </section>
       <section id="solutions" className="section container">
@@ -691,7 +835,15 @@ function Advertisers() {
       />
       <section className="section section-tinted">
         <div className="container detail-split">
-          <div className="service-brief"><h2>Choose your campaign platform</h2>{platforms.map(platform => <a className="text-link" key={platform.id} href={platform.slug}><BrandLogo brand={platform.id} label={platform.name} /><ArrowUpRight size={16} /></a>)}</div>
+          <div className="service-brief">
+            <h2>Choose your campaign platform</h2>
+            {platforms.map((platform) => (
+              <a className="text-link" key={platform.id} href={platform.slug}>
+                <BrandLogo brand={platform.id} label={platform.name} />
+                <ArrowUpRight size={16} />
+              </a>
+            ))}
+          </div>
           <div>
             <span className="eyebrow">A CAMPAIGN WITH CONTEXT</span>
             <h2>
@@ -709,6 +861,10 @@ function Advertisers() {
             </a>
           </div>
         </div>
+      </section>
+      <section className="section container">
+        <PlatformComparison />
+        <CampaignDeliverables />
       </section>
       <section className="section container">
         <SectionHeading
@@ -777,7 +933,9 @@ function PlatformList() {
           <div>
             <span className="eyebrow">{p.category}</span>
             <h3>
-              <a href={p.slug}><BrandLogo brand={p.id} /></a>
+              <a href={p.slug}>
+                <BrandLogo brand={p.id} />
+              </a>
             </h3>
             <p>{p.description}</p>
           </div>
@@ -799,15 +957,13 @@ function OttHub() {
       <section className="page-hero container ott-hero">
         <span className="eyebrow">BIDDIGI FOR ADVERTISERS</span>
         <h1>
-          Your brand.
-          {" "}
-          Their next
-          {" "}
-          <span>viewing moment.</span>
+          Your brand. Their next <span>viewing moment.</span>
         </h1>
         <div>
           <p>
-            Run your campaign on JioHotstar, Prime Video, Sony LIV, YouTube or ZEE5. Biddigi handles media planning, campaign execution and delivery review. Explore the original placement examples below.
+            Run your campaign on JioHotstar, Prime Video, Sony LIV, YouTube or
+            ZEE5. Biddigi handles media planning, campaign execution and
+            delivery review. Explore the original placement examples below.
           </p>
           <LinkButton href={contact("advertiser")}>
             Request a media plan
@@ -861,9 +1017,7 @@ function PlatformPage({ slug }: { slug: string }) {
           <a className="breadcrumb" href="/ott-ads">
             OTT & video ads / {p.name}
           </a>
-          <span className="eyebrow">
-            Advertising with Biddigi
-          </span>
+          <span className="eyebrow">Advertising with Biddigi</span>
           <BrandLogo brand={p.id} hero />
           <h1>{p.tagline}</h1>
           <p>{p.description}</p>
@@ -893,10 +1047,12 @@ function PlatformPage({ slug }: { slug: string }) {
               campaign.
             </p>
             <p className="small-note">
-              Original {p.name} advertising reference. Examples retain their source branding; current booking details are confirmed in your media plan.
+              Original {p.name} advertising reference. Examples retain their
+              source branding; current booking details are confirmed in your
+              media plan.
             </p>
           </div>
-          <PlacementGallery platformId={p.id} />
+          <CampaignDeliverables platform={p.name} />
         </div>
         <div className="container format-cards">
           {p.formats.map((f, i) => (
@@ -996,9 +1152,9 @@ function About() {
               commercial scope that fit.
             </p>
             <p>
-              Publisher work covers integration review, placement configuration and
-              performance reporting. Advertiser work covers media planning, creative
-              coordination, campaign execution and delivery review.
+              Publisher work covers integration review, placement configuration
+              and performance reporting. Advertiser work covers media planning,
+              creative coordination, campaign execution and delivery review.
             </p>
           </div>
           <div className="entity-list">
@@ -1079,7 +1235,16 @@ function Legal({ privacy }: { privacy: boolean }) {
             email service to the Biddigi team. The mail service and receiving
             inbox process the message as part of delivery.
           </p>
-          <h2>Website operation</h2>
+          <h2>Website operation and measurement</h2>
+          <p>
+            Aggregate statistics help us understand page visits, selected
+            services and enquiry progress. Enquiry contents are excluded from
+            analytics. Form protection checks are verified on the server.
+            Temporary hashed rate-limit keys and submission receipts protect
+            delivery; where enabled, aggregate event counts use a 90-day
+            retention window and expired records are purged when the service
+            next processes a request.
+          </p>
           <p>
             The enquiry endpoint uses validation, abuse controls and submission
             identifiers to process requests. This website does not require an
@@ -1104,9 +1269,9 @@ function Legal({ privacy }: { privacy: boolean }) {
           </p>
           <h2>Illustrations and calculations</h2>
           <p>
-            Sample advertisements, auction bids, reporting figures and
-            calculator results explain concepts. They are not live customer
-            results, guaranteed outcomes or a forecast for your property.
+            Platform placement examples and calculator results explain concepts.
+            They are not live customer results, guaranteed outcomes or a
+            forecast for your property.
           </p>
           <h2>Service arrangements</h2>
           <p>
@@ -1136,11 +1301,7 @@ function NotFound() {
   return (
     <section className="container page-hero">
       <span className="eyebrow">404 / A DIFFERENT DIRECTION</span>
-      <h1>
-        This page isn’t
-        {" "}
-        in the picture.
-      </h1>
+      <h1>This page isn’t in the picture.</h1>
       <p>Head back to Biddigi or tell us what you were looking for.</p>
       <LinkButton href="/">Back to the homepage</LinkButton>
     </section>

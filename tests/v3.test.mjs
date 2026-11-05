@@ -66,7 +66,8 @@ test("eight generated source assets have valid responsive AVIF and WebP variants
 test("homepage hero identifies Biddigi services and a concrete publisher starting point", () => {
   const html = render("/");
   assert.match(html, /Ad operations for publishers/);
-  assert.match(html, /Publisher review checklist/);
+  assert.match(html, /Monetize your inventory/);
+  assert.match(html, /Plan an advertising campaign/);
   assert.match(html, /contact\?role=publisher/);
   assert.doesNotMatch(html, /TRAIL SUPPLY|FIELDNOTES|signal-publication/);
 });
