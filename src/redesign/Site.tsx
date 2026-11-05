@@ -989,6 +989,7 @@ function OttHub() {
           </LinkButton>
         </div>
       </section>
+      <section className="section container"><PlatformComparison /></section>
       <CampaignAtlas />
 
       <section className="section process-section">
