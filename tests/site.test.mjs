@@ -55,16 +55,14 @@ test("all thirteen routes contain substantive HTML and unique primary headings",
   }
 });
 
-test("static markup preserves explanatory actors, sample labels and no fake receipt", () => {
-  const html = render("/");
-  assert.match(html, /Biddigi connects your ad space with buyers/);
-  assert.match(html, /Publisher content/);
-  assert.match(html, /ELIGIBLE DEMAND \/ ILLUSTRATIVE/);
-  assert.match(render("/publishers"), /Configured auction selects/);
-  assert.match(render("/publishers"), /not a live auction/);
-  assert.ok(!html.includes("38.4%"));
-  assert.ok(!html.includes("12 business hours"));
-  assert.ok(!html.includes("Request Received!"));
+test("public pages describe services without fictional campaigns or trading dashboards", () => {
+  for (const route of routes) {
+    const html = render(route.path);
+    assert.doesNotMatch(html, /TRAIL SUPPLY|FIELDNOTES|Example buyer|Revenue scenario explorer|ctv-cutaway-lab/);
+    assert.ok(!html.includes("Request Received!"));
+  }
+  assert.match(render("/publishers"), /ads.txt/);
+  assert.match(render("/advertisers"), /campaign execution/);
   assert.match(render("/missing"), /404/);
 });
 

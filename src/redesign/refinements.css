@@ -73,3 +73,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media(prefers-reduced-motion: reduce) {
   :is(.yield-copilot-card, .dimensional-cutaway-container) * { animation: none !important; transition: none !important; }
 }
+
+/* Biddigi service briefs replace fictional campaign artwork. */
+.service-brief { min-width: 0; padding: clamp(22px, 3vw, 42px); background: #e9e7dd; border-top: 3px solid var(--orange); color: var(--ink); }
+.service-brief h2 { font-size: clamp(26px, 2.5vw, 38px); line-height: 1.15; margin: 16px 0 24px; }
+.service-brief dl { margin: 0; }
+.service-brief dt { font-weight: 600; padding-top: 16px; border-top: 1px solid var(--line); }
+.service-brief dd { margin: 6px 0 18px; font-size: 16px; line-height: 1.6; color: #4e584f; }
+.service-brief > .text-link { display: flex; justify-content: space-between; margin-top: 18px; gap: 12px; }

@@ -16,12 +16,7 @@ import {
   Workflow,
   ArrowDown,
 } from "lucide-react";
-import { AuctionScene, MetricTrace } from "./Illustrations";
-import { PlacementLens, FormatPreview } from "./PlacementStudio";
-import { SignalHero } from "./SignalHero";
 import { CampaignAtlas } from "./CampaignAtlas";
-import { DimensionalAdCutaway } from "./DimensionalAdCutaway";
-import { YieldRevenueCopilot } from "./YieldRevenueCopilot";
 import { ServiceArtwork } from "./ServiceArtwork";
 import { ContactPage } from "./Contact";
 import { platforms } from "./platforms";
@@ -323,10 +318,43 @@ function CTA({ campaign = false }: { campaign?: boolean }) {
     </section>
   );
 }
+
+function PublisherChecklist() {
+  return <aside className="service-brief" aria-label="Publisher review checklist">
+    <span className="eyebrow">YOUR FIRST BIDDIGI REVIEW</span><h2>Bring your property. Start with your setup.</h2>
+    <dl><dt>Property</dt><dd>Website URL, app-store listing or streaming service.</dd><dt>Audience</dt><dd>Monthly ad impressions, main countries and content categories.</dd><dt>Current setup</dt><dd>Ad server, demand sources, placements and any integration constraints.</dd><dt>Review focus</dt><dd>Buyer eligibility, ads.txt or app-ads.txt, consent signals and reporting access.</dd></dl>
+    <a className="text-link" href={contact()}>Discuss your publisher setup <ArrowUpRight size={16} /></a>
+  </aside>;
+}
+function CampaignBrief() {
+  return <aside className="service-brief" aria-label="Campaign planning brief">
+    <span className="eyebrow">YOUR BIDDIGI MEDIA PLAN</span><h2>Define the campaign before booking.</h2>
+    <dl><dt>Audience & objective</dt><dd>Locations, languages, viewing context and what you want the campaign to achieve.</dd><dt>Platform & format</dt><dd>Select streaming or online video inventory and confirm eligible placements.</dd><dt>Budget & dates</dt><dd>Agree spend, campaign window and available inventory.</dd><dt>Creative & reporting</dt><dd>Confirm asset specifications, approval steps and available delivery metrics.</dd></dl>
+  </aside>;
+}
+function PublisherServices() {
+  return <div><SectionHeading eyebrow="BIDDIGI PUBLISHER SERVICES" title="A review built around your inventory." />
+    <div className="service-grid">{[
+      ['Websites', 'Review display and native placements, ad-server configuration, header bidding and ads.txt.'],
+      ['Mobile apps', 'Review app-store listings, app-ads.txt, existing SDKs and supported in-app placements.'],
+      ['Video & connected TV', 'Review player or streaming integrations, ad-break requirements, creative compatibility and available demand.'],
+    ].map(([title,text])=><article key={title}><Workflow aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div>
+  </div>;
+}
+function ReportingScope() {
+  return <div><SectionHeading eyebrow="BIDDIGI PERFORMANCE REVIEW" title="Know what your reporting needs to answer." text="We review available metrics against your property, placements and agreed commercial scope." />
+    <div className="service-grid">{[
+      ['Delivery', 'Review served impressions and fill by placement, device and geography where the integration supports these breakdowns.'],
+      ['Revenue', 'Compare gross revenue and eCPM, then account for the agreed fees when reviewing net earnings.'],
+      ['Next actions', 'Use delivery and revenue trends to discuss placement changes, pricing and integration issues.'],
+    ].map(([title,text])=><article key={title}><BarChart3 aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div>
+  </div>;
+}
+
 function Home() {
   return (
     <>
-      <SignalHero />
+      <PageHero eyebrow="PUBLISHER MONETIZATION & OTT CAMPAIGNS" title="Ad operations for publishers. Campaign execution for brands." text="Biddigi supports publisher integrations, placement reviews and reporting, and executes advertising campaigns across JioHotstar, Prime Video, Sony LIV, YouTube and ZEE5." />
       <div className="property-bar">
         <div className="container">
           <span>ONE CONNECTION. FOUR ENVIRONMENTS.</span>
@@ -341,7 +369,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <section className="section container signal-intro" id="solutions">
+      <section className="section container signal-intro" id="how-it-works">
         <div className="split-heading">
           <span className="eyebrow">01 / THE PUBLISHER CONNECTION</span>
           <div>
@@ -363,12 +391,12 @@ function Home() {
       </section>
       <section className="section section-tinted signal-placement-chapter">
         <div className="container">
-          <PlacementLens />
+          <PublisherServices />
         </div>
       </section>
       <section className="section section-dark signal-reporting" id="reporting">
         <div className="container">
-          <MetricTrace />
+          <ReportingScope />
           <a className="text-link" href="/publishers#reporting">
             Explore reporting <ArrowUpRight size={18} />
           </a>
@@ -436,17 +464,15 @@ function PageHero({
           {company ? "Discuss your project" : campaign ? "Request a media plan" : "Discuss my ad setup"}
         </LinkButton>
       </div>
-      <ServiceArtwork
-        kind={company ? "company" : campaign ? "advertiser" : "publisher"}
-      />
+      {company ? <ServiceArtwork kind="company" /> : campaign ? <CampaignBrief /> : <PublisherChecklist />}
     </section>
   );
 }
 function Calculator() {
-  const [impressions, setImpressions] = useState("100000");
-  const [ecpm, setEcpm] = useState("2.5");
+  const [impressions, setImpressions] = useState("");
+  const [ecpm, setEcpm] = useState("");
   const [compare, setCompare] = useState(false);
-  const [other, setOther] = useState("2.5");
+  const [other, setOther] = useState("");
   const current = revenue(impressions, ecpm);
   const alternative = revenue(impressions, other);
   const currency = (n: number) =>
@@ -523,7 +549,7 @@ function Calculator() {
           <div className="calculator-result" aria-live="polite">
             <span>ILLUSTRATIVE MONTHLY REVENUE</span>
             <strong>
-              {current === null ? "Check your inputs" : currency(current)}
+              {current === null ? "Enter your figures" : currency(current)}
             </strong>
             {compare && (
               <p>
@@ -540,9 +566,7 @@ function Calculator() {
           </p>
         </div>
       </div>
-      <div className="container mt-8">
-        <YieldRevenueCopilot />
-      </div>
+
     </section>
   );
 }
@@ -555,8 +579,8 @@ function Publishers() {
         text="Web, app, video or connected TV. We help connect your available ad space with eligible buyers and bring clarity to integration, placements and performance."
       />
       <section className="section container">
-        <PlacementLens />
-        <a className="text-link" href="#yield-copilot">Explore a revenue scenario <ArrowDown size={16} /></a>
+        <PublisherServices />
+        <a className="text-link" href="#calculator">Explore a revenue scenario <ArrowDown size={16} /></a>
       </section>
       <section id="how-it-works" className="section section-tinted">
         <div className="container detail-split">
@@ -584,7 +608,7 @@ function Publishers() {
               </p>
             </details>
           </div>
-          <AuctionScene />
+          <PublisherChecklist />
         </div>
       </section>
       <section id="solutions" className="section container">
@@ -625,7 +649,7 @@ function Publishers() {
       </section>
       <section id="reporting" className="section section-dark">
         <div className="container">
-          <MetricTrace />
+          <ReportingScope />
         </div>
       </section>
       <section className="section container">
@@ -662,12 +686,12 @@ function Advertisers() {
       <PageHero
         eyebrow="FOR BRANDS, AGENCIES & DEMAND PARTNERS"
         title="A stronger connection between your brief and the screen."
-        text="Bring your audience, objective and creative idea. Biddigi helps shape the media plan, coordinate campaign requirements and review the delivery."
+        text="Run campaigns on JioHotstar, Prime Video, Sony LIV, YouTube and ZEE5. Biddigi handles your media plan, creative coordination, campaign execution and delivery review."
         campaign
       />
       <section className="section section-tinted">
         <div className="container detail-split">
-          <FormatPreview />
+          <div className="service-brief"><h2>Choose your campaign platform</h2>{platforms.map(platform => <a className="text-link" key={platform.id} href={platform.slug}><BrandLogo brand={platform.id} label={platform.name} /><ArrowUpRight size={16} /></a>)}</div>
           <div>
             <span className="eyebrow">A CAMPAIGN WITH CONTEXT</span>
             <h2>
@@ -810,9 +834,7 @@ function OttHub() {
         </div>
       </section>
       <CampaignAtlas />
-      <div className="container">
-        <DimensionalAdCutaway />
-      </div>
+
       <section className="section process-section">
         <div className="container">
           <SectionHeading
@@ -896,14 +918,6 @@ function PlatformPage({ slug }: { slug: string }) {
           </h2>
           <p>{p.audience}</p>
           <p>{p.geographic}</p>
-          <a
-            href={p.source.url}
-            className="text-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {p.source.label} <ArrowUpRight size={16} />
-          </a>
         </div>
         <div className="creative-checklist">
           <h3>Your creative starting point</h3>
@@ -982,9 +996,9 @@ function About() {
               commercial scope that fit.
             </p>
             <p>
-              Our website uses labeled illustrations to explain concepts. Your
-              actual setup and results depend on the inventory, demand and
-              agreements involved.
+              Publisher work covers integration review, placement configuration and
+              performance reporting. Advertiser work covers media planning, creative
+              coordination, campaign execution and delivery review.
             </p>
           </div>
           <div className="entity-list">

@@ -63,39 +63,12 @@ test("eight generated source assets have valid responsive AVIF and WebP variants
   );
 });
 
-test("the first server-rendered hero has finished content, live labels and animation controls", () => {
+test("homepage hero identifies Biddigi services and a concrete publisher starting point", () => {
   const html = render("/");
-  const hero = html.slice(
-    html.indexOf("signal-hero"),
-    html.indexOf("property-bar"),
-  );
-  for (const marker of [
-    "signal-publication",
-    "signal-ad-plane",
-    "Publisher content",
-    "Ad placement",
-    "TRAIL SUPPLY",
-    "editorial-640",
-    "product-640",
-    "Pause impression sequence",
-    "Replay impression sequence",
-    "Impression sequence stages",
-  ])
-    assert.ok(hero.includes(marker), marker);
-  assert.ok(
-    hero.includes("ELIGIBLE DEMAND / ILLUSTRATIVE"),
-    "the cutaway must distinguish fictional demand from live activity",
-  );
-  const adPlane = hero.slice(
-    hero.indexOf('class="signal-ad-plane"'),
-    hero.indexOf('class="signal-trace"'),
-  );
-  assert.ok(
-    !adPlane.includes("opacity:0"),
-    "finished ad is visible before animation",
-  );
-  assert.ok(!html.includes("landscape-hill"));
-  assert.ok(html.indexOf("how-it-works") >= 0);
+  assert.match(html, /Ad operations for publishers/);
+  assert.match(html, /Publisher review checklist/);
+  assert.match(html, /contact\?role=publisher/);
+  assert.doesNotMatch(html, /TRAIL SUPPLY|FIELDNOTES|signal-publication/);
 });
 
 test("all prerendered image sources resolve and generated contexts differ across platform pages", async () => {

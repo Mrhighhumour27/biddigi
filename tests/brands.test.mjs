@@ -22,7 +22,7 @@ test('every brand image used by the thirteen pages resolves to a local image ass
     const bytes = await readFile(new URL(`../public${asset}`, import.meta.url));
     assert.ok(asset.endsWith('.svg') ? bytes.toString().includes('<svg') : bytes[0] === 137 || bytes[0] === 255 || bytes.toString('ascii',0,4) === 'RIFF', asset);
   }
-  assert.equal(assets.size, 10);
+  assert.equal(assets.size, 7);
 });
 
 test('platform identities, early platform discovery and scenario disclosure survive prerendering', () => {
@@ -31,8 +31,8 @@ test('platform identities, early platform discovery and scenario disclosure surv
     assert.ok(doc.querySelector('.platform-hero .brand-identity-hero img'), slug);
   }
   const ott = render('/ott-ads');
-  assert.ok(ott.indexOf('id="platforms"') < ott.indexOf('id="ctv-cutaway-lab"'));
-  assert.match(render('/publishers'), /Revenue scenario explorer/);
-  assert.match(render('/publishers'), /Calculated locally|Figures are illustrative/);
+  assert.ok(ott.indexOf('id="platforms"') < ott.indexOf('class="campaign-atlas'));
+  assert.match(render('/publishers'), /Monthly served ad impressions/);
+  assert.match(render('/publishers'), /Enter your figures/);
   assert.doesNotMatch(render('/publishers'), /GCP Monthly Credit|38MS INFERENCE/);
 });
